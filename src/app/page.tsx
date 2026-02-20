@@ -121,13 +121,13 @@ function MainComponent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/artists"
-              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange shadow-xl text-center pointer-events-none opacity-50"
+              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-yellow shadow-xl text-center pointer-events-none opacity-50"
             >
               出演団体（Coming Soon）
             </Link>
             <Link
               href="/timetable"
-              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal shadow-xl text-center pointer-events-none opacity-50"
+              className="bg-kobe-yellow text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal shadow-xl text-center pointer-events-none opacity-50"
             >
               タイムテーブル（Coming Soon）
             </Link>
@@ -216,7 +216,7 @@ function MainComponent() {
                     <p className="text-lg font-black mb-2">
                       入退場自由・予約不要
                     </p>
-                    <p className="text-3xl font-black text-kobe-orange mb-2">
+                    <p className="text-3xl font-black text-kobe-yellow mb-2">
                       無料
                     </p>
                   </div>

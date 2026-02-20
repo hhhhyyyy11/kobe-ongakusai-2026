@@ -34,7 +34,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-kobe-orange">ページ</h4>
+            <h4 className="text-lg font-black mb-4 text-kobe-yellow">ページ</h4>
             <div className="space-y-2">
               <Link
                 href="/"
@@ -63,13 +63,13 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-kobe-orange">
+            <h4 className="text-lg font-black mb-4 text-kobe-yellow">
               お問い合わせ
             </h4>
             <FooterContactLinks />
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-kobe-orange">
+            <h4 className="text-lg font-black mb-4 text-kobe-yellow">
               アクセス
             </h4>
             <p className="text-gray-300 font-bold">
