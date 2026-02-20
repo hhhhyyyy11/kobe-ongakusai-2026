@@ -11,11 +11,8 @@ import {
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
-import { FlyerSection } from "@/components/FlyerSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
-import { sponsors, cooperations } from "@/constants/sponsors";
 
 function MainComponent() {
   const [isClient, setIsClient] = React.useState(false);
@@ -49,16 +46,16 @@ function MainComponent() {
           <div className="absolute top-28 left-12 md:top-30 md:left-16 text-3xl md:text-4xl text-kobe-dark-teal animate-bounce delay-100">
             <BsMusicNote />
           </div>
-          <div className="absolute top-32 right-20 md:top-40 md:right-24 text-2xl md:text-3xl text-kobe-orange animate-bounce delay-300">
+          <div className="absolute top-32 right-20 md:top-40 md:right-24 text-2xl md:text-3xl text-kobe-yellow animate-bounce delay-300">
             <BsMusicNote />
           </div>
           <div className="absolute bottom-32 left-24 md:bottom-40 md:left-32 text-4xl md:text-5xl text-kobe-dark-teal animate-bounce delay-500">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-20 right-16 md:bottom-24 md:right-20 text-3xl md:text-4xl text-kobe-orange animate-bounce delay-700">
+          <div className="absolute bottom-20 right-16 md:bottom-24 md:right-20 text-3xl md:text-4xl text-kobe-yellow animate-bounce delay-700">
             <BsMusicNote />
           </div>
-          <div className="absolute top-1/2 left-8 md:left-12 text-2xl md:text-3xl text-kobe-orange/70 animate-bounce delay-900">
+          <div className="absolute top-1/2 left-8 md:left-12 text-2xl md:text-3xl text-kobe-yellow/70 animate-bounce delay-900">
             <BsMusicNote />
           </div>
           <div className="absolute top-1/3 right-8 md:right-12 text-2xl md:text-3xl text-kobe-dark-teal/70 animate-bounce delay-1100">
@@ -82,18 +79,20 @@ function MainComponent() {
             className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl mb-8"
             style={{ borderWidth: "6px" }}
           >
-            <p className="text-xl md:text-2xl font-black mb-4 text-kobe-orange">
+            <p className="text-xl md:text-2xl font-black mb-4 text-kobe-yellow">
               学生音楽 × 神戸
             </p>
             <p className="text-lg md:text-xl font-bold mb-6 text-kobe-dark-teal">
-              関西圏6大学10団体が出演
+              今年も、夏の神戸で学生たちが奏でる音楽が響きわたる。
               <br />
-              計17大学のメンバーから構成される実行委員会主催の学生音楽フェス！
+              関西最大級の学生音楽フェス！
+              <br />
+              詳細は近日発表！
             </p>
             <div className="text-xl md:text-2xl font-bold text-kobe-dark-teal space-y-3">
               <div className="flex items-center justify-center space-x-3">
                 <FaCalendarAlt className="text-3xl" />
-                <span>2025年8月22日（金）10:00〜19:00</span>
+                <span>2026年8月21日（金）</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <FaMapMarkerAlt className="text-3xl" />
@@ -103,7 +102,7 @@ function MainComponent() {
                       href="https://www.totteikobe.jp/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-kobe-dark-teal hover:text-kobe-orange underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
+                      className="text-kobe-dark-teal hover:text-kobe-yellow underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
                     >
                       TOTTEI PARK
                       <FaExternalLinkAlt className="text-base" />
@@ -112,7 +111,7 @@ function MainComponent() {
                   <div className="text-lg">（神戸市中央区）</div>
                 </div>
               </div>
-              <div className="bg-kobe-orange text-white px-6 py-3 rounded-full text-lg font-black mt-4">
+              <div className="bg-kobe-yellow text-kobe-dark-teal px-6 py-3 rounded-full text-lg font-black mt-4">
                 入場無料・入退場自由
               </div>
             </div>
@@ -122,22 +121,22 @@ function MainComponent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/artists"
-              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
+              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange shadow-xl text-center pointer-events-none opacity-50"
             >
-              出演団体を見る
+              出演団体（Coming Soon）
             </Link>
             <Link
               href="/timetable"
-              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
+              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal shadow-xl text-center pointer-events-none opacity-50"
             >
-              タイムテーブルを見る
+              タイムテーブル（Coming Soon）
             </Link>
           </div>
         </div>
       </section>
 
       {/* Ticket Section */}
-      <section id="ticket" className="py-20 bg-kobe-orange relative">
+      <section id="ticket" className="py-20 bg-kobe-yellow relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-light-blue">
           <svg
@@ -147,14 +146,14 @@ function MainComponent() {
           >
             <path
               d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
-              fill="#FF6B47"
+              fill="#F59E0B"
             />
           </svg>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white text-kobe-orange px-8 py-4 rounded-full border-4 border-kobe-dark-teal my-6">
+            <div className="inline-block bg-white text-kobe-dark-teal px-8 py-4 rounded-full border-4 border-kobe-dark-teal my-6">
               <h2 className="text-4xl md:text-5xl font-black">
                 開催概要・入場について
               </h2>
@@ -169,23 +168,14 @@ function MainComponent() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-6">
                 {/* 日時情報 */}
-                <div className="bg-kobe-orange text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
+                <div className="bg-kobe-yellow text-kobe-dark-teal p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
                   <div className="text-center flex-1">
                     <FaCalendarAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">日時</h3>
                     <p className="text-lg font-bold mb-2">
-                      2025年8月22日（金）
+                      2026年8月21日（金）
                     </p>
-                    <p className="text-base font-bold">10:00〜19:00</p>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-3 mt-4">
-                    <p className="text-sm font-bold text-center">
-                      ※イベント後には
-                      <br />
-                      メリケンパークでの
-                      <br />
-                      花火打ち上げあり
-                    </p>
+                    <p className="text-base font-bold">時間未定</p>
                   </div>
                 </div>
 
@@ -199,7 +189,7 @@ function MainComponent() {
                         href="https://www.totteikobe.jp/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white hover:text-kobe-light-blue underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
+                        className="text-white hover:text-kobe-yellow underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
                       >
                         TOTTEI PARK
                         <FaExternalLinkAlt className="text-sm" />
@@ -242,52 +232,6 @@ function MainComponent() {
             </div>
           </div>
         </div>
-
-        {/* YouTubeライブ配信リンク */}
-        <div className="max-w-6xl mx-auto px-4 mt-12">
-          <div className="text-center">
-            <YouTubeLiveLink size="large" />
-          </div>
-        </div>
-
-        {/* クラウドファンディングセクション */}
-        <div>
-          <div className="max-w-6xl mx-auto px-4 mt-12">
-            <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-2xl p-8 md:p-12 text-center">
-              <h3 className="text-3xl md:text-4xl font-black text-kobe-dark-teal mb-6">
-                神戸音学祭 クラウドファンディングのご案内
-              </h3>
-              <p className="text-lg md:text-xl font-bold text-kobe-gray mb-6">
-                神戸音学祭は、関西の大学軽音サークル・軽音学部の学生が作り上げる入場料無料の屋外音楽フェスです。
-                <br />
-                このフェスの大きな特徴として、「出演料無料」の実現を目指しています。機材費・運営費の確保のため、どうか皆様にご支援いただけないでしょうか。
-                <br />
-                ご支援と、このプロジェクトの拡散へのご協力を心からお願いいたします。
-              </p>
-              <Image
-                src="/images/crowd-fundings/funding.jpg"
-                alt="クラウドファンディングバナー"
-                width={500}
-                height={100}
-                className="rounded-2xl mb-6 mx-auto"
-              />
-              <Link
-                href="https://camp-fire.jp/projects/875206/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-kobe-orange text-white px-8 py-4 rounded-full text-xl font-black hover:bg-kobe-dark-teal transition-colors duration-300 inline-flex items-center gap-2"
-              >
-                クラウドファンディングページへ
-                <FaExternalLinkAlt className="text-base flex-none" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* フライヤー・タイムテーブルセクション */}
-        <div className="max-w-6xl mx-auto px-4 mt-12">
-          <FlyerSection />
-        </div>
       </section>
 
       {/* SNS Section */}
@@ -315,64 +259,15 @@ function MainComponent() {
               <p className="md:text-2xl text-lg font-bold text-kobe-gray mb-6">
                 ongakusai.kobe@gmail.com
               </p>
-              <p className="md:text-lg text-base font-bold text-kobe-dark-teal mb-10">
-                ※ロゴをクリックすると各企業・団体のホームページに移動します
-              </p>
 
-              {/* 協賛企業セクション */}
-              <div className="mb-12">
-                <h3 className="text-2xl font-bold text-kobe-dark-teal mb-6 text-center">
-                  協賛
-                </h3>
-                <div className="flex flex-wrap gap-6 justify-center items-center">
-                  {sponsors.map((sponsor, index) => (
-                    <Link
-                      key={`sponsor-${index}`}
-                      href={sponsor.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
-                      title={`${sponsor.name}のホームページを開く`}
-                      aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
-                    >
-                      <Image
-                        src={sponsor.image}
-                        alt={sponsor.name}
-                        width={150}
-                        height={80}
-                        className="max-w-full max-h-full h-auto object-contain"
-                      />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* 協力企業セクション */}
-              <div>
-                <h3 className="text-2xl font-bold text-kobe-dark-teal mb-6 text-center">
-                  協力
-                </h3>
-                <div className="flex flex-wrap gap-6 justify-center items-center">
-                  {cooperations.map((cooperation, index) => (
-                    <Link
-                      key={`cooperation-${index}`}
-                      href={cooperation.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
-                      title={`${cooperation.name}のホームページを開く`}
-                      aria-label={`${cooperation.name}のホームページ（新しいタブで開きます）`}
-                    >
-                      <Image
-                        src={cooperation.image}
-                        alt={cooperation.name}
-                        width={150}
-                        height={80}
-                        className="max-w-full max-h-full h-auto object-contain"
-                      />
-                    </Link>
-                  ))}
-                </div>
+              {/* 協賛・協力 — Coming Soon */}
+              <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 bg-gray-50">
+                <p className="text-2xl font-black text-kobe-yellow mb-2">
+                  Coming Soon
+                </p>
+                <p className="text-kobe-gray font-bold text-sm">
+                  協賛企業・団体は決定次第掲載いたします
+                </p>
               </div>
             </div>
           </div>

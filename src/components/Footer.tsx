@@ -92,7 +92,7 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
           <p className="font-bold">
-            &copy; 2025 神戸音学祭実行委員会. All rights reserved.
+            &copy; 2026 神戸音学祭実行委員会. All rights reserved.
           </p>
         </div>
       </div>

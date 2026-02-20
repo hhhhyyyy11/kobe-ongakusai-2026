@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "神戸音学祭 2025",
+  title: "神戸音学祭 2026",
   description:
-    "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス。TOTTEI PARKで開催される入場無料の音楽イベントです。",
+    "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」が今年も神戸「TOTTEI PARK」にて開催。詳細は近日発表！",
   applicationName: "神戸音学祭",
   keywords: [
     "神戸音学祭",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "学生",
     "神戸",
     "TOTTEI PARK",
+    "GLION ARENA KOBE",
     "コンサート",
     "イベント",
     "ライブ",
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     "軽音楽",
     "大学",
     "音楽祭",
+    "2026",
   ],
   authors: [{ name: "神戸音学祭実行委員会" }],
   creator: "神戸音学祭実行委員会",
@@ -79,11 +81,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "神戸音学祭 2025",
+    title: "神戸音学祭 2026",
     description:
-      "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
+      "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     url: "https://kobe-ongakusai.vercel.app",
-    siteName: "神戸音学祭 2025",
+    siteName: "神戸音学祭 2026",
     locale: "ja_JP",
     type: "website",
     images: [
@@ -91,15 +93,15 @@ export const metadata: Metadata = {
         url: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
         width: 1200,
         height: 630,
-        alt: "神戸音学祭 2025 - 学生主催の野外音楽フェス",
+        alt: "神戸音学祭 2026 - 学生主催の野外音楽フェス",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "神戸音学祭 2025",
+    title: "神戸音学祭 2026",
     description:
-      "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
+      "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     creator: "@K0beOngakusai",
     site: "@K0beOngakusai",
     images: ["https://kobe-ongakusai.vercel.app/images/logo_main.jpg"],
@@ -116,7 +118,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "site-name": "神戸音学祭 2025",
+    "site-name": "神戸音学祭 2026",
     "application-name": "神戸音学祭",
   },
   verification: {
@@ -132,11 +134,10 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MusicEvent",
-    name: "神戸音学祭 2025",
-    description: "関西圏6大学10団体が出演する学生主催の野外音楽フェス",
+    name: "神戸音学祭 2026",
+    description: "学生主催の野外音楽フェス",
     image: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
-    startDate: "2025-08-22T10:00:00+09:00",
-    endDate: "2025-08-22T19:00:00+09:00",
+    startDate: "2026-08-21",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -154,57 +155,14 @@ export default function RootLayout({
       "@type": "Organization",
       name: "神戸音学祭実行委員会",
       url: "https://kobe-ongakusai.vercel.app",
-      description: "17大学のメンバーから構成される実行委員会",
     },
-    performer: [
-      {
-        "@type": "Organization",
-        name: "関西学院大学文化総部軽音楽部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸市外国語大学学部軽音学部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸親和大学軽音学部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音楽部ROCK",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルFreeBeat",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルMMC",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルSoundS",
-      },
-      {
-        "@type": "Organization",
-        name: "同志社大学Lilac Rainbows",
-      },
-      {
-        "@type": "Organization",
-        name: "立命館大学Hansel&Gretel",
-      },
-      {
-        "@type": "Organization",
-        name: "立命館大学Jack&Beans",
-      },
-    ],
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "JPY",
       availability: "https://schema.org/InStock",
-      url: "https://kobe-ongakusai.vercel.app",
-      validFrom: "2025-01-01T00:00:00+09:00",
+      url: "https://kobe-ongakusai-2026.vercel.app",
+      validFrom: "2026-01-01T00:00:00+09:00",
       description: "入場無料・入退場自由",
     },
   };
