@@ -58,8 +58,8 @@ export function Header() {
               href="/"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/")
-                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
             >
               TOP
@@ -68,8 +68,8 @@ export function Header() {
               href="/artists"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/artists")
-                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
             >
               出演団体
@@ -78,8 +78,8 @@ export function Header() {
               href="/timetable"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/timetable")
-                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
             >
               タイムテーブル
@@ -88,8 +88,8 @@ export function Header() {
               href="/about"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/about")
-                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
             >
               神戸音学祭とは
@@ -101,8 +101,8 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-all duration-300 transform ${
               isMobileMenuOpen
-                ? "bg-kobe-dark-teal scale-105 border-2 border-kobe-orange"
-                : "bg-kobe-orange hover:scale-110 border-2 border-kobe-dark-teal"
+                ? "bg-kobe-dark-teal scale-105 border-2 border-kobe-yellow"
+                : "bg-kobe-yellow hover:scale-110 border-2 border-kobe-dark-teal"
             }`}
           >
             <FaBars
@@ -132,8 +132,8 @@ export function Header() {
                 href="/"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/")
-                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                    ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-white"
                 }`}
                 style={{ borderWidth: "3px" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -144,8 +144,8 @@ export function Header() {
                 href="/artists"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/artists")
-                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                    ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-white"
                 }`}
                 style={{ borderWidth: "3px", animationDelay: "100ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -156,8 +156,8 @@ export function Header() {
                 href="/timetable"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/timetable")
-                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                    ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-white"
                 }`}
                 style={{ borderWidth: "3px", animationDelay: "200ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -168,8 +168,8 @@ export function Header() {
                 href="/about"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/about")
-                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                    ? "bg-kobe-yellow text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-white"
                 }`}
                 style={{ borderWidth: "3px", animationDelay: "300ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}

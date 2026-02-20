@@ -18,13 +18,13 @@ function AboutPage() {
           <div className="absolute top-28 left-12 text-3xl text-kobe-dark-teal animate-bounce delay-100">
             <BsMusicNote />
           </div>
-          <div className="absolute top-32 right-20 text-2xl text-kobe-orange animate-bounce delay-300">
+          <div className="absolute top-32 right-20 text-2xl text-kobe-yellow animate-bounce delay-300">
             <BsMusicNote />
           </div>
           <div className="absolute bottom-32 left-24 text-4xl text-kobe-dark-teal animate-bounce delay-500">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-20 right-16 text-3xl text-kobe-orange animate-bounce delay-700">
+          <div className="absolute bottom-20 right-16 text-3xl text-kobe-yellow animate-bounce delay-700">
             <BsMusicNote />
           </div>
         </div>
@@ -39,7 +39,7 @@ function AboutPage() {
             <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
               神戸音学祭について
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-kobe-orange">
+            <p className="text-xl md:text-2xl font-bold text-kobe-yellow">
               学生の、学生による、学生のための野外音楽フェス
             </p>
           </div>
@@ -102,7 +102,7 @@ function AboutPage() {
                 </h3>
               </div>
               <div className="text-white font-bold space-y-4">
-                <div className="bg-kobe-orange rounded-2xl p-4">
+                <div className="bg-kobe-yellow rounded-2xl p-4">
                   <p className="font-black mb-2 flex items-center gap-2">
                     <FaMusic className="text-white" />
                     学生主体の運営
@@ -137,7 +137,7 @@ function AboutPage() {
           <div
             className="rounded-3xl border-4 border-white shadow-xl p-8 text-white"
             style={{
-              background: "linear-gradient(to right, #2C5F5D, #FF6B47)",
+              background: "linear-gradient(to right, #2C5F5D, #F59E0B)",
             }}
           >
             <div className="text-center mb-8">
@@ -172,7 +172,7 @@ function AboutPage() {
 
               <div className="bg-white rounded-2xl p-6 text-kobe-dark-teal">
                 <p className="font-black text-center leading-relaxed">
-                  初年度である今回は試行的な位置付けですが、ここを出発点とし、今後はより多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
+                  2年目を迎える今回は、より多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
                 </p>
               </div>
             </div>
