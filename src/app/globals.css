@@ -8,8 +8,8 @@
   --kobe-light-blue: #94cef5;
   --kobe-dark-teal: #2c5f5d;
   --kobe-orange: #ff6b47;
-  --kobe-yellow: #F59E0B;
-  --kobe-yellow-light: #FDE68A;
+  --kobe-yellow: #f59e0b;
+  --kobe-yellow-light: #fde68a;
   --kobe-gray: #777777;
 }
 
@@ -206,7 +206,8 @@ body.modal-open {
 
 /* カウントダウン用アニメーション */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
   }
   50% {
@@ -219,8 +220,13 @@ body.modal-open {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float {

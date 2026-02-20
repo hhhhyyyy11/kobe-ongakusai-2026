@@ -71,9 +71,7 @@ export default function ArtistsPage() {
                 <p className="text-2xl font-black text-kobe-dark-teal mb-2">
                   出演団体は近日発表
                 </p>
-                <p className="text-kobe-gray font-bold">
-                  続報をお楽しみに！
-                </p>
+                <p className="text-kobe-gray font-bold">続報をお楽しみに！</p>
               </div>
             </div>
           </div>
@@ -85,4 +83,3 @@ export default function ArtistsPage() {
     </div>
   );
 }
-

@@ -98,10 +98,10 @@ function SetListPage() {
               <FaMusic className="text-6xl text-gray-300 mx-auto mb-6" />
               <p className="text-2xl font-black text-kobe-dark-teal mb-2">
                 タイムテーブルは近日公開
-                </p>
+              </p>
               <p className="text-kobe-gray font-bold">
                 出演団体・演奏スケジュールは決定次第お知らせします
-                </p>
+              </p>
             </div>
           </div>
         </div>
@@ -114,4 +114,3 @@ function SetListPage() {
 }
 
 export default SetListPage;
-
