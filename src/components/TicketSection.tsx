@@ -1,6 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaTicketAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import { WavePattern } from "./WavePattern";
 
 export function TicketSection() {
@@ -30,9 +35,7 @@ export function TicketSection() {
                 <div className="text-center flex-1">
                   <FaCalendarAlt className="text-4xl mb-4 mx-auto" />
                   <h3 className="text-xl font-black mb-4">日時</h3>
-                  <p className="text-lg font-bold mb-2">
-                    2026年8月21日（金）
-                  </p>
+                  <p className="text-lg font-bold mb-2">2026年8月21日（金）</p>
                   <p className="text-base font-bold">時間未定</p>
                 </div>
               </div>

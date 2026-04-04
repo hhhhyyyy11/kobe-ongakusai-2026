@@ -7,9 +7,7 @@ export function SponsorSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-6">
           <div className="inline-block bg-white text-kobe-dark-teal px-8 py-4 rounded-full border-4 border-kobe-dark-teal mb-6">
-            <h2 className="text-4xl md:text-5xl font-black">
-              協賛企業・団体
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-black">協賛企業・団体</h2>
           </div>
         </div>
 

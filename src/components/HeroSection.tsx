@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import { DecorativeNotes } from "./DecorativeNotes";
 
 export function HeroSection() {
