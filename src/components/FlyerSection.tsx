@@ -22,7 +22,6 @@ export const FlyerSection: React.FC = () => {
     hashtags: SHARE_CONFIG.hashtags,
   };
 
-
   const shareToLine = () => {
     const lineText = `${shareData.title}\n${shareData.text}`;
     const url = `${SHARE_CONFIG.shareUrls.line}?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(lineText)}`;
