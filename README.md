@@ -4,8 +4,8 @@
 
 ## プロジェクト概要
 
-- **開催日**: 2025年8月22日 11:00~19:00
-- **会場**: GLION ARENA KOBE TOTTEI PARK
+- **開催日**: 2026年8月21日（金）
+- **会場**: TOTTEI PARK (神戸市中央区新港町2-1)
 - **主催**: 神戸音学祭実行委員会
 
 ## 技術スタック
@@ -161,10 +161,4 @@ src/
 
 ---
 
-&copy; 2025 Kobe Ongakusai 実行委員会. All rights reserved.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+&copy; 2026 Kobe Ongakusai 実行委員会. All rights reserved.
