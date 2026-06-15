@@ -7,7 +7,7 @@ interface WavePatternProps {
 }
 
 export function WavePattern({
-  fillColor = "#F59E0B",
+  fillColor = "#FFEF5E",
   className = "",
   backgroundColor = "bg-kobe-light-blue",
 }: WavePatternProps) {

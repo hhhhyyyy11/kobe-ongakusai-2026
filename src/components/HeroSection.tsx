@@ -14,7 +14,7 @@ export function HeroSection() {
       id="top"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32"
       style={{
-        backgroundImage: `url('/images/logo_sub.png')`,
+        backgroundImage: `url('/images/logos/logo_sub.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -30,7 +30,7 @@ export function HeroSection() {
         {/* Main Logo Display */}
         <div className="mb-8">
           <Image
-            src="/images/logo_transparent.png"
+            src="/images/logos/logo_transparent_2026.png"
             alt="Kobe Ongakusai Main Logo"
             width={256}
             height={256}
@@ -90,7 +90,7 @@ export function HeroSection() {
           </Link>
           <Link
             href="/timetable"
-            className="bg-kobe-yellow text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal shadow-xl text-center pointer-events-none opacity-50"
+            className="bg-kobe-yellow text-kobe-dark-teal px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal shadow-xl text-center pointer-events-none opacity-50"
           >
             タイムテーブル（Coming Soon）
           </Link>

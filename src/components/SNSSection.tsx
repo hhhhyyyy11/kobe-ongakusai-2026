@@ -1,6 +1,5 @@
 import React from "react";
 import { InstagramEmbed } from "./InstagramEmbed";
-import { TwitterEmbed } from "./TwitterEmbed";
 
 interface SNSSectionProps {
   isClient: boolean;
@@ -21,7 +20,6 @@ export const SNSSection: React.FC<SNSSectionProps> = ({ isClient }) => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           <InstagramEmbed />
-          <TwitterEmbed isClient={isClient} />
         </div>
       </div>
     </section>

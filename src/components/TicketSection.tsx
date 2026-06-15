@@ -12,7 +12,7 @@ export function TicketSection() {
   return (
     <section id="ticket" className="py-20 bg-kobe-yellow relative">
       {/* Wave Pattern at Top */}
-      <WavePattern fillColor="#F59E0B" backgroundColor="bg-kobe-light-blue" />
+      <WavePattern fillColor="#FFEF5E" backgroundColor="bg-kobe-light-blue" />
 
       <div className="max-w-6xl mx-auto px-4 relative">
         <div className="text-center mb-16">

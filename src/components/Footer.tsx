@@ -15,7 +15,7 @@ export function Footer() {
               className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity"
             >
               <Image
-                src="/images/logo_transparent.png"
+                src="/images/logos/logo_transparent_2026.png"
                 alt="Logo"
                 width={96}
                 height={96}

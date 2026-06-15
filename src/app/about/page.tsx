@@ -79,9 +79,9 @@ function AboutPage() {
                 </h3>
               </div>
               <div className="text-white font-bold space-y-4">
-                <div className="bg-kobe-yellow rounded-2xl p-4">
+                <div className="bg-kobe-yellow rounded-2xl p-4 text-kobe-dark-teal">
                   <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMusic className="text-white" />
+                    <FaMusic className="text-kobe-dark-teal" />
                     学生主体の運営
                   </p>
                   <p className="text-sm">
@@ -114,7 +114,7 @@ function AboutPage() {
           <div
             className="rounded-3xl border-4 border-white shadow-xl p-8 text-white"
             style={{
-              background: "linear-gradient(to right, #2C5F5D, #F59E0B)",
+              background: "linear-gradient(to right, #2C5F5D, #B8960A)",
             }}
           >
             <div className="text-center mb-8">

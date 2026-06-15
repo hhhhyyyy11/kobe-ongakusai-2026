@@ -1,6 +1,5 @@
 import React from "react";
 import { FaInstagram, FaEnvelope } from "react-icons/fa";
-import { SiX } from "react-icons/si";
 import { SNS_INFO } from "@/constants/sns";
 
 export const ContactLinks: React.FC = () => {
@@ -15,17 +14,6 @@ export const ContactLinks: React.FC = () => {
           className="text-kobe-dark-teal font-bold hover:underline"
         >
           @{SNS_INFO.instagram.handle}
-        </a>
-      </div>
-      <div className="flex items-center gap-3">
-        <SiX className="text-black text-xl" />
-        <a
-          href={SNS_INFO.twitter.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-kobe-dark-teal font-bold hover:underline"
-        >
-          @{SNS_INFO.twitter.handle}
         </a>
       </div>
       <div className="flex items-center gap-3">
