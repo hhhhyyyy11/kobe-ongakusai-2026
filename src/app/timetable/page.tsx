@@ -21,19 +21,21 @@ function SetListPage() {
         <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl">
             <div className="flex justify-center mb-6">
-              <div className="bg-kobe-yellow rounded-full p-4">
+              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-4">
                 <FaMusic className="text-6xl text-white" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
               タイムテーブル
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-kobe-yellow mb-4">
-              2026年8月21日（金）開催予定
-            </p>
+            <div className="mb-4">
+              <p className="inline-block px-6 py-2 rounded-full text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500">
+                2026年8月21日（金）開催予定
+              </p>
+            </div>
             <div className="flex items-center justify-center space-x-4 text-lg font-bold text-kobe-dark-teal">
               <div className="flex items-center space-x-2">
-                <FaClock />
+                <FaClock className="text-orange-500" />
                 <span>時間未定</span>
               </div>
             </div>
@@ -42,8 +44,11 @@ function SetListPage() {
       </section>
 
       {/* パフォーマンス内容説明 */}
-      <section className="py-16 bg-kobe-light-blue">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="py-16 bg-white relative">
+        {/* Wave Pattern at Top */}
+        <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
+
+        <div className="max-w-4xl mx-auto px-4 pt-16">
           <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8">
             <div className="text-center">
               <div className="text-6xl mb-4 flex justify-center">
@@ -66,10 +71,7 @@ function SetListPage() {
 
       {/* Performance Schedule */}
       <section className="py-16 bg-white relative">
-        {/* Wave Pattern at Top */}
-        <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
-
-        <div className="max-w-4xl mx-auto px-4 pt-16">
+        <div className="max-w-4xl mx-auto px-4 pt-4">
           <div className="text-center py-20">
             <div className="border-2 border-dashed border-gray-300 rounded-2xl p-12 bg-gray-50">
               <FaMusic className="text-6xl text-gray-300 mx-auto mb-6" />

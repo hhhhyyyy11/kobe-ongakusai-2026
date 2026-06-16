@@ -8,30 +8,32 @@ import { WavePattern } from "@/components/WavePattern";
 
 export default function ArtistsPage() {
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Header */}
       <Header />
 
       {/* Main Content */}
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 overflow-hidden bg-kobe-light-blue">
+        <section className="relative pt-32 pb-16 overflow-hidden">
           {/* Decorative Elements */}
           <DecorativeNotes />
 
           <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl mb-16">
               <div className="flex justify-center mb-6">
-                <div className="bg-kobe-yellow rounded-full p-4">
+                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-4">
                   <FaUsers className="text-6xl text-white" />
                 </div>
               </div>
               <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
                 出演団体
               </h1>
-              <p className="text-xl md:text-2xl font-bold text-kobe-yellow mb-4">
-                Coming Soon
-              </p>
+              <div className="mb-4">
+                <p className="inline-block px-6 py-2 rounded-full text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500">
+                  Coming Soon
+                </p>
+              </div>
             </div>
           </div>
         </section>
