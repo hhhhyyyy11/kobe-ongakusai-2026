@@ -58,7 +58,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({
         {/* 閉じるボタン */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 md:top-4 md:right-4 bg-white text-kobe-dark-teal p-2 rounded-full hover:bg-kobe-orange hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg z-10"
+          className="absolute top-2 right-2 md:top-4 md:right-4 bg-white text-gray-800 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg z-10"
           title="閉じる"
         >
           <FaTimes className="text-xl" />
@@ -80,7 +80,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({
           <a
             href={imageSrc}
             download={downloadFileName}
-            className="bg-kobe-dark-teal text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
+            className="bg-gray-800 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
           >
             <FaDownload />
             <span className="font-bold text-sm md:text-base">ダウンロード</span>

@@ -118,8 +118,8 @@ export const FlyerSection: React.FC = () => {
 
           {/* ハッシュタグエリア */}
           <div className="text-center">
-            <div className="bg-kobe-light-blue/10 rounded-lg p-4 border-2 border-kobe-dark-teal mb-6">
-              <p className="text-sm font-bold text-kobe-dark-teal">
+            <div className="bg-gray-50 rounded-lg p-4 border-2 border-gray-200 mb-6">
+              <p className="text-sm font-bold text-gray-600">
                 #関西 #関西イベント #神戸 #神戸イベント #音楽イベント #フェス
                 #野外フェス #学生 #学生イベント #コピーバンド
                 #コピーバンドライブ #tottei #totteikobe #glion #神戸音学祭

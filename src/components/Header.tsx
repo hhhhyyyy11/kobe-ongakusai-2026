@@ -29,7 +29,7 @@ export function Header() {
   }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-kobe-dark-teal">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-2 border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link
@@ -56,40 +56,40 @@ export function Header() {
             {/* 全てページ遷移のナビゲーション */}
             <Link
               href="/"
-              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
                 isActive("/")
-                  ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
               }`}
             >
               TOP
             </Link>
             <Link
               href="/artists"
-              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
                 isActive("/artists")
-                  ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
               }`}
             >
               出演団体
             </Link>
             <Link
               href="/timetable"
-              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
                 isActive("/timetable")
-                  ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
               }`}
             >
               タイムテーブル
             </Link>
             <Link
               href="/about"
-              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
                 isActive("/about")
-                  ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg transform scale-105"
-                  : "text-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal border-kobe-dark-teal hover:shadow-lg"
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
               }`}
             >
               神戸音学祭とは
@@ -101,8 +101,8 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-all duration-300 transform ${
               isMobileMenuOpen
-                ? "bg-kobe-dark-teal scale-105 border-2 border-kobe-yellow"
-                : "bg-kobe-yellow hover:scale-110 border-2 border-kobe-dark-teal"
+                ? "bg-gray-800 scale-105 border-2 border-orange-400"
+                : "bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-110 border-2 border-orange-400"
             }`}
           >
             <FaBars
@@ -119,7 +119,7 @@ export function Header() {
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mt-4 pb-4 border-t-2 border-kobe-dark-teal/20">
+          <div className="mt-4 pb-4 border-t-2 border-gray-200">
             <div
               className={`flex flex-col space-y-3 pt-4 transform transition-all duration-500 ease-in-out ${
                 isMobileMenuOpen
@@ -130,48 +130,48 @@ export function Header() {
               {/* 全てページ遷移のナビゲーション（モバイル） */}
               <Link
                 href="/"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/")
-                    ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal"
+                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
                 }`}
-                style={{ borderWidth: "3px" }}
+                style={{ borderWidth: "2px" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 TOP
               </Link>
               <Link
                 href="/artists"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/artists")
-                    ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal"
+                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
                 }`}
-                style={{ borderWidth: "3px", animationDelay: "100ms" }}
+                style={{ borderWidth: "2px", animationDelay: "100ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 出演団体
               </Link>
               <Link
                 href="/timetable"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/timetable")
-                    ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal"
+                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
                 }`}
-                style={{ borderWidth: "3px", animationDelay: "200ms" }}
+                style={{ borderWidth: "2px", animationDelay: "200ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 タイムテーブル
               </Link>
               <Link
                 href="/about"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/about")
-                    ? "bg-kobe-yellow text-kobe-dark-teal border-kobe-dark-teal shadow-lg"
-                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-yellow hover:text-kobe-dark-teal"
+                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
                 }`}
-                style={{ borderWidth: "3px", animationDelay: "300ms" }}
+                style={{ borderWidth: "2px", animationDelay: "300ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 神戸音学祭とは
