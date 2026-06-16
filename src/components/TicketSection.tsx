@@ -6,13 +6,10 @@ import {
   FaTicketAlt,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import { WavePattern } from "./WavePattern";
 
 export function TicketSection() {
   return (
     <section id="ticket" className="py-24 bg-kobe-light-blue relative">
-      {/* Wave Pattern at Top */}
-      <WavePattern fillColor="#94cef5" backgroundColor="bg-white" />
 
       <div className="max-w-6xl mx-auto px-4 relative pt-8">
         <div className="text-center mb-16">
