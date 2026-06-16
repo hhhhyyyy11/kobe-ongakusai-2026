@@ -232,3 +232,38 @@ body.modal-open {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+@keyframes hero-slideshow {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  2.5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  15%,
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.hero-slide {
+  animation: hero-slideshow 40s infinite;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .hero-slide:first-child {
+    opacity: 1;
+  }
+}
