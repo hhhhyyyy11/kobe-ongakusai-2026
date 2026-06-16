@@ -1,12 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import {
-  FaMusic,
-  FaHandshake,
-  FaMicrophone,
-  FaStar,
-} from "react-icons/fa";
+import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
