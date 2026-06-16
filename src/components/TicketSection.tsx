@@ -10,7 +10,6 @@ import {
 export function TicketSection() {
   return (
     <section id="ticket" className="py-24 bg-kobe-light-blue relative">
-
       <div className="max-w-6xl mx-auto px-4 relative pt-8">
         <div className="text-center mb-16">
           <div className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-full mb-6">
