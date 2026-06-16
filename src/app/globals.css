@@ -8,8 +8,8 @@
   --kobe-light-blue: #94cef5;
   --kobe-dark-teal: #2c5f5d;
   --kobe-orange: #ff6b47;
-  --kobe-yellow: #f59e0b;
-  --kobe-yellow-light: #fde68a;
+  --kobe-yellow: #ffef5e;
+  --kobe-yellow-light: #fff9c4;
   --kobe-gray: #777777;
 }
 
@@ -208,10 +208,10 @@ body.modal-open {
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 20px rgba(255, 239, 94, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 40px rgba(255, 239, 94, 0.6);
   }
 }
 
@@ -231,4 +231,39 @@ body.modal-open {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes hero-slideshow {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  2.5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  15%,
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.hero-slide {
+  animation: hero-slideshow 40s infinite;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .hero-slide:first-child {
+    opacity: 1;
+  }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { ImageModal } from "./ImageModal";
 import Image from "next/image";
 import { FaDownload } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { BsLine } from "react-icons/bs";
 import { SHARE_CONFIG } from "@/constants/sns";
 
@@ -21,16 +20,6 @@ export const FlyerSection: React.FC = () => {
     text: SHARE_CONFIG.text,
     url: SHARE_CONFIG.baseUrl,
     hashtags: SHARE_CONFIG.hashtags,
-  };
-
-  // SNSシェア関数
-  const shareToTwitter = () => {
-    const tweetText = `${shareData.title}\n${shareData.text}\n${shareData.url}\n#${shareData.hashtags
-      .split(",")
-      .map((h) => h.trim())
-      .join(" #")}`;
-    const url = `${SHARE_CONFIG.shareUrls.twitter}?text=${encodeURIComponent(tweetText)}`;
-    window.open(url, "_blank", "width=600,height=400");
   };
 
   const shareToLine = () => {
@@ -129,8 +118,8 @@ export const FlyerSection: React.FC = () => {
 
           {/* ハッシュタグエリア */}
           <div className="text-center">
-            <div className="bg-kobe-light-blue/10 rounded-lg p-4 border-2 border-kobe-dark-teal mb-6">
-              <p className="text-sm font-bold text-kobe-dark-teal">
+            <div className="bg-gray-50 rounded-lg p-4 border-2 border-gray-200 mb-6">
+              <p className="text-sm font-bold text-gray-600">
                 #関西 #関西イベント #神戸 #神戸イベント #音楽イベント #フェス
                 #野外フェス #学生 #学生イベント #コピーバンド
                 #コピーバンドライブ #tottei #totteikobe #glion #神戸音学祭
@@ -139,14 +128,6 @@ export const FlyerSection: React.FC = () => {
 
             {/* SNSシェアボタン */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-              <button
-                onClick={shareToTwitter}
-                className="bg-[#000000] text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg font-bold text-sm flex items-center gap-2 justify-center w-44"
-                title="X(旧Twitter)でシェア"
-              >
-                <FaXTwitter className="text-lg" />
-                Xでシェア
-              </button>
               <button
                 onClick={shareToLine}
                 className="bg-[#00B900] text-white px-6 py-3 rounded-full hover:bg-[#009900] transition-all duration-300 transform hover:scale-105 shadow-lg font-bold text-sm flex items-center gap-2 justify-center w-44"

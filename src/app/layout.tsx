@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
+        url: "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
         width: 1200,
         height: 630,
         alt: "神戸音学祭 2026 - 学生主催の野外音楽フェス",
@@ -104,7 +104,9 @@ export const metadata: Metadata = {
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     creator: "@K0beOngakusai",
     site: "@K0beOngakusai",
-    images: ["https://kobe-ongakusai.vercel.app/images/logo_main.jpg"],
+    images: [
+      "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
+    ],
   },
   robots: {
     index: true,
@@ -136,7 +138,7 @@ export default function RootLayout({
     "@type": "MusicEvent",
     name: "神戸音学祭 2026",
     description: "学生主催の野外音楽フェス",
-    image: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
+    image: "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
     startDate: "2026-08-21",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",

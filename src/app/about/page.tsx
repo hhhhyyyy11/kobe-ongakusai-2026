@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
-import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { DecorativeNotes } from "@/components/DecorativeNotes";
+import { WavePattern } from "@/components/WavePattern";
 
 function AboutPage() {
   return (
@@ -14,34 +15,23 @@ function AboutPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-28 left-12 text-3xl text-kobe-dark-teal animate-bounce delay-100">
-            <BsMusicNote />
-          </div>
-          <div className="absolute top-32 right-20 text-2xl text-kobe-yellow animate-bounce delay-300">
-            <BsMusicNote />
-          </div>
-          <div className="absolute bottom-32 left-24 text-4xl text-kobe-dark-teal animate-bounce delay-500">
-            <BsMusicNote />
-          </div>
-          <div className="absolute bottom-20 right-16 text-3xl text-kobe-yellow animate-bounce delay-700">
-            <BsMusicNote />
-          </div>
-        </div>
+        <DecorativeNotes />
 
         <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl">
             <div className="flex justify-center mb-6">
-              <div className="bg-kobe-dark-teal rounded-full p-4">
+              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-4">
                 <FaMusic className="text-6xl text-white" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
               神戸音学祭について
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-kobe-yellow">
-              学生の、学生による、学生のための野外音楽フェス
-            </p>
+            <div>
+              <p className="inline-block px-6 py-2 rounded-full text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500">
+                学生の、学生による、学生のための野外音楽フェス
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -49,25 +39,14 @@ function AboutPage() {
       {/* About Section */}
       <section className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-light-blue">
-          <svg
-            viewBox="0 0 1200 120"
-            className="w-full h-full"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+        <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
 
         <div className="max-w-6xl mx-auto px-4 pt-16">
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             {/* コンセプト */}
             <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8">
               <div className="text-center mb-6">
-                <div className="bg-kobe-light-blue rounded-full p-4 inline-block mb-4">
+                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-4 inline-block mb-4">
                   <FaMusic className="text-4xl text-white" />
                 </div>
                 <h3 className="text-2xl font-black text-kobe-dark-teal mb-4">
@@ -92,7 +71,7 @@ function AboutPage() {
             </div>
 
             {/* 特徴 */}
-            <div className="bg-kobe-dark-teal rounded-3xl border-4 border-white shadow-xl p-8">
+            <div className="bg-kobe-dark-teal rounded-3xl border-2 border-kobe-dark-teal shadow-xl p-8">
               <div className="text-center mb-6">
                 <div className="bg-white rounded-full p-4 inline-block mb-4">
                   <FaHandshake className="text-4xl text-kobe-dark-teal" />
@@ -102,9 +81,9 @@ function AboutPage() {
                 </h3>
               </div>
               <div className="text-white font-bold space-y-4">
-                <div className="bg-kobe-yellow rounded-2xl p-4">
+                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-4 text-white">
                   <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMusic className="text-white" />
+                    <FaMusic />
                     学生主体の運営
                   </p>
                   <p className="text-sm">
@@ -113,7 +92,7 @@ function AboutPage() {
                 </div>
                 <div className="bg-kobe-light-blue rounded-2xl p-4 text-kobe-dark-teal">
                   <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMicrophone className="text-kobe-dark-teal" />
+                    <FaMicrophone />
                     多様な音楽ジャンル
                   </p>
                   <p className="text-sm">
@@ -122,7 +101,7 @@ function AboutPage() {
                 </div>
                 <div className="bg-white/20 rounded-2xl p-4">
                   <p className="font-black mb-2 flex items-center gap-2">
-                    <FaStar className="text-white" />
+                    <FaStar />
                     野外フェスの魅力
                   </p>
                   <p className="text-sm">
@@ -137,7 +116,7 @@ function AboutPage() {
           <div
             className="rounded-3xl border-4 border-white shadow-xl p-8 text-white"
             style={{
-              background: "linear-gradient(to right, #2C5F5D, #F59E0B)",
+              background: "linear-gradient(to right, #2C5F5D, #B8960A)",
             }}
           >
             <div className="text-center mb-8">
