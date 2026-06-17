@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { navigationItems } from "@/constants/navigation";
 import { FooterContactLinks } from "./FooterContactLinks";
 
 export function Footer() {
@@ -36,30 +37,15 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-black mb-4 text-orange-400">ページ</h4>
             <div className="space-y-2">
-              <Link
-                href="/"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                ホーム
-              </Link>
-              <Link
-                href="/artists"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                出演団体
-              </Link>
-              <Link
-                href="/timetable"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                タイムテーブル
-              </Link>
-              <Link
-                href="/about"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                音楽祭について
-              </Link>
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-gray-300 hover:text-white font-bold transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
           <div>

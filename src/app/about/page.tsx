@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -42,6 +43,18 @@ function AboutPage() {
         <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
 
         <div className="max-w-6xl mx-auto px-4 pt-16">
+          {/* 集合写真 */}
+          <div className="mb-12 rounded-3xl border-4 border-kobe-dark-teal shadow-xl overflow-hidden bg-gray-100">
+            <Image
+              src="/images/archive/S__21094537_0.jpg"
+              alt="神戸音学祭 集合写真"
+              width={1477}
+              height={1108}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 mb-12">
             {/* コンセプト */}
             <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8">
@@ -61,7 +74,7 @@ function AboutPage() {
                 </div>
                 <div className="bg-kobe-light-blue/20 rounded-2xl p-4">
                   <p className="leading-relaxed">
-                    学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
+                    学生のエネルギッシュな主体性や世代の壁を超える音楽の力を通して、神戸全体を活気づけ、想いによって人と繋がる街を形作っていくことを目指しています。
                   </p>
                   <p className="text-sm mt-2 text-center opacity-80">
                     ※神戸アリーナプロジェクトの一環
