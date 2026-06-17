@@ -4,15 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars } from "react-icons/fa";
-
-const navItems = [
-  { href: "/", label: "TOP" },
-  { href: "/artists", label: "出演団体" },
-  { href: "/timetable", label: "タイムテーブル" },
-  { href: "/booths", label: "ブース" },
-  { href: "/archive", label: "前回開催の様子" },
-  { href: "/about", label: "神戸音学祭とは" },
-];
+import { navigationItems } from "@/constants/navigation";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -62,19 +54,24 @@ export function Header() {
           </Link>
 
           <div className="hidden lg:flex flex-wrap justify-end gap-2 xl:gap-3 ml-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`px-4 py-3 rounded-full font-black text-sm xl:text-base border-2 transition-all duration-300 ${
-                  isActive(item.href)
-                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
-                    : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navigationItems.map((item) => {
+              const active = isActive(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`px-4 py-3 rounded-full font-black text-sm xl:text-base border-2 transition-all duration-300 ${
+                    active
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                      : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -110,24 +107,29 @@ export function Header() {
                   : "-translate-y-4 opacity-0"
               }`}
             >
-              {navItems.map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block w-full px-4 py-2.5 rounded-2xl font-black text-base border-2 transition-all duration-300 text-center transform hover:scale-105 ${
-                    isActive(item.href)
-                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
-                      : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
-                  }`}
-                  style={{
-                    borderWidth: "2px",
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navigationItems.map((item, index) => {
+                const active = isActive(item.href);
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`block w-full px-4 py-2.5 rounded-2xl font-black text-base border-2 transition-all duration-300 text-center transform hover:scale-105 ${
+                      active
+                        ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                        : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
+                    }`}
+                    style={{
+                      borderWidth: "2px",
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

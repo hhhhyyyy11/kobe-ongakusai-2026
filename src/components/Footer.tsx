@@ -2,16 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { navigationItems } from "@/constants/navigation";
 import { FooterContactLinks } from "./FooterContactLinks";
-
-const footerNavItems = [
-  { href: "/", label: "TOP" },
-  { href: "/artists", label: "出演団体" },
-  { href: "/timetable", label: "タイムテーブル" },
-  { href: "/booths", label: "ブース" },
-  { href: "/archive", label: "前回開催の様子" },
-  { href: "/about", label: "神戸音学祭とは" },
-];
 
 export function Footer() {
   return (
@@ -45,7 +37,7 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-black mb-4 text-orange-400">ページ</h4>
             <div className="space-y-2">
-              {footerNavItems.map((item) => (
+              {navigationItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

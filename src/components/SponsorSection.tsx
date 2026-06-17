@@ -35,7 +35,7 @@ export function SponsorSection() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div
-                  className="rounded-2xl border-2 border-white bg-white p-6 flex min-h-56 flex-col items-center justify-center"
+                  className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center"
                   style={{ backgroundColor: "#ffffff" }}
                 >
                   <p

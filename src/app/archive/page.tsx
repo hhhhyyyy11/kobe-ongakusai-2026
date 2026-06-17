@@ -8,22 +8,22 @@ import { Header } from "@/components/Header";
 import { WavePattern } from "@/components/WavePattern";
 
 const archiveImages = [
-  { src: "/images/archive/S__21094535_0.jpg", width: 1477, height: 1108 },
-  { src: "/images/archive/S__21094536_0.jpg", width: 1108, height: 1477 },
-  { src: "/images/archive/S__21094537_0.jpg", width: 1477, height: 1108 },
-  { src: "/images/archive/S__21094538_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094539_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094540_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094541_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094542_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094543_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094544_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094546_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094547_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094548_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094549_0.jpg", width: 1567, height: 1045 },
-  { src: "/images/archive/S__21094550_0.jpg", width: 1045, height: 1567 },
-  { src: "/images/archive/S__21094551_0.jpg", width: 1567, height: 1045 },
+  "/images/archive/S__21094535_0.jpg",
+  "/images/archive/S__21094536_0.jpg",
+  "/images/archive/S__21094537_0.jpg",
+  "/images/archive/S__21094538_0.jpg",
+  "/images/archive/S__21094539_0.jpg",
+  "/images/archive/S__21094540_0.jpg",
+  "/images/archive/S__21094541_0.jpg",
+  "/images/archive/S__21094542_0.jpg",
+  "/images/archive/S__21094543_0.jpg",
+  "/images/archive/S__21094544_0.jpg",
+  "/images/archive/S__21094546_0.jpg",
+  "/images/archive/S__21094547_0.jpg",
+  "/images/archive/S__21094548_0.jpg",
+  "/images/archive/S__21094549_0.jpg",
+  "/images/archive/S__21094550_0.jpg",
+  "/images/archive/S__21094551_0.jpg",
 ];
 
 export default function ArchivePage() {
@@ -59,14 +59,14 @@ export default function ArchivePage() {
 
           <div className="max-w-7xl mx-auto px-4 pt-16">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {archiveImages.map((image, index) => (
+              {archiveImages.map((src, index) => (
                 <div
-                  key={image.src}
+                  key={src}
                   className="group overflow-hidden rounded-3xl border-4 border-kobe-dark-teal bg-gray-100 shadow-xl"
                 >
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src={image.src}
+                      src={src}
                       alt={`前回開催の様子 ${index + 1}`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
