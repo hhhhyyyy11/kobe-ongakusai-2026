@@ -5,6 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 
+const navItems = [
+  { href: "/", label: "TOP" },
+  { href: "/artists", label: "出演団体" },
+  { href: "/timetable", label: "タイムテーブル" },
+  { href: "/booths", label: "ブース" },
+  { href: "/archive", label: "前回開催の様子" },
+  { href: "/about", label: "神戸音学祭とは" },
+];
+
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const pathname = usePathname();
@@ -52,48 +61,20 @@ export function Header() {
             />
           </Link>
 
-          <div className="hidden lg:flex space-x-3 xl:space-x-6 ml-6">
-            {/* 全てページ遷移のナビゲーション */}
-            <Link
-              href="/"
-              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
-                isActive("/")
-                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
-                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
-              }`}
-            >
-              TOP
-            </Link>
-            <Link
-              href="/artists"
-              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
-                isActive("/artists")
-                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
-                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
-              }`}
-            >
-              出演団体
-            </Link>
-            <Link
-              href="/timetable"
-              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
-                isActive("/timetable")
-                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
-                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
-              }`}
-            >
-              タイムテーブル
-            </Link>
-            <Link
-              href="/about"
-              className={`px-6 py-3 rounded-full font-black text-lg border-2 transition-all duration-300 ${
-                isActive("/about")
-                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
-                  : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
-              }`}
-            >
-              神戸音学祭とは
-            </Link>
+          <div className="hidden lg:flex flex-wrap justify-end gap-2 xl:gap-3 ml-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-4 py-3 rounded-full font-black text-sm xl:text-base border-2 transition-all duration-300 ${
+                  isActive(item.href)
+                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                    : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile menu button */}
@@ -115,67 +96,38 @@ export function Header() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          className={`lg:hidden transition-all duration-500 ease-in-out ${
+            isMobileMenuOpen
+              ? "max-h-[calc(100vh-5rem)] overflow-y-auto opacity-100"
+              : "max-h-0 overflow-hidden opacity-0"
           }`}
         >
           <div className="mt-4 pb-4 border-t-2 border-gray-200">
             <div
-              className={`flex flex-col space-y-3 pt-4 transform transition-all duration-500 ease-in-out ${
+              className={`flex flex-col space-y-2 pt-4 transform transition-all duration-500 ease-in-out ${
                 isMobileMenuOpen
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-4 opacity-0"
               }`}
             >
-              {/* 全てページ遷移のナビゲーション（モバイル） */}
-              <Link
-                href="/"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
-                  isActive("/")
-                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
-                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
-                }`}
-                style={{ borderWidth: "2px" }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                TOP
-              </Link>
-              <Link
-                href="/artists"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
-                  isActive("/artists")
-                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
-                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
-                }`}
-                style={{ borderWidth: "2px", animationDelay: "100ms" }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                出演団体
-              </Link>
-              <Link
-                href="/timetable"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
-                  isActive("/timetable")
-                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
-                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
-                }`}
-                style={{ borderWidth: "2px", animationDelay: "200ms" }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                タイムテーブル
-              </Link>
-              <Link
-                href="/about"
-                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-2 transition-all duration-300 text-center transform hover:scale-105 ${
-                  isActive("/about")
-                    ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
-                    : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
-                }`}
-                style={{ borderWidth: "2px", animationDelay: "300ms" }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                神戸音学祭とは
-              </Link>
+              {navItems.map((item, index) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block w-full px-4 py-2.5 rounded-2xl font-black text-base border-2 transition-all duration-300 text-center transform hover:scale-105 ${
+                    isActive(item.href)
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg"
+                      : "text-gray-800 bg-white/50 border-gray-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white"
+                  }`}
+                  style={{
+                    borderWidth: "2px",
+                    animationDelay: `${index * 100}ms`,
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

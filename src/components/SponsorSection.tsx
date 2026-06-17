@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { FaHandshake } from "react-icons/fa";
 import { WavePattern } from "./WavePattern";
 
@@ -26,6 +27,36 @@ export function SponsorSection() {
             <p className="md:text-2xl text-lg font-bold text-gray-500 mb-6">
               ongakusai.kobe@gmail.com
             </p>
+
+            <div className="mb-8">
+              <div className="inline-block bg-kobe-dark-teal px-6 py-2 rounded-full mb-5">
+                <h3 className="text-2xl font-black text-white">後援</h3>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div
+                  className="rounded-2xl border-2 border-white bg-white p-6 flex min-h-56 flex-col items-center justify-center"
+                  style={{ backgroundColor: "#ffffff" }}
+                >
+                  <p
+                    className="text-3xl md:text-4xl font-black text-black"
+                    style={{ color: "#000000" }}
+                  >
+                    神戸新聞
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border-2 border-gray-200 bg-white p-4 flex min-h-56 items-center justify-center">
+                  <Image
+                    src="/images/sponsors/suntv.png"
+                    alt="サンテレビ"
+                    width={859}
+                    height={612}
+                    className="h-40 w-auto object-contain md:h-52"
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* 協賛・協力 — Coming Soon */}
             <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 bg-gray-50">

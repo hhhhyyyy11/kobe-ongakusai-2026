@@ -4,6 +4,15 @@ import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FooterContactLinks } from "./FooterContactLinks";
 
+const footerNavItems = [
+  { href: "/", label: "TOP" },
+  { href: "/artists", label: "出演団体" },
+  { href: "/timetable", label: "タイムテーブル" },
+  { href: "/booths", label: "ブース" },
+  { href: "/archive", label: "前回開催の様子" },
+  { href: "/about", label: "神戸音学祭とは" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-kobe-dark-teal text-white py-12">
@@ -36,30 +45,15 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-black mb-4 text-orange-400">ページ</h4>
             <div className="space-y-2">
-              <Link
-                href="/"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                ホーム
-              </Link>
-              <Link
-                href="/artists"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                出演団体
-              </Link>
-              <Link
-                href="/timetable"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                タイムテーブル
-              </Link>
-              <Link
-                href="/about"
-                className="block text-gray-300 hover:text-white font-bold transition-colors"
-              >
-                音楽祭について
-              </Link>
+              {footerNavItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-gray-300 hover:text-white font-bold transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
           <div>

@@ -1,0 +1,121 @@
+"use client";
+import React from "react";
+import {
+  FaCommentDots,
+  FaGamepad,
+  FaGuitar,
+  FaShoppingBag,
+  FaStore,
+  FaUtensils,
+} from "react-icons/fa";
+import { DecorativeNotes } from "@/components/DecorativeNotes";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { WavePattern } from "@/components/WavePattern";
+
+const boothCards = [
+  {
+    title: "出店ブース",
+    description: "学生団体や地元飲食店による出店を6店舗予定しています。",
+    icon: FaUtensils,
+    accent: "bg-gradient-to-r from-yellow-400 to-orange-500",
+  },
+  {
+    title: "音学祭グッズ",
+    description: "運営による神戸音学祭グッズの販売を予定しています。",
+    icon: FaShoppingBag,
+    accent: "bg-kobe-dark-teal",
+  },
+  {
+    title: "ゲーム屋台",
+    description: "景品ありのゲーム屋台を委員で運営予定です。",
+    icon: FaGamepad,
+    accent: "bg-gradient-to-r from-orange-500 to-yellow-400",
+  },
+  {
+    title: "書き込み交流ブース",
+    description:
+      "来場者同士がメッセージを書き込み、交流できるブースを設置予定です。",
+    icon: FaCommentDots,
+    accent: "bg-kobe-dark-teal",
+  },
+  {
+    title: "アコギ演奏ブース",
+    description: "アコースティックギターの演奏を楽しめるブースを設置予定です。",
+    icon: FaGuitar,
+    accent: "bg-gradient-to-r from-yellow-400 to-orange-500",
+  },
+];
+
+export default function BoothsPage() {
+  return (
+    <div className="min-h-screen bg-kobe-light-blue font-sans">
+      <Header />
+
+      <main>
+        <section className="relative pt-32 pb-16 overflow-hidden">
+          <DecorativeNotes />
+
+          <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl">
+              <div className="flex justify-center mb-6">
+                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-4">
+                  <FaStore className="text-6xl text-white" />
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
+                ブース
+              </h1>
+              <div>
+                <p className="inline-block px-6 py-2 rounded-full text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500">
+                  出店・ゲーム・交流を楽しめる会場内エリア
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white relative">
+          <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
+
+          <div className="max-w-6xl mx-auto px-4 pt-16">
+            <div className="mb-10 rounded-3xl border-4 border-kobe-dark-teal bg-kobe-light-blue/20 p-6 text-center shadow-xl md:p-8">
+              <p className="text-xl font-black leading-relaxed text-kobe-dark-teal md:text-2xl">
+                ライブだけでなく、食べる・遊ぶ・交流する時間も楽しめる
+                <br className="hidden md:block" />
+                神戸音学祭のブースエリアを準備中です。
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {boothCards.map((booth) => {
+                const Icon = booth.icon;
+
+                return (
+                  <div
+                    key={booth.title}
+                    className="rounded-3xl border-4 border-kobe-dark-teal bg-white p-6 shadow-xl"
+                  >
+                    <div
+                      className={`${booth.accent} mb-5 inline-flex rounded-full p-4`}
+                    >
+                      <Icon className="text-4xl text-white" />
+                    </div>
+                    <h2 className="mb-3 text-2xl font-black text-kobe-dark-teal">
+                      {booth.title}
+                    </h2>
+                    <p className="text-base font-bold leading-relaxed text-kobe-dark-teal">
+                      {booth.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
