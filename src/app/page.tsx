@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { TicketSection } from "@/components/TicketSection";
 import { SponsorSection } from "@/components/SponsorSection";
+import { CrowdfundingSection } from "@/components/CrowdfundingSection";
 
 function MainComponent() {
   const [isClient, setIsClient] = React.useState(false);
@@ -21,6 +22,9 @@ function MainComponent() {
 
       {/* Main Visual Section */}
       <HeroSection />
+
+      {/* Crowdfunding Section */}
+      <CrowdfundingSection />
 
       {/* Ticket Section */}
       <TicketSection />
