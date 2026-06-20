@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaHeart } from "react-icons/fa";
 
@@ -19,8 +20,20 @@ export function CrowdfundingSection() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl px-2 py-8 sm:p-5 md:p-8 lg:p-10">
-          <div className="grid items-center gap-8 md:grid-cols-[minmax(310px,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
+        <div className="max-w-6xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl px-2 py-8 sm:p-5 md:p-8 lg:p-10">
+          <div className="grid items-center gap-6 md:grid-cols-[minmax(210px,0.75fr)_minmax(310px,1fr)] lg:grid-cols-[minmax(185px,0.65fr)_minmax(310px,0.95fr)_minmax(0,1.1fr)] lg:gap-8">
+            <div className="mx-auto w-full max-w-[285px] sm:max-w-[324px] md:max-w-none lg:max-w-[240px]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border-2 border-kobe-dark-teal bg-orange-50 shadow-xl md:border-4">
+                <Image
+                  src="/images/crowd-fundings/funding.jpg"
+                  alt="神戸音学祭2026 クラウドファンディングのお知らせ"
+                  fill
+                  sizes="(min-width: 1024px) 240px, (min-width: 768px) 35vw, 324px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
             <div className="mx-auto w-full max-w-[324px]">
               <div className="flex min-h-[414px] items-center justify-center overflow-hidden rounded-2xl border-2 border-kobe-dark-teal bg-orange-50 p-2 shadow-xl sm:min-h-[459px] sm:border-4 sm:p-4 md:min-h-[495px]">
                 <div className="h-[394px] w-[265px] overflow-hidden rounded-xl bg-white sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
@@ -38,7 +51,7 @@ export function CrowdfundingSection() {
               </div>
             </div>
 
-            <div className="text-center md:text-left">
+            <div className="text-center md:col-span-2 lg:col-span-1 lg:text-left">
               <div className="mb-4 inline-flex items-center gap-3 rounded-full bg-kobe-yellow px-5 py-2 text-sm md:text-base font-black text-kobe-dark-teal">
                 <FaHeart className="text-kobe-orange" />
                 CAMPFIREにて実施中
