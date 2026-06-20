@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { FaHandshake } from "react-icons/fa";
+import { SupporterCard } from "./SupporterCard";
 import { WavePattern } from "./WavePattern";
 
 export function SponsorSection() {
@@ -33,29 +33,23 @@ export function SponsorSection() {
                 <h3 className="text-2xl font-black text-white">後援</h3>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div
-                  className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center"
-                  style={{ backgroundColor: "#ffffff" }}
-                >
-                  <p
-                    className="text-3xl md:text-4xl font-black text-black"
-                    style={{ color: "#000000" }}
-                  >
-                    神戸新聞
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border-2 border-gray-200 bg-white p-4 flex min-h-56 items-center justify-center">
-                  <Image
-                    src="/images/sponsors/suntv.png"
-                    alt="サンテレビ"
-                    width={859}
-                    height={612}
-                    className="h-40 w-auto object-contain md:h-52"
-                  />
-                </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <SupporterCard name="神戸市中央区役所" />
+                <SupporterCard name="神戸新聞社" />
+                <SupporterCard
+                  name="サンテレビ"
+                  image={{
+                    src: "/images/sponsors/suntv.png",
+                    width: 859,
+                    height: 612,
+                  }}
+                />
               </div>
+
+              <p className="mt-5 rounded-2xl border border-kobe-dark-teal bg-kobe-light-blue/20 px-4 py-3 text-sm font-bold leading-relaxed text-kobe-dark-teal">
+                この事業は、令和 8 年度
+                神戸市地域貢献活動補助金を受けて実施しています。
+              </p>
             </div>
 
             {/* 協賛・協力 — Coming Soon */}
