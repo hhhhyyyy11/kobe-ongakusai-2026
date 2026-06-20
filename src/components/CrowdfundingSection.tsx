@@ -21,8 +21,8 @@ export function CrowdfundingSection() {
         </div>
 
         <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl border-6 border-kobe-dark-teal bg-white shadow-2xl">
-          <div className="grid items-center gap-8 px-5 py-8 sm:p-8 lg:grid-cols-[minmax(280px,0.9fr)_minmax(340px,1fr)] lg:gap-10 lg:p-10">
-            <div className="relative mx-auto w-full max-w-[340px] lg:max-w-[380px]">
+          <div className="grid items-center gap-8 px-5 py-8 sm:p-8 lg:grid-cols-[minmax(320px,1fr)_minmax(340px,0.95fr)] lg:gap-10 lg:p-10">
+            <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[430px]">
               <div className="absolute inset-5 rounded-[2rem] bg-gradient-to-br from-yellow-300 to-orange-400 opacity-35 blur-2xl" />
               <div className="relative rotate-[-2deg] rounded-[1.75rem] bg-gradient-to-br from-yellow-200 via-orange-100 to-white p-3 shadow-2xl">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem]">
@@ -31,15 +31,15 @@ export function CrowdfundingSection() {
                     alt="神戸音学祭2026 クラウドファンディングのお知らせ"
                     fill
                     quality={100}
-                    sizes="(min-width: 1024px) 380px, (min-width: 640px) 340px, 320px"
+                    sizes="(min-width: 1024px) 430px, (min-width: 640px) 360px, 320px"
                     className="object-cover"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="mx-auto flex w-full max-w-[420px] flex-col items-center text-center lg:items-start lg:text-left">
-              <div className="w-full rounded-3xl bg-orange-50/80 p-4 shadow-xl ring-2 ring-gray-200 sm:p-5">
+            <div className="mx-auto w-full max-w-[420px]">
+              <div className="w-full rounded-3xl bg-orange-50/80 p-4 text-center shadow-xl ring-2 ring-gray-200 sm:p-5">
                 <div className="mx-auto flex min-h-[414px] w-full max-w-[348px] items-center justify-center overflow-hidden rounded-2xl bg-white p-2 shadow-lg sm:min-h-[459px] sm:p-4 md:min-h-[495px] md:max-w-[362px]">
                   <div className="h-[394px] w-[265px] overflow-hidden rounded-xl bg-white sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
                     <iframe
@@ -54,17 +54,17 @@ export function CrowdfundingSection() {
                     />
                   </div>
                 </div>
-              </div>
 
-              <Link
-                href={crowdfundingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-3 rounded-full border-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-7 py-4 text-base lg:text-xl font-black text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              >
-                CAMPFIREで詳細を見る
-                <FaExternalLinkAlt className="text-base" />
-              </Link>
+                <Link
+                  href={crowdfundingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex w-full max-w-[348px] items-center justify-center gap-3 rounded-2xl border-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-4 text-base font-black text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl sm:max-w-[362px] lg:text-xl"
+                >
+                  CAMPFIREで詳細を見る
+                  <FaExternalLinkAlt className="text-base" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
