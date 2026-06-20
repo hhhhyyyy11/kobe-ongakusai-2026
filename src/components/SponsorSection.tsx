@@ -42,6 +42,18 @@ export function SponsorSection() {
                     className="text-3xl md:text-4xl font-black text-black"
                     style={{ color: "#000000" }}
                   >
+                    神戸市中央区役所
+                  </p>
+                </div>
+
+                <div
+                  className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center"
+                  style={{ backgroundColor: "#ffffff" }}
+                >
+                  <p
+                    className="text-3xl md:text-4xl font-black text-black"
+                    style={{ color: "#000000" }}
+                  >
                     神戸新聞社
                   </p>
                 </div>
