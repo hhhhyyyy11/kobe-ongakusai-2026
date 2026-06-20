@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaExternalLinkAlt, FaHeart } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const crowdfundingUrl = "https://camp-fire.jp/projects/935171/view";
 const crowdfundingWidgetUrl = "https://camp-fire.jp/projects/935171/widget";
@@ -22,11 +22,6 @@ export function CrowdfundingSection() {
 
         <div className="max-w-5xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl px-4 py-8 sm:p-6 md:p-8 lg:p-10">
           <div className="flex flex-col items-center gap-6">
-            <div className="inline-flex items-center gap-3 rounded-full bg-kobe-yellow px-5 py-2 text-sm md:text-base font-black text-kobe-dark-teal">
-              <FaHeart className="text-kobe-orange" />
-              CAMPFIREにて実施中
-            </div>
-
             <div className="grid w-full items-center justify-center gap-8 lg:grid-cols-[minmax(280px,360px)_minmax(310px,362px)] lg:gap-12">
               <div className="mx-auto w-full max-w-[320px] sm:max-w-[360px]">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border-2 border-kobe-dark-teal bg-orange-50 shadow-xl sm:border-4">
