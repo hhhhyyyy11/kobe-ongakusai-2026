@@ -33,7 +33,7 @@ export function SponsorSection() {
                 <h3 className="text-2xl font-black text-white">後援</h3>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <SupporterCard name="神戸市中央区役所" />
                 <SupporterCard name="神戸新聞社" />
                 <SupporterCard
