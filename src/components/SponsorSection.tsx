@@ -3,6 +3,14 @@ import Image from "next/image";
 import { FaHandshake } from "react-icons/fa";
 import { WavePattern } from "./WavePattern";
 
+function SupporterTextCard({ name }: { name: string }) {
+  return (
+    <div className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center">
+      <p className="text-3xl md:text-4xl font-black text-black">{name}</p>
+    </div>
+  );
+}
+
 export function SponsorSection() {
   return (
     <section id="sponsor" className="py-20 bg-kobe-light-blue relative">
@@ -34,29 +42,8 @@ export function SponsorSection() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div
-                  className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center"
-                  style={{ backgroundColor: "#ffffff" }}
-                >
-                  <p
-                    className="text-3xl md:text-4xl font-black text-black"
-                    style={{ color: "#000000" }}
-                  >
-                    神戸市中央区役所
-                  </p>
-                </div>
-
-                <div
-                  className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center"
-                  style={{ backgroundColor: "#ffffff" }}
-                >
-                  <p
-                    className="text-3xl md:text-4xl font-black text-black"
-                    style={{ color: "#000000" }}
-                  >
-                    神戸新聞社
-                  </p>
-                </div>
+                <SupporterTextCard name="神戸市中央区役所" />
+                <SupporterTextCard name="神戸新聞社" />
 
                 <div className="rounded-2xl border-2 border-gray-200 bg-white p-4 flex min-h-56 items-center justify-center">
                   <Image
