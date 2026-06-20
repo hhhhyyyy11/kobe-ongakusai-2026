@@ -1,15 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { FaHandshake } from "react-icons/fa";
+import { SupporterCard } from "./SupporterCard";
 import { WavePattern } from "./WavePattern";
-
-function SupporterTextCard({ name }: { name: string }) {
-  return (
-    <div className="rounded-2xl border-2 border-gray-200 bg-white p-6 flex min-h-56 flex-col items-center justify-center">
-      <p className="text-3xl md:text-4xl font-black text-black">{name}</p>
-    </div>
-  );
-}
 
 export function SponsorSection() {
   return (
@@ -42,18 +34,16 @@ export function SponsorSection() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <SupporterTextCard name="神戸市中央区役所" />
-                <SupporterTextCard name="神戸新聞社" />
-
-                <div className="rounded-2xl border-2 border-gray-200 bg-white p-4 flex min-h-56 items-center justify-center">
-                  <Image
-                    src="/images/sponsors/suntv.png"
-                    alt="サンテレビ"
-                    width={859}
-                    height={612}
-                    className="h-40 w-auto object-contain md:h-52"
-                  />
-                </div>
+                <SupporterCard name="神戸市中央区役所" />
+                <SupporterCard name="神戸新聞社" />
+                <SupporterCard
+                  name="サンテレビ"
+                  image={{
+                    src: "/images/sponsors/suntv.png",
+                    width: 859,
+                    height: 612,
+                  }}
+                />
               </div>
 
               <p className="mt-5 rounded-2xl border border-kobe-dark-teal bg-kobe-light-blue/20 px-4 py-3 text-sm font-bold leading-relaxed text-kobe-dark-teal">
