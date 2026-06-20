@@ -56,6 +56,11 @@ export function SponsorSection() {
                   />
                 </div>
               </div>
+
+              <p className="mt-5 border-t border-gray-200 pt-4 text-xs font-medium leading-relaxed text-gray-500 md:text-sm">
+                この事業は、令和 8 年度
+                神戸市地域貢献活動補助金を受けて実施しています。
+              </p>
             </div>
 
             {/* 協賛・協力 — Coming Soon */}
