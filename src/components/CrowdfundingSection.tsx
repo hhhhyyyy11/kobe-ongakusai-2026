@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt, FaHeart } from "react-icons/fa";
 
 const crowdfundingUrl = "https://camp-fire.jp/projects/935171/view";
+const crowdfundingWidgetUrl = "https://camp-fire.jp/projects/935171/widget";
 
 export function CrowdfundingSection() {
   return (
@@ -19,18 +19,19 @@ export function CrowdfundingSection() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl p-5 md:p-8 lg:p-10">
-          <div className="grid items-center gap-7 md:grid-cols-[minmax(220px,0.9fr)_minmax(0,1.1fr)] lg:gap-10">
-            <div className="mx-auto w-full max-w-xs md:max-w-sm">
-              <div className="overflow-hidden rounded-2xl border-4 border-kobe-dark-teal bg-orange-50 shadow-xl">
-                <Image
-                  src="/images/crowd-fundings/funding.jpg"
-                  alt="神戸音学祭2026 クラウドファンディングのお知らせ"
-                  width={1080}
-                  height={1350}
-                  sizes="(min-width: 768px) 360px, 100vw"
-                  className="h-auto w-full"
-                  priority={false}
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl p-2 sm:p-5 md:p-8 lg:p-10">
+          <div className="grid items-center gap-7 md:grid-cols-[minmax(245px,0.9fr)_minmax(0,1.1fr)] lg:gap-10">
+            <div className="mx-auto w-full max-w-[285px]">
+              <div className="flex min-h-[377px] items-center justify-center overflow-hidden rounded-2xl border-2 border-kobe-dark-teal bg-orange-50 p-1 shadow-xl sm:min-h-[405px] sm:border-4 sm:p-4">
+                <iframe
+                  title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
+                  src={crowdfundingWidgetUrl}
+                  width="245"
+                  height="365"
+                  frameBorder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  className="h-[365px] w-[245px] max-w-full rounded-xl bg-white"
                 />
               </div>
             </div>
