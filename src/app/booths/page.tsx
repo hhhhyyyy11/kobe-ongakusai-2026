@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import {
   FaCommentDots,
@@ -85,6 +86,19 @@ export default function BoothsPage() {
                 <br className="hidden md:block" />
                 神戸音学祭のブースエリアを準備中です。
               </p>
+            </div>
+
+            <div className="mb-10 flex justify-center">
+              <div className="w-full max-w-3xl overflow-hidden rounded-3xl border-4 border-kobe-dark-teal bg-white shadow-xl">
+                <Image
+                  src="/images/booths/S__21127172.jpg"
+                  alt="神戸音学祭のブースエリア案内"
+                  width={1280}
+                  height={1280}
+                  className="h-auto w-full object-cover"
+                  sizes="(min-width: 768px) 768px, calc(100vw - 32px)"
+                />
+              </div>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
