@@ -42,7 +42,7 @@ export function SponsorSection() {
                     className="text-3xl md:text-4xl font-black text-black"
                     style={{ color: "#000000" }}
                   >
-                    神戸新聞
+                    神戸新聞社
                   </p>
                 </div>
 
