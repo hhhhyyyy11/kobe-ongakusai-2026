@@ -20,8 +20,8 @@ export function CrowdfundingSection() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl border-6 border-kobe-dark-teal bg-white shadow-2xl">
-          <div className="grid items-center gap-8 px-5 py-8 sm:p-8 lg:grid-cols-[minmax(320px,1fr)_minmax(340px,0.95fr)] lg:gap-10 lg:p-10">
+        <div className="mx-auto max-w-[460px] overflow-hidden rounded-3xl border-6 border-kobe-dark-teal bg-white shadow-2xl lg:max-w-5xl">
+          <div className="grid items-center gap-8 px-4 py-8 sm:p-8 lg:grid-cols-[minmax(320px,1fr)_minmax(340px,0.95fr)] lg:gap-10 lg:p-10">
             <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[430px]">
               <div className="absolute inset-5 rounded-[2rem] bg-gradient-to-br from-yellow-300 to-orange-400 opacity-35 blur-2xl" />
               <div className="relative rotate-[-2deg] rounded-[1.75rem] bg-gradient-to-br from-yellow-200 via-orange-100 to-white p-3 shadow-2xl">
@@ -39,8 +39,8 @@ export function CrowdfundingSection() {
             </div>
 
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="relative mx-auto w-full max-w-[306px] overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-transform duration-300 hover:scale-[1.02] sm:max-w-[336px] md:max-w-[362px]">
-                <div className="h-[394px] w-[265px] overflow-hidden bg-white sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
+              <div className="relative mx-auto w-[265px] overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:w-[289px] md:w-[306px]">
+                <div className="h-[387px] w-[265px] overflow-hidden bg-white sm:h-[424px] sm:w-[289px] md:h-[448px] md:w-[306px]">
                   <iframe
                     title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
                     src={crowdfundingWidgetUrl}
@@ -53,7 +53,7 @@ export function CrowdfundingSection() {
                   />
                 </div>
 
-                <div className="flex w-full items-center justify-center gap-3 border-t-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-5 text-base font-black text-white lg:text-xl">
+                <div className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white md:py-5 lg:text-xl">
                   CAMPFIREで詳細を見る
                   <FaExternalLinkAlt className="text-base" />
                 </div>
