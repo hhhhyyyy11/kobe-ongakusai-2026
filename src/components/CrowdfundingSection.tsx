@@ -39,9 +39,9 @@ export function CrowdfundingSection() {
             </div>
 
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="w-full rounded-3xl bg-orange-50/80 p-4 text-center shadow-xl ring-2 ring-gray-200 sm:p-5">
-                <div className="mx-auto flex min-h-[414px] w-full max-w-[348px] items-center justify-center overflow-hidden rounded-2xl bg-white p-2 shadow-lg sm:min-h-[459px] sm:p-4 md:min-h-[495px] md:max-w-[362px]">
-                  <div className="h-[394px] w-[265px] overflow-hidden rounded-xl bg-white sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
+              <div className="mx-auto w-full max-w-[386px] overflow-hidden rounded-3xl bg-orange-50/80 text-center shadow-xl ring-2 ring-gray-200">
+                <div className="flex min-h-[414px] w-full items-center justify-center bg-orange-50 p-4 sm:min-h-[459px] sm:p-5 md:min-h-[495px]">
+                  <div className="h-[394px] w-[265px] overflow-hidden rounded-t-2xl bg-white shadow-lg sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
                     <iframe
                       title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
                       src={crowdfundingWidgetUrl}
@@ -59,7 +59,7 @@ export function CrowdfundingSection() {
                   href={crowdfundingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex w-full max-w-[348px] items-center justify-center gap-3 rounded-2xl border-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-4 text-base font-black text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl sm:max-w-[362px] lg:text-xl"
+                  className="flex w-full items-center justify-center gap-3 border-t-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-5 text-base font-black text-white transition-all duration-300 hover:from-yellow-300 hover:to-orange-500 lg:text-xl"
                 >
                   CAMPFIREで詳細を見る
                   <FaExternalLinkAlt className="text-base" />
