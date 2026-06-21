@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaExternalLinkAlt, FaHeart } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const crowdfundingUrl = "https://camp-fire.jp/projects/935171/view";
+const crowdfundingWidgetUrl = "https://camp-fire.jp/projects/935171/widget";
 
 export function CrowdfundingSection() {
   return (
     <section id="crowdfunding" className="bg-kobe-light-blue py-16 relative">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4">
         <div className="text-center mb-8">
           <div className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-7 py-3 rounded-full mb-4">
             <h2 className="text-3xl md:text-4xl font-black">
@@ -19,47 +20,55 @@ export function CrowdfundingSection() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl p-5 md:p-8 lg:p-10">
-          <div className="grid items-center gap-7 md:grid-cols-[minmax(220px,0.9fr)_minmax(0,1.1fr)] lg:gap-10">
-            <div className="mx-auto w-full max-w-xs md:max-w-sm">
-              <div className="overflow-hidden rounded-2xl border-4 border-kobe-dark-teal bg-orange-50 shadow-xl">
-                <Image
-                  src="/images/crowd-fundings/funding.jpg"
-                  alt="神戸音学祭2026 クラウドファンディングのお知らせ"
-                  width={1080}
-                  height={1350}
-                  sizes="(min-width: 768px) 360px, 100vw"
-                  className="h-auto w-full"
-                  priority={false}
-                />
+        <div className="mx-auto max-w-[460px] overflow-hidden rounded-3xl border-6 border-kobe-dark-teal bg-white shadow-2xl lg:max-w-5xl">
+          <div className="grid items-center gap-8 px-4 py-8 sm:p-8 lg:grid-cols-[minmax(320px,1fr)_minmax(340px,0.95fr)] lg:gap-10 lg:p-10">
+            <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[430px]">
+              <div className="absolute inset-5 rounded-[2rem] bg-gradient-to-br from-yellow-300 to-orange-400 opacity-35 blur-2xl" />
+              <div className="relative rotate-[-2deg] rounded-[1.75rem] bg-gradient-to-br from-yellow-200 via-orange-100 to-white p-3 shadow-2xl">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem]">
+                  <Image
+                    src="/images/crowd-fundings/funding.jpg"
+                    alt="神戸音学祭2026 クラウドファンディングのお知らせ"
+                    fill
+                    quality={100}
+                    sizes="(min-width: 1024px) 430px, (min-width: 640px) 360px, 320px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="text-center md:text-left">
-              <div className="mb-4 inline-flex items-center gap-3 rounded-full bg-kobe-yellow px-5 py-2 text-sm md:text-base font-black text-kobe-dark-teal">
-                <FaHeart className="text-kobe-orange" />
-                CAMPFIREにて実施中
+            <div className="mx-auto w-full max-w-[420px]">
+              <div className="relative mx-auto w-[265px] cursor-pointer overflow-hidden rounded-3xl bg-white text-center shadow-xl ring-4 ring-transparent transition-all duration-300 hover:ring-orange-400 sm:w-[289px] md:w-[306px]">
+                <div className="h-[387px] w-[265px] overflow-hidden bg-white sm:h-[424px] sm:w-[289px] md:h-[448px] md:w-[306px]">
+                  <iframe
+                    title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
+                    src={crowdfundingWidgetUrl}
+                    width="245"
+                    height="365"
+                    loading="lazy"
+                    style={{ border: "none" }}
+                    className="h-[365px] w-[245px] origin-top-left scale-[1.08] bg-white sm:scale-[1.18] md:scale-[1.25]"
+                  />
+                </div>
+
+                <div className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white md:py-5 lg:text-xl">
+                  CAMPFIREで詳細を見る
+                  <FaExternalLinkAlt className="text-base" />
+                </div>
+
+                <Link
+                  href={crowdfundingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="CAMPFIREでクラウドファンディングの詳細を見る"
+                  className="absolute inset-0 z-10"
+                >
+                  <span className="sr-only">
+                    CAMPFIREでクラウドファンディングの詳細を見る
+                  </span>
+                </Link>
               </div>
-
-              <h3 className="mb-5 text-2xl lg:text-4xl font-black leading-tight text-kobe-dark-teal">
-                音楽で神戸をもっと熱く。
-                <br />
-                応援よろしくお願いします！
-              </h3>
-
-              <p className="mb-7 text-base lg:text-lg font-bold leading-relaxed text-gray-600">
-                学生たちがつくる野外音楽フェス「神戸音学祭」を、今年も神戸で開催するためのクラウドファンディングです。リターン内容や詳細はCAMPFIREのページをご覧ください。
-              </p>
-
-              <Link
-                href={crowdfundingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-full border-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-7 py-4 text-base lg:text-xl font-black text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              >
-                CAMPFIREで詳細を見る
-                <FaExternalLinkAlt className="text-base" />
-              </Link>
             </div>
           </div>
         </div>
