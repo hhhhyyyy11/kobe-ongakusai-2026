@@ -39,30 +39,35 @@ export function CrowdfundingSection() {
             </div>
 
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="mx-auto w-full max-w-[386px] overflow-hidden rounded-3xl bg-orange-50/80 text-center shadow-xl ring-2 ring-gray-200">
-                <div className="flex min-h-[414px] w-full items-center justify-center bg-orange-50 p-4 sm:min-h-[459px] sm:p-5 md:min-h-[495px]">
-                  <div className="h-[394px] w-[265px] overflow-hidden rounded-t-2xl bg-white shadow-lg sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
-                    <iframe
-                      title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
-                      src={crowdfundingWidgetUrl}
-                      width="245"
-                      height="365"
-                      frameBorder="0"
-                      scrolling="no"
-                      loading="lazy"
-                      className="h-[365px] w-[245px] origin-top-left scale-[1.08] bg-white sm:scale-[1.18] md:scale-[1.25]"
-                    />
-                  </div>
+              <div className="relative mx-auto w-full max-w-[306px] overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-transform duration-300 hover:scale-[1.02] sm:max-w-[336px] md:max-w-[362px]">
+                <div className="h-[394px] w-[265px] overflow-hidden bg-white sm:h-[431px] sm:w-[289px] md:h-[456px] md:w-[306px]">
+                  <iframe
+                    title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
+                    src={crowdfundingWidgetUrl}
+                    width="245"
+                    height="365"
+                    frameBorder="0"
+                    scrolling="no"
+                    loading="lazy"
+                    className="h-[365px] w-[245px] origin-top-left scale-[1.08] bg-white sm:scale-[1.18] md:scale-[1.25]"
+                  />
+                </div>
+
+                <div className="flex w-full items-center justify-center gap-3 border-t-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-5 text-base font-black text-white lg:text-xl">
+                  CAMPFIREで詳細を見る
+                  <FaExternalLinkAlt className="text-base" />
                 </div>
 
                 <Link
                   href={crowdfundingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-3 border-t-4 border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 px-5 py-5 text-base font-black text-white transition-all duration-300 hover:from-yellow-300 hover:to-orange-500 lg:text-xl"
+                  aria-label="CAMPFIREでクラウドファンディングの詳細を見る"
+                  className="absolute inset-0 z-10"
                 >
-                  CAMPFIREで詳細を見る
-                  <FaExternalLinkAlt className="text-base" />
+                  <span className="sr-only">
+                    CAMPFIREでクラウドファンディングの詳細を見る
+                  </span>
                 </Link>
               </div>
             </div>
