@@ -46,28 +46,20 @@ export function CrowdfundingSection() {
                     src={crowdfundingWidgetUrl}
                     width="245"
                     height="365"
-                    frameBorder="0"
-                    scrolling="no"
                     loading="lazy"
+                    style={{ border: "none" }}
                     className="h-[365px] w-[245px] origin-top-left scale-[1.08] bg-white sm:scale-[1.18] md:scale-[1.25]"
                   />
-                </div>
-
-                <div className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white md:py-5 lg:text-xl">
-                  CAMPFIREで詳細を見る
-                  <FaExternalLinkAlt className="text-base" />
                 </div>
 
                 <Link
                   href={crowdfundingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="CAMPFIREでクラウドファンディングの詳細を見る"
-                  className="absolute inset-0 z-10"
+                  className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white transition-colors duration-300 hover:from-yellow-300 hover:to-orange-500 md:py-5 lg:text-xl"
                 >
-                  <span className="sr-only">
-                    CAMPFIREでクラウドファンディングの詳細を見る
-                  </span>
+                  CAMPFIREで詳細を見る
+                  <FaExternalLinkAlt className="text-base" />
                 </Link>
               </div>
             </div>
