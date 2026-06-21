@@ -39,7 +39,7 @@ export function CrowdfundingSection() {
             </div>
 
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="relative mx-auto w-[265px] overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:w-[289px] md:w-[306px]">
+              <div className="relative mx-auto w-[265px] cursor-pointer overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:w-[289px] md:w-[306px]">
                 <div className="h-[387px] w-[265px] overflow-hidden bg-white sm:h-[424px] sm:w-[289px] md:h-[448px] md:w-[306px]">
                   <iframe
                     title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
@@ -52,14 +52,21 @@ export function CrowdfundingSection() {
                   />
                 </div>
 
+                <div className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white md:py-5 lg:text-xl">
+                  CAMPFIREで詳細を見る
+                  <FaExternalLinkAlt className="text-base" />
+                </div>
+
                 <Link
                   href={crowdfundingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative -mt-px flex w-full items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-4 text-base font-black text-white transition-colors duration-300 hover:from-yellow-300 hover:to-orange-500 md:py-5 lg:text-xl"
+                  aria-label="CAMPFIREでクラウドファンディングの詳細を見る"
+                  className="absolute inset-0 z-10"
                 >
-                  CAMPFIREで詳細を見る
-                  <FaExternalLinkAlt className="text-base" />
+                  <span className="sr-only">
+                    CAMPFIREでクラウドファンディングの詳細を見る
+                  </span>
                 </Link>
               </div>
             </div>
