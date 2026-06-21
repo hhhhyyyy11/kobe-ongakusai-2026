@@ -39,7 +39,7 @@ export function CrowdfundingSection() {
             </div>
 
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="relative mx-auto w-[265px] cursor-pointer overflow-hidden rounded-3xl bg-white text-center shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl sm:w-[289px] md:w-[306px]">
+              <div className="relative mx-auto w-[265px] cursor-pointer overflow-hidden rounded-3xl bg-white text-center shadow-xl ring-4 ring-transparent transition-all duration-300 hover:ring-orange-400 sm:w-[289px] md:w-[306px]">
                 <div className="h-[387px] w-[265px] overflow-hidden bg-white sm:h-[424px] sm:w-[289px] md:h-[448px] md:w-[306px]">
                   <iframe
                     title="神戸音学祭2026 CAMPFIREクラウドファンディング支援状況"
