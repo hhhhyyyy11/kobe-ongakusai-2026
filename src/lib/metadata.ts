@@ -24,7 +24,7 @@ export function createPageMetadata({
       title,
       description,
       url,
-      siteName: "神戸音学祭 2026",
+      siteName: "神戸音学祭",
       locale: "ja_JP",
       type: "website",
       images: [
@@ -57,4 +57,12 @@ export const organizationJsonLd = {
     "https://www.instagram.com/kobe_ongakusai/",
     "https://x.com/K0beOngakusai",
   ],
+};
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "神戸音学祭",
+  alternateName: ["神戸音学祭2026", "Kobe Ongakusai"],
+  url: siteUrl,
 };

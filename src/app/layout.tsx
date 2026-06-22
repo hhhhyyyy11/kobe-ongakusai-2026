@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { organizationJsonLd } from "@/lib/metadata";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/metadata";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     description:
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     url: siteUrl,
-    siteName: "神戸音学祭 2026",
+    siteName: "神戸音学祭",
     locale: "ja_JP",
     type: "website",
     images: [
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "site-name": "神戸音学祭 2026",
+    "site-name": "神戸音学祭",
     "application-name": "神戸音学祭",
   },
   verification: {
@@ -186,6 +186,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
       </head>
