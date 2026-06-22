@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { absoluteUrl, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://kobe-ongakusai.vercel.app"),
+  metadataBase: new URL(siteUrl),
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -84,13 +85,13 @@ export const metadata: Metadata = {
     title: "神戸音学祭 2026",
     description:
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
-    url: "https://kobe-ongakusai.vercel.app",
+    url: siteUrl,
     siteName: "神戸音学祭 2026",
     locale: "ja_JP",
     type: "website",
     images: [
       {
-        url: "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
+        url: absoluteUrl("/images/logos/logo_main_2026.jpg"),
         width: 1200,
         height: 630,
         alt: "神戸音学祭 2026 - 学生主催の野外音楽フェス",
@@ -104,9 +105,7 @@ export const metadata: Metadata = {
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     creator: "@K0beOngakusai",
     site: "@K0beOngakusai",
-    images: [
-      "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
-    ],
+    images: [absoluteUrl("/images/logos/logo_main_2026.jpg")],
   },
   robots: {
     index: true,
@@ -124,7 +123,7 @@ export const metadata: Metadata = {
     "application-name": "神戸音学祭",
   },
   verification: {
-    google: "FJtH2J5vLz-_MLCjiSdj-34OBYIpbLooUjBCGf3JKUs",
+    google: "8_eGUve5ulZ0o-1YwLo3-b5woQIVCVBPsaJaRbUCG70",
   },
 };
 
@@ -138,7 +137,7 @@ export default function RootLayout({
     "@type": "MusicEvent",
     name: "神戸音学祭 2026",
     description: "学生主催の野外音楽フェス",
-    image: "https://kobe-ongakusai.vercel.app/images/logos/logo_main_2026.jpg",
+    image: absoluteUrl("/images/logos/logo_main_2026.jpg"),
     startDate: "2026-08-21",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -156,14 +155,14 @@ export default function RootLayout({
     organizer: {
       "@type": "Organization",
       name: "神戸音学祭実行委員会",
-      url: "https://kobe-ongakusai.vercel.app",
+      url: siteUrl,
     },
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "JPY",
       availability: "https://schema.org/InStock",
-      url: "https://kobe-ongakusai-2026.vercel.app",
+      url: siteUrl,
       validFrom: "2026-01-01T00:00:00+09:00",
       description: "入場無料・入退場自由",
     },
