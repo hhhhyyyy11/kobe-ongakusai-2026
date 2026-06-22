@@ -105,9 +105,7 @@ export const metadata: Metadata = {
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     creator: "@K0beOngakusai",
     site: "@K0beOngakusai",
-    images: [
-      absoluteUrl("/images/logos/logo_main_2026.jpg"),
-    ],
+    images: [absoluteUrl("/images/logos/logo_main_2026.jpg")],
   },
   robots: {
     index: true,
