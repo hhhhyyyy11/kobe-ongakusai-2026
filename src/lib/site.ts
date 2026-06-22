@@ -1,6 +1,12 @@
+const defaultSiteUrl = "https://kobe-ongakusai.com";
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://kobe-ongakusai.com";
+  configuredSiteUrl && /^https?:\/\//i.test(configuredSiteUrl)
+    ? configuredSiteUrl.replace(/\/+$/, "")
+    : defaultSiteUrl;
+
+export const siteHost = new URL(siteUrl).host;
 
 export const siteRoutes = [
   {
@@ -30,5 +36,9 @@ export const siteRoutes = [
 ] as const;
 
 export function absoluteUrl(path = "") {
-  return `${siteUrl}${path}`;
+  if (!path) {
+    return siteUrl;
+  }
+
+  return new URL(path, `${siteUrl}/`).toString();
 }
