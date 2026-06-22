@@ -1,4 +1,4 @@
-"use client";
+import type { Metadata } from "next";
 import React from "react";
 import Image from "next/image";
 import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
@@ -6,6 +6,14 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { WavePattern } from "@/components/WavePattern";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "神戸音学祭とは｜学生主催の野外音楽フェス",
+  description:
+    "神戸音学祭は、学生音楽から神戸市を盛り上げることを目指す学生主催の野外音楽フェスです。企画の背景、コンセプト、学生主体の運営体制を紹介します。",
+  path: "/about",
+});
 
 function AboutPage() {
   return (

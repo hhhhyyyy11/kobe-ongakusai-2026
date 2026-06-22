@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { organizationJsonLd } from "@/lib/metadata";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -137,8 +138,10 @@ export default function RootLayout({
     "@type": "MusicEvent",
     name: "神戸音学祭 2026",
     description: "学生主催の野外音楽フェス",
+    url: siteUrl,
     image: absoluteUrl("/images/logos/logo_main_2026.jpg"),
-    startDate: "2026-08-21",
+    startDate: "2026-08-21T00:00:00+09:00",
+    endDate: "2026-08-21T23:59:59+09:00",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -156,6 +159,10 @@ export default function RootLayout({
       "@type": "Organization",
       name: "神戸音学祭実行委員会",
       url: siteUrl,
+      sameAs: [
+        "https://www.instagram.com/kobe_ongakusai/",
+        "https://x.com/K0beOngakusai",
+      ],
     },
     offers: {
       "@type": "Offer",
@@ -174,6 +181,12 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
       </head>
       <body

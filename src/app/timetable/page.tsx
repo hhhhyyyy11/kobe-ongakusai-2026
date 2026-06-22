@@ -1,4 +1,4 @@
-"use client";
+import type { Metadata } from "next";
 import React from "react";
 import { FaMusic, FaClock } from "react-icons/fa";
 import { Footer } from "@/components/Footer";
@@ -6,6 +6,14 @@ import { Header } from "@/components/Header";
 import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { WavePattern } from "@/components/WavePattern";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "タイムテーブル｜神戸音学祭2026",
+  description:
+    "神戸音学祭2026のタイムテーブル情報ページです。2026年8月21日の出演スケジュールや演奏時間は、決定次第お知らせします。",
+  path: "/timetable",
+});
 
 function SetListPage() {
   return (

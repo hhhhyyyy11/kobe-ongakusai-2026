@@ -30,6 +30,10 @@ export const siteRoutes = [
     priority: 0.7,
   },
   {
+    path: "/access",
+    priority: 0.8,
+  },
+  {
     path: "/archive",
     priority: 0.5,
   },

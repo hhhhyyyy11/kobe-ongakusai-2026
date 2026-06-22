@@ -1,10 +1,18 @@
-"use client";
+import type { Metadata } from "next";
 import React from "react";
 import { FaUsers } from "react-icons/fa";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { WavePattern } from "@/components/WavePattern";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "出演団体｜神戸音学祭2026",
+  description:
+    "神戸音学祭2026の出演団体情報ページです。学生バンドや出演団体の発表情報を、決定次第掲載します。",
+  path: "/artists",
+});
 
 export default function ArtistsPage() {
   return (
