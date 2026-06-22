@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   FaCalendarAlt,
   FaCloudSun,
-  FaEnvelope,
   FaExternalLinkAlt,
   FaMapMarkerAlt,
   FaQuestionCircle,
@@ -34,7 +33,7 @@ const overviewItems = [
   {
     title: "会場",
     text: "TOTTEI PARK",
-    detail: "神戸市中央区新港町2-1",
+    detail: "神戸ウォーターフロントエリア",
     icon: FaMapMarkerAlt,
   },
   {
@@ -53,8 +52,7 @@ const faqItems = [
   },
   {
     question: "会場はどこですか？",
-    answer:
-      "会場は神戸市中央区新港町2-1のTOTTEI PARKです。各線三宮駅から徒歩約17分です。",
+    answer: "会場はTOTTEI PARKです。各線三宮駅から徒歩約17分です。",
   },
   {
     question: "入場料や予約は必要ですか？",
@@ -69,12 +67,7 @@ const faqItems = [
   {
     question: "出演団体やタイムテーブルはいつ公開されますか？",
     answer:
-      "出演団体とタイムテーブルは決定次第、公式サイト内の出演団体ページとタイムテーブルページで公開します。",
-  },
-  {
-    question: "協賛や出演、取材の問い合わせはどこからできますか？",
-    answer:
-      "公式サイトの問い合わせリンク、または公式SNSから神戸音学祭実行委員会までお問い合わせください。",
+      "出演団体とタイムテーブルは決定次第、公式サイト内の出演団体ページ、タイムテーブルページ、公式SNSで公開します。",
   },
 ];
 
@@ -130,7 +123,7 @@ export default function AccessPage() {
                 アクセス・FAQ
               </h1>
               <p className="inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-2 text-xl font-bold text-white md:text-2xl">
-                来場前に知りたい情報をまとめました
+                来場前に知っておきたい情報をまとめました
               </p>
             </div>
           </div>
@@ -172,8 +165,6 @@ export default function AccessPage() {
                 </div>
                 <p className="mb-4 text-xl font-black">TOTTEI PARK</p>
                 <p className="mb-6 font-bold leading-relaxed">
-                  兵庫県神戸市中央区新港町2-1
-                  <br />
                   各線三宮駅から徒歩約17分です。公共交通機関での来場をおすすめします。
                 </p>
                 <Link
@@ -199,7 +190,7 @@ export default function AccessPage() {
                     天候や会場状況により案内内容が変わる場合は、公式サイトと公式SNSでお知らせします。
                   </p>
                   <p className="font-bold leading-relaxed">
-                    出演団体、タイムテーブル、ブース詳細は決定次第、各ページで順次公開します。
+                    出演団体、タイムテーブル、ブース詳細は決定次第、各ページと公式SNSで順次公開します。
                   </p>
                 </div>
               </section>
@@ -228,16 +219,6 @@ export default function AccessPage() {
                 ))}
               </div>
             </section>
-
-            <div className="mt-12 rounded-3xl border-4 border-kobe-dark-teal bg-white p-8 text-center shadow-xl">
-              <FaEnvelope className="mx-auto mb-4 text-5xl text-kobe-orange" />
-              <h2 className="mb-3 text-2xl font-black text-kobe-dark-teal">
-                お問い合わせ
-              </h2>
-              <p className="font-bold leading-relaxed text-kobe-dark-teal">
-                協賛、出演、取材、その他のお問い合わせは、公式SNSまたは問い合わせリンクから神戸音学祭実行委員会までご連絡ください。
-              </p>
-            </div>
           </div>
         </section>
       </main>

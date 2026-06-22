@@ -9,7 +9,7 @@ import { CrowdfundingSection } from "@/components/CrowdfundingSection";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "神戸音学祭2026｜2026年8月21日 TOTTEI PARKで開催",
+  title: "神戸音学祭2026",
   description:
     "神戸音学祭2026は、2026年8月21日に神戸・TOTTEI PARKで開催する学生主催の野外音楽フェスです。入場無料・入退場自由で、学生音楽から神戸を盛り上げます。",
 });

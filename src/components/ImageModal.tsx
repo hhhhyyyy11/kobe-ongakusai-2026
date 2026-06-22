@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { FaDownload, FaTimes } from "react-icons/fa";
@@ -9,7 +7,6 @@ interface ImageModalProps {
   onClose: () => void;
   imageSrc: string;
   imageAlt: string;
-  downloadSrc?: string;
   downloadFileName: string;
   width: number;
   height: number;
@@ -20,7 +17,6 @@ export const ImageModal: React.FC<ImageModalProps> = ({
   onClose,
   imageSrc,
   imageAlt,
-  downloadSrc,
   downloadFileName,
   width,
   height,
@@ -82,7 +78,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({
         {/* ダウンロードボタン */}
         <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2">
           <a
-            href={downloadSrc || imageSrc}
+            href={imageSrc}
             download={downloadFileName}
             className="bg-gray-800 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2"
           >

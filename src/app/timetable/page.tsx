@@ -11,7 +11,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "タイムテーブル｜神戸音学祭2026",
   description:
-    "神戸音学祭2026のタイムテーブル情報ページです。2026年8月21日の出演スケジュールや演奏時間は、決定次第お知らせします。",
+    "神戸音学祭2026のタイムテーブル情報ページです。出演スケジュールや演奏時間は、決定次第お知らせします。",
   path: "/timetable",
 });
 

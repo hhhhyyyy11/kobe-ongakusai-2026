@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ImageModal } from "./ImageModal";
 import Image from "next/image";
@@ -51,7 +49,7 @@ export const FlyerSection: React.FC = () => {
               >
                 <div className="aspect-[3/4] w-64 md:w-72 bg-white rounded-xl flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/images/flyer-web.jpg"
+                    src="/images/flyer.jpg"
                     alt="神戸音学祭フライヤー"
                     width={400}
                     height={566}
@@ -147,12 +145,11 @@ export const FlyerSection: React.FC = () => {
       <ImageModal
         isOpen={isFlyerModalOpen}
         onClose={closeFlyerModal}
-        imageSrc="/images/flyer-web.jpg"
+        imageSrc="/images/flyer.jpg"
         imageAlt="神戸音学祭フライヤー"
-        downloadSrc="/images/flyer.jpg"
-        downloadFileName="神戸音学祭_フライヤー.jpg"
-        width={848}
-        height={1200}
+        downloadFileName="神戸音学祭_フライヤー.png"
+        width={800}
+        height={1132}
       />
 
       {/* タイムテーブル拡大モーダル */}
