@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import React from "react";
 import { FaMusic, FaClock } from "react-icons/fa";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";

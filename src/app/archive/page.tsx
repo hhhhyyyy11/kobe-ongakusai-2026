@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import React from "react";
 import Image from "next/image";
 import { FaImages } from "react-icons/fa";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
