@@ -1,6 +1,5 @@
-"use client";
+import type { Metadata } from "next";
 import Image from "next/image";
-import React from "react";
 import {
   FaCommentDots,
   FaGamepad,
@@ -13,6 +12,14 @@ import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WavePattern } from "@/components/WavePattern";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "ブース・出店情報｜神戸音学祭2026",
+  description:
+    "神戸音学祭2026のブース・出店情報ページです。飲食、グッズ、ゲーム屋台、交流ブースなど、会場内で楽しめるエリアを紹介します。",
+  path: "/booths",
+});
 
 const boothCards = [
   {

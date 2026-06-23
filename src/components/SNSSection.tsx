@@ -2,11 +2,7 @@ import React from "react";
 import { InstagramEmbed } from "./InstagramEmbed";
 import { WavePattern } from "./WavePattern";
 
-interface SNSSectionProps {
-  isClient: boolean;
-}
-
-export const SNSSection: React.FC<SNSSectionProps> = ({ isClient }) => {
+export const SNSSection: React.FC = () => {
   return (
     <section className="py-20 bg-white relative">
       {/* Wave Pattern at Top */}

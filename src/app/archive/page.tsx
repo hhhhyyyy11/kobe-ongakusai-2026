@@ -1,11 +1,18 @@
-"use client";
-import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { FaImages } from "react-icons/fa";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WavePattern } from "@/components/WavePattern";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "前回開催の様子｜神戸音学祭",
+  description:
+    "前回開催された神戸音学祭の写真アーカイブです。学生音楽フェスの会場の熱気や演奏の様子を写真で紹介します。",
+  path: "/archive",
+});
 
 const archiveImages = [
   "/images/archive/S__21094535_0.jpg",

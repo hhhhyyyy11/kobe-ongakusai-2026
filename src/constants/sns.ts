@@ -17,7 +17,7 @@ export const SNS_INFO = {
 export const SHARE_CONFIG = {
   title: "神戸音学祭2026",
   text: "関西圏6大学10団体が出演する学生音楽フェス！2026年8月21日(金)",
-  baseUrl: "https://kobe-ongakusai.vercel.app",
+  baseUrl: "https://kobe-ongakusai.com",
   hashtags:
     "神戸,神戸イベント,音楽イベント,フェス,野外フェス,学生,学生イベント,コピーバンド,コピーバンドライブ,tottei,totteipark,glion,神戸音学祭",
 
