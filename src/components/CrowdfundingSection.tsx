@@ -47,6 +47,8 @@ export function CrowdfundingSection() {
                     width="245"
                     height="365"
                     loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                     style={{ border: "none" }}
                     className="h-[365px] w-[245px] origin-top-left scale-[1.08] bg-white sm:scale-[1.18] md:scale-[1.25]"
                   />
