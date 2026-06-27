@@ -6,6 +6,9 @@ on:
     branches-ignore:
       - main # メインブランチへのPRは通知しない
 
+permissions:
+  contents: read
+
 jobs:
   notify:
     runs-on: ubuntu-latest
