@@ -8,7 +8,7 @@ import { WavePattern } from "@/components/WavePattern";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "前回開催の様子｜神戸音学祭",
+  title: "前回開催の様子｜神戸音学祭2026",
   description:
     "前回開催された神戸音学祭の写真アーカイブです。学生音楽フェスの会場の熱気や演奏の様子を写真で紹介します。",
   path: "/archive",
