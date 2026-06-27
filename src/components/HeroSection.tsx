@@ -31,6 +31,8 @@ export function HeroSection() {
             src={src}
             alt=""
             fill
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "low" : "auto"}
             sizes="100vw"
             className="hero-slide object-cover"
             style={{
@@ -64,7 +66,7 @@ export function HeroSection() {
             height={572}
             priority
             fetchPriority="high"
-            sizes="(min-width: 1280px) 1024px, (min-width: 768px) calc(100vw - 32px), calc(100vw - 32px)"
+            sizes="(min-width: 1280px) 1024px, calc(100vw - 32px)"
             className="w-full max-w-5xl drop-shadow-[0_10px_26px_rgba(0,0,0,0.75)]"
           />
 
