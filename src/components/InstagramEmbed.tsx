@@ -33,7 +33,7 @@ export const InstagramEmbed: React.FC = () => {
           width="100%"
           height="600"
           referrerPolicy="strict-origin-when-cross-origin"
-          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          sandbox="allow-popups allow-same-origin allow-scripts"
           style={{ border: "none" }}
           scrolling="no"
           className="w-full h-[480px] md:h-[600px]"
