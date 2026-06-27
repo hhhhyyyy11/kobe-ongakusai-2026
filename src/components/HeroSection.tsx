@@ -31,7 +31,6 @@ export function HeroSection() {
             src={src}
             alt=""
             fill
-            priority={index === 0}
             sizes="100vw"
             className="hero-slide object-cover"
             style={{
@@ -63,6 +62,9 @@ export function HeroSection() {
             alt="神戸音学祭"
             width={2615}
             height={572}
+            priority
+            fetchPriority="high"
+            sizes="(min-width: 1280px) 1024px, (min-width: 768px) calc(100vw - 32px), calc(100vw - 32px)"
             className="w-full max-w-5xl drop-shadow-[0_10px_26px_rgba(0,0,0,0.75)]"
           />
 
