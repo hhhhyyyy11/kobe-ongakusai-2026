@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, siteUrl } from "@/lib/site";
+import { absoluteUrl, shortSiteName, siteName, siteUrl } from "@/lib/site";
 
 type PageMetadata = {
   title: string;
@@ -24,7 +24,7 @@ export function createPageMetadata({
       title,
       description,
       url,
-      siteName: "神戸音学祭",
+      siteName,
       locale: "ja_JP",
       type: "website",
       images: [
@@ -32,7 +32,7 @@ export function createPageMetadata({
           url: absoluteUrl("/images/logos/logo_main_2026.jpg"),
           width: 1200,
           height: 630,
-          alt: "神戸音学祭 2026",
+          alt: siteName,
         },
       ],
     },
@@ -62,7 +62,7 @@ export const organizationJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "神戸音学祭",
-  alternateName: ["神戸音学祭2026", "Kobe Ongakusai"],
+  name: siteName,
+  alternateName: [shortSiteName, "Kobe Ongakusai"],
   url: siteUrl,
 };

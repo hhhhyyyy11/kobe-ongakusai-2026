@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/metadata";
-import { absoluteUrl, siteUrl } from "@/lib/site";
+import { absoluteUrl, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,11 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "神戸音学祭 2026",
+  title: siteName,
   description:
     "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」が今年も神戸「TOTTEI PARK」にて開催。詳細は近日発表！",
-  applicationName: "神戸音学祭",
+  applicationName: siteName,
   keywords: [
+    siteName,
     "神戸音学祭",
     "音楽フェス",
     "学生",
@@ -49,16 +50,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/images/favicons/icon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "/images/favicons/icon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
         url: "/images/favicons/icon-48x48.png",
         sizes: "48x48",
         type: "image/png",
@@ -73,6 +64,16 @@ export const metadata: Metadata = {
         sizes: "96x96",
         type: "image/png",
       },
+      {
+        url: "/images/favicons/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/images/favicons/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     apple: [
       {
@@ -83,11 +84,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "神戸音学祭 2026",
+    title: siteName,
     description:
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     url: siteUrl,
-    siteName: "神戸音学祭",
+    siteName,
     locale: "ja_JP",
     type: "website",
     images: [
@@ -95,13 +96,13 @@ export const metadata: Metadata = {
         url: absoluteUrl("/images/logos/logo_main_2026.jpg"),
         width: 1200,
         height: 630,
-        alt: "神戸音学祭 2026 - 学生主催の野外音楽フェス",
+        alt: `${siteName} - 学生主催の野外音楽フェス`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "神戸音学祭 2026",
+    title: siteName,
     description:
       "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」",
     creator: "@K0beOngakusai",
@@ -120,8 +121,8 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "site-name": "神戸音学祭",
-    "application-name": "神戸音学祭",
+    "site-name": siteName,
+    "application-name": siteName,
   },
   verification: {
     google: "8_eGUve5ulZ0o-1YwLo3-b5woQIVCVBPsaJaRbUCG70",
@@ -136,7 +137,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MusicEvent",
-    name: "神戸音学祭 2026",
+    name: siteName,
     description: "学生主催の野外音楽フェス",
     url: siteUrl,
     image: absoluteUrl("/images/logos/logo_main_2026.jpg"),

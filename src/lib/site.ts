@@ -1,6 +1,9 @@
 const defaultSiteUrl = "https://kobe-ongakusai.com";
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
+export const siteName = "神戸音学祭2026";
+export const shortSiteName = "神戸音学祭";
+
 export const siteUrl =
   configuredSiteUrl && /^https?:\/\//i.test(configuredSiteUrl)
     ? configuredSiteUrl.replace(/\/+$/, "")
