@@ -87,7 +87,6 @@ export default function ArchivePage() {
                 </h2>
                 <p className="max-w-3xl mx-auto text-base md:text-lg font-bold leading-relaxed text-kobe-dark-teal">
                   これまでに開催された神戸音学祭の記録をまとめています。
-                  今後の開催情報も、このページに順次追加していきます。
                 </p>
               </div>
 
