@@ -233,37 +233,39 @@ body.modal-open {
   animation: float 3s ease-in-out infinite;
 }
 
-@keyframes hero-slideshow {
-  0% {
-    opacity: 0;
-    transform: scale(1.02);
-  }
-  2.5% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1.08);
-  }
-  15%,
-  100% {
-    opacity: 0;
-    transform: scale(1.1);
-  }
+.hero-slide {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1s ease;
 }
 
-.hero-slide {
-  animation: hero-slideshow 40s infinite;
+.hero-slide-incoming {
   opacity: 0;
+}
+
+.hero-slide-current,
+.hero-slide-incoming-visible {
+  opacity: 1;
+  animation: hero-slideshow-scale 6s linear both;
+}
+
+.hero-slide-exiting {
+  opacity: 0;
+}
+
+@keyframes hero-slideshow-scale {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slide {
     animation: none;
-    opacity: 0;
-  }
-
-  .hero-slide:first-child {
     opacity: 1;
+    transform: none;
   }
 }
