@@ -60,6 +60,18 @@ function parseRequiredString(html: string, property: string): string {
   return value;
 }
 
+function parseRequiredDateString(html: string, property: string): string {
+  const value = parseRequiredString(html, property);
+
+  if (Number.isNaN(Date.parse(value))) {
+    throw new Error(
+      `Missing or invalid CAMPFIRE date meta property: ${property}`
+    );
+  }
+
+  return value;
+}
+
 export async function getCrowdfundingStats(): Promise<CrowdfundingStats> {
   try {
     const response = await fetch(crowdfundingUrl, {
@@ -82,7 +94,7 @@ export async function getCrowdfundingStats(): Promise<CrowdfundingStats> {
       targetAmount: parseRequiredNumber(html, "note:target_amount"),
       currentAmount: parseRequiredNumber(html, "note:current_amount"),
       supporters: parseRequiredNumber(html, "note:supporters"),
-      endAt: parseRequiredString(html, "note:end_at"),
+      endAt: parseRequiredDateString(html, "note:end_at"),
       fetchedAt: new Date().toISOString(),
       isFallback: false,
     };

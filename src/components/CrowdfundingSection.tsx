@@ -13,9 +13,10 @@ const yenFormatter = new Intl.NumberFormat("ja-JP", {
   maximumFractionDigits: 0,
 });
 
-const dateFormatter = new Intl.DateTimeFormat("ja-JP", {
+const tokyoDatePartsFormatter = new Intl.DateTimeFormat("ja-JP", {
+  timeZone: "Asia/Tokyo",
   year: "numeric",
-  month: "long",
+  month: "numeric",
   day: "numeric",
 });
 
@@ -27,8 +28,23 @@ function getProgressPercent(stats: CrowdfundingStats) {
   return Math.floor((stats.currentAmount / stats.targetAmount) * 100);
 }
 
+function getTokyoDateUtcTime(date: Date) {
+  const parts = Object.fromEntries(
+    tokyoDatePartsFormatter
+      .formatToParts(date)
+      .map((part) => [part.type, part.value])
+  );
+
+  return Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day)
+  );
+}
+
 function getRemainingDays(endAt: string) {
-  const remainingMs = new Date(endAt).getTime() - Date.now();
+  const remainingMs =
+    getTokyoDateUtcTime(new Date(endAt)) - getTokyoDateUtcTime(new Date());
 
   return Math.max(0, Math.ceil(remainingMs / (1000 * 60 * 60 * 24)));
 }
@@ -39,6 +55,7 @@ function formatFetchedAt(fetchedAt: string) {
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "Asia/Tokyo",
   }).format(new Date(fetchedAt));
 }
 
@@ -134,10 +151,10 @@ export async function CrowdfundingSection() {
                     </div>
                     <div className="rounded-2xl bg-sky-50 px-3 py-4 text-center">
                       <dt className="text-xs font-black text-kobe-gray">
-                        終了日
+                        目標金額
                       </dt>
-                      <dd className="mt-1 text-base font-black md:text-lg">
-                        {dateFormatter.format(new Date(stats.endAt))}
+                      <dd className="mt-1 text-xl font-black md:text-2xl">
+                        {yenFormatter.format(stats.targetAmount)}
                       </dd>
                     </div>
                   </dl>
