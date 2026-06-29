@@ -1,12 +1,119 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { SNS_INFO } from "@/constants/sns";
 
+type InstagramFeedPost = {
+  shortcode: string;
+  imageUrl: string;
+  permalink: string;
+  isVideo: boolean;
+};
+
+type InstagramFeedResponse = {
+  posts?: InstagramFeedPost[];
+};
+
 export const InstagramEmbed: React.FC = () => {
   const { instagram } = SNS_INFO;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false);
+  const [isSmallViewport, setIsSmallViewport] = useState(false);
+  const [mobilePosts, setMobilePosts] = useState<InstagramFeedPost[]>([]);
+  const [hasLoadedMobilePosts, setHasLoadedMobilePosts] = useState(false);
+
+  useEffect(() => {
+    if (shouldLoadEmbed) {
+      return;
+    }
+
+    const container = containerRef.current;
+
+    if (!container || !("IntersectionObserver" in window)) {
+      setShouldLoadEmbed(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoadEmbed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px" }
+    );
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, [shouldLoadEmbed]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateViewport = () => setIsSmallViewport(mediaQuery.matches);
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => mediaQuery.removeEventListener("change", updateViewport);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoadEmbed || !isSmallViewport || hasLoadedMobilePosts) {
+      return;
+    }
+
+    const controller = new AbortController();
+
+    async function loadMobilePosts() {
+      try {
+        const response = await fetch("/api/instagram-feed", {
+          signal: controller.signal,
+        });
+        const data = (await response.json()) as InstagramFeedResponse;
+        setMobilePosts(data.posts?.slice(0, 9) ?? []);
+      } catch {
+        if (!controller.signal.aborted) {
+          setMobilePosts([]);
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setHasLoadedMobilePosts(true);
+        }
+      }
+    }
+
+    loadMobilePosts();
+
+    return () => controller.abort();
+  }, [hasLoadedMobilePosts, isSmallViewport, shouldLoadEmbed]);
+
+  const embedFrameClassName = "w-full h-[720px] sm:h-[760px] md:h-[600px]";
+  const mobileGridClassName =
+    "w-full aspect-square md:aspect-auto md:h-[600px]";
+
+  const instagramIframe = (
+    <iframe
+      src={instagram.embedUrl}
+      width="100%"
+      height="760"
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+      sandbox="allow-popups allow-same-origin allow-scripts"
+      style={{ border: "none" }}
+      scrolling="no"
+      className={embedFrameClassName}
+      title="Instagram Feed"
+    />
+  );
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-6">
+    <div
+      ref={containerRef}
+      className="w-full max-w-2xl mx-auto bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-6"
+    >
       <div className="text-center mb-6">
         <div className="flex items-center justify-center gap-3 mb-4">
           <FaInstagram className="text-5xl text-purple-500" />
@@ -28,18 +135,80 @@ export const InstagramEmbed: React.FC = () => {
       </div>
 
       <div className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
-        <iframe
-          src={instagram.embedUrl}
-          width="100%"
-          height="600"
-          referrerPolicy="strict-origin-when-cross-origin"
-          sandbox="allow-popups allow-same-origin allow-scripts"
-          style={{ border: "none" }}
-          scrolling="no"
-          className="w-full h-[480px] md:h-[600px]"
-          title="Instagram Feed"
-        />
+        {!shouldLoadEmbed ? (
+          <div
+            aria-label="Instagram Feed"
+            className={`${mobileGridClassName} animate-pulse bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50`}
+          />
+        ) : isSmallViewport ? (
+          hasLoadedMobilePosts && mobilePosts.length === 0 ? (
+            instagramIframe
+          ) : (
+            <InstagramMobileGrid
+              isLoading={!hasLoadedMobilePosts}
+              posts={mobilePosts}
+            />
+          )
+        ) : (
+          instagramIframe
+        )}
       </div>
+    </div>
+  );
+};
+
+type InstagramMobileGridProps = {
+  isLoading: boolean;
+  posts: InstagramFeedPost[];
+};
+
+const InstagramMobileGrid: React.FC<InstagramMobileGridProps> = ({
+  isLoading,
+  posts,
+}) => {
+  if (isLoading && posts.length === 0) {
+    return (
+      <div
+        aria-label="Instagram Feed"
+        className="grid w-full grid-cols-3 gap-2 p-2"
+      >
+        {Array.from({ length: 9 }).map((_, index) => (
+          <div
+            key={index}
+            className="aspect-square animate-pulse rounded-md bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50"
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      aria-label="Instagram Feed"
+      className="grid w-full grid-cols-3 gap-2 p-2"
+    >
+      {posts.slice(0, 9).map((post, index) => (
+        <a
+          key={post.shortcode}
+          href={post.permalink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative block aspect-square overflow-hidden rounded-md bg-gray-100"
+          aria-label={`Instagram post ${index + 1}`}
+        >
+          <img
+            src={`/api/instagram-feed/image?url=${encodeURIComponent(post.imageUrl)}`}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          {post.isVideo ? (
+            <span className="absolute right-1.5 top-1.5 rounded-full bg-black/60 p-1 text-white">
+              <FaInstagram className="text-xs" />
+            </span>
+          ) : null}
+        </a>
+      ))}
     </div>
   );
 };
