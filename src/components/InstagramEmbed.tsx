@@ -197,7 +197,9 @@ const InstagramMobileGrid: React.FC<InstagramMobileGridProps> = ({
           aria-label={`Instagram post ${index + 1}`}
         >
           <img
-            src={`/api/instagram-feed/image?url=${encodeURIComponent(post.imageUrl)}`}
+            src={`/api/instagram-feed/image?shortcode=${encodeURIComponent(
+              post.shortcode
+            )}`}
             alt=""
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"

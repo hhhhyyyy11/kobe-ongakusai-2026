@@ -1,87 +1,12 @@
 import { NextResponse } from "next/server";
-import { SNS_INFO } from "@/constants/sns";
-
-type InstagramFeedPost = {
-  shortcode: string;
-  imageUrl: string;
-  permalink: string;
-  isVideo: boolean;
-};
-
-const INSTAGRAM_FEED_LIMIT = 9;
+import { fetchInstagramFeedPosts } from "@/lib/instagramFeed";
 
 export const revalidate = 300;
 
-function decodeJsonString(value: string): string {
-  let decoded = value;
-
-  for (let index = 0; index < 3; index += 1) {
-    try {
-      const nextDecoded = JSON.parse(`"${decoded}"`) as string;
-
-      if (nextDecoded === decoded) {
-        break;
-      }
-
-      decoded = nextDecoded;
-    } catch {
-      break;
-    }
-  }
-
-  return decoded.replace(/\\\//g, "/").replace(/\\u0025/g, "%");
-}
-
-function extractInstagramFeed(html: string): InstagramFeedPost[] {
-  const normalizedHtml = html.replace(/\\"/g, '"');
-  const mediaPattern =
-    /"shortcode":"([^"]+)"[\s\S]*?"is_video":(true|false)[\s\S]*?"display_url":"([^"]+)"/g;
-  const seenShortcodes = new Set<string>();
-  const posts: InstagramFeedPost[] = [];
-
-  for (const match of normalizedHtml.matchAll(mediaPattern)) {
-    const [, shortcode, isVideo, imageUrl] = match;
-
-    if (seenShortcodes.has(shortcode)) {
-      continue;
-    }
-
-    seenShortcodes.add(shortcode);
-    posts.push({
-      shortcode,
-      imageUrl: decodeJsonString(imageUrl),
-      permalink: `https://www.instagram.com/p/${shortcode}/`,
-      isVideo: isVideo === "true",
-    });
-
-    if (posts.length >= INSTAGRAM_FEED_LIMIT) {
-      break;
-    }
-  }
-
-  return posts;
-}
-
 export async function GET() {
   try {
-    const response = await fetch(SNS_INFO.instagram.embedUrl, {
-      headers: {
-        "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-        "User-Agent":
-          "Mozilla/5.0 (compatible; KobeOngakusaiBot/1.0; +https://kobe-ongakusai.com)",
-      },
-      next: { revalidate },
-    });
-
-    if (!response.ok) {
-      return NextResponse.json(
-        { posts: [] },
-        { status: 502, statusText: "Failed to load Instagram feed" }
-      );
-    }
-
     return NextResponse.json(
-      { posts: extractInstagramFeed(await response.text()) },
+      { posts: await fetchInstagramFeedPosts() },
       {
         headers: {
           "Cache-Control": "s-maxage=300, stale-while-revalidate=3600",
