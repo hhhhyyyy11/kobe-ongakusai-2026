@@ -100,10 +100,9 @@ export async function CrowdfundingSection() {
                       />
                     </div>
                     <p className="text-center text-sm font-bold text-kobe-gray">
-                      目標 {yenFormatter.format(stats.targetAmount)} まで
-                      あと{" "}
+                      目標 {yenFormatter.format(stats.targetAmount)} まで あと{" "}
                       {yenFormatter.format(
-                        Math.max(stats.targetAmount - stats.currentAmount, 0),
+                        Math.max(stats.targetAmount - stats.currentAmount, 0)
                       )}
                     </p>
                   </div>
