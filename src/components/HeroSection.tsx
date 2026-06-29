@@ -5,18 +5,8 @@ import {
   FaExternalLinkAlt,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { HeroBackgroundSlideshow } from "./HeroBackgroundSlideshow";
 import { HeroComingSoonLinks } from "./HeroComingSoonLinks";
-
-const heroSlides = [
-  "/images/archive/S__21094535_0.jpg",
-  "/images/archive/S__21094537_0.jpg",
-  "/images/archive/S__21094538_0.jpg",
-  "/images/archive/S__21094539_0.jpg",
-  "/images/archive/S__21094541_0.jpg",
-  "/images/archive/S__21094542_0.jpg",
-  "/images/archive/S__21094544_0.jpg",
-  "/images/archive/S__21094551_0.jpg",
-];
 
 export function HeroSection() {
   return (
@@ -24,23 +14,7 @@ export function HeroSection() {
       id="top"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-950 pt-20 pb-40 sm:pt-28 sm:pb-48 md:pt-32 md:pb-56"
     >
-      <div className="absolute inset-0">
-        {heroSlides.map((src, index) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            fill
-            loading={index === 0 ? "eager" : "lazy"}
-            fetchPriority={index === 0 ? "low" : "auto"}
-            sizes="100vw"
-            className="hero-slide object-cover"
-            style={{
-              animationDelay: `${index * 5}s`,
-            }}
-          />
-        ))}
-      </div>
+      <HeroBackgroundSlideshow />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/65" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,239,94,0.18)_0%,rgba(255,107,71,0.08)_34%,transparent_68%)]" />
