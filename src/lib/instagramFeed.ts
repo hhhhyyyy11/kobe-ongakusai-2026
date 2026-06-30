@@ -42,19 +42,22 @@ export function extractInstagramFeed(html: string): InstagramFeedPost[] {
   const mediaPattern =
     /"shortcode":"([^"]+)"[\s\S]*?"is_video":(true|false)[\s\S]*?"display_url":"([^"]+)"/g;
   const seenShortcodes = new Set<string>();
+  const seenImageUrls = new Set<string>();
   const posts: InstagramFeedPost[] = [];
 
   for (const match of normalizedHtml.matchAll(mediaPattern)) {
     const [, shortcode, isVideo, imageUrl] = match;
+    const decodedImageUrl = decodeJsonString(imageUrl);
 
-    if (seenShortcodes.has(shortcode)) {
+    if (seenShortcodes.has(shortcode) || seenImageUrls.has(decodedImageUrl)) {
       continue;
     }
 
     seenShortcodes.add(shortcode);
+    seenImageUrls.add(decodedImageUrl);
     posts.push({
       shortcode,
-      imageUrl: decodeJsonString(imageUrl),
+      imageUrl: decodedImageUrl,
       permalink: `https://www.instagram.com/p/${shortcode}/`,
       isVideo: isVideo === "true",
     });
