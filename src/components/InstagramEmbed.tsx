@@ -186,7 +186,7 @@ const InstagramFeedGrid: React.FC<InstagramFeedGridProps> = ({ posts }) => {
           aria-label={`Instagram post ${index + 1}`}
         >
           <img
-            src={post.imageUrl}
+            src={`/api/instagram-feed/image/${post.shortcode}`}
             alt=""
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
