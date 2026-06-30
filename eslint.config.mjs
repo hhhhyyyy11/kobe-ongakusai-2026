@@ -1,7 +1,7 @@
 import nextPlugin from "@next/eslint-plugin-next";
 
 const eslintConfig = [
-  nextPlugin.flatConfig.coreWebVitals,
+  nextPlugin.configs["core-web-vitals"],
   {
     ignores: ["node_modules/", ".next/", "out/"],
   },
