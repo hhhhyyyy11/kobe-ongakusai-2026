@@ -22,6 +22,7 @@ export const InstagramEmbed: React.FC = () => {
   const [isSmallViewport, setIsSmallViewport] = useState(false);
   const [mobilePosts, setMobilePosts] = useState<InstagramFeedPost[]>([]);
   const [hasLoadedMobilePosts, setHasLoadedMobilePosts] = useState(false);
+  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
 
   useEffect(() => {
     if (shouldLoadEmbed) {
@@ -104,8 +105,11 @@ export const InstagramEmbed: React.FC = () => {
       sandbox="allow-popups allow-same-origin allow-scripts"
       style={{ border: "none" }}
       scrolling="no"
-      className={embedFrameClassName}
+      className={`${embedFrameClassName} transition-opacity duration-500 ${
+        isIframeLoaded ? "opacity-100" : "opacity-0"
+      }`}
       title="Instagram Feed"
+      onLoad={() => setIsIframeLoaded(true)}
     />
   );
 
@@ -134,15 +138,19 @@ export const InstagramEmbed: React.FC = () => {
         </a>
       </div>
 
-      <div className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
+      <div className="relative bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
         {!shouldLoadEmbed ? (
-          <div
-            aria-label="Instagram Feed"
-            className={`${mobileGridClassName} animate-pulse bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50`}
-          />
+          <InstagramLoadingState className={mobileGridClassName} />
         ) : isSmallViewport ? (
           hasLoadedMobilePosts && mobilePosts.length === 0 ? (
-            instagramIframe
+            <>
+              {!isIframeLoaded ? (
+                <InstagramLoadingState
+                  className={`${embedFrameClassName} absolute inset-0 z-10`}
+                />
+              ) : null}
+              {instagramIframe}
+            </>
           ) : (
             <InstagramMobileGrid
               isLoading={!hasLoadedMobilePosts}
@@ -150,8 +158,50 @@ export const InstagramEmbed: React.FC = () => {
             />
           )
         ) : (
-          instagramIframe
+          <>
+            {!isIframeLoaded ? (
+              <InstagramLoadingState
+                className={`${embedFrameClassName} absolute inset-0 z-10`}
+              />
+            ) : null}
+            {instagramIframe}
+          </>
         )}
+      </div>
+    </div>
+  );
+};
+
+type InstagramLoadingStateProps = {
+  className?: string;
+};
+
+const InstagramLoadingState: React.FC<InstagramLoadingStateProps> = ({
+  className = "w-full aspect-square",
+}) => {
+  return (
+    <div
+      aria-label="Instagram Feed"
+      role="status"
+      className={`flex flex-col items-center justify-center bg-white p-4 ${className}`}
+    >
+      <div className="mb-5 flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-3 text-kobe-dark-teal shadow-sm">
+        <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-white shadow">
+          <span className="absolute inset-0 rounded-full border-2 border-purple-100 border-t-pink-500 animate-spin" />
+          <FaInstagram className="relative text-2xl text-purple-500" />
+        </span>
+        <span className="text-sm font-bold md:text-base">
+          Instagramを読み込み中...
+        </span>
+      </div>
+      <div className="grid w-full max-w-md grid-cols-3 gap-2">
+        {Array.from({ length: 9 }).map((_, index) => (
+          <div
+            key={index}
+            className="aspect-square rounded-lg bg-gradient-to-br from-gray-100 via-purple-50 to-pink-100 animate-pulse"
+            style={{ animationDelay: `${index * 120}ms` }}
+          />
+        ))}
       </div>
     </div>
   );
@@ -167,19 +217,7 @@ const InstagramMobileGrid: React.FC<InstagramMobileGridProps> = ({
   posts,
 }) => {
   if (isLoading && posts.length === 0) {
-    return (
-      <div
-        aria-label="Instagram Feed"
-        className="grid w-full grid-cols-3 gap-2 p-2"
-      >
-        {Array.from({ length: 9 }).map((_, index) => (
-          <div
-            key={index}
-            className="aspect-square animate-pulse rounded-md bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50"
-          />
-        ))}
-      </div>
-    );
+    return <InstagramLoadingState />;
   }
 
   return (
