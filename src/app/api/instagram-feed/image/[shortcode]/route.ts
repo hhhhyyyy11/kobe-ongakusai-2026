@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fetchInstagramFeedPosts } from "@/lib/instagramFeed";
 
+export const dynamic = "force-dynamic";
 export const revalidate = 300;
 
 const SHORTCODE_PATTERN = /^[A-Za-z0-9_-]+$/;
