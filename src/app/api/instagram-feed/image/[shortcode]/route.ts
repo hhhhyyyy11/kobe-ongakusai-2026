@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchInstagramFeedPosts } from "@/lib/instagramFeed";
+import { findInstagramFeedPost } from "@/lib/instagramFeed";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 300;
@@ -19,7 +19,11 @@ function isTrustedInstagramImageUrl(value: string): boolean {
   try {
     const url = new URL(value);
 
-    return url.protocol === "https:" && url.hostname.endsWith(".fbcdn.net");
+    return (
+      url.protocol === "https:" &&
+      (url.hostname.endsWith(".fbcdn.net") ||
+        url.hostname.endsWith(".cdninstagram.com"))
+    );
   } catch {
     return false;
   }
@@ -39,8 +43,7 @@ export async function GET(
   }
 
   try {
-    const posts = await fetchInstagramFeedPosts();
-    const post = posts.find((candidate) => candidate.shortcode === shortcode);
+    const post = await findInstagramFeedPost(shortcode);
 
     if (!post) {
       return NextResponse.json(

@@ -8,14 +8,22 @@ export type InstagramFeedPost = {
 };
 
 const INSTAGRAM_FEED_LIMIT = 9;
+const INSTAGRAM_FEED_REVALIDATE_SECONDS = 300;
 const INSTAGRAM_FETCH_OPTIONS = {
   headers: {
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
     "User-Agent":
       "Mozilla/5.0 (compatible; KobeOngakusaiBot/1.0; +https://kobe-ongakusai.com)",
   },
-  next: { revalidate: 300 },
+  next: { revalidate: INSTAGRAM_FEED_REVALIDATE_SECONDS },
 } as const;
+
+let cachedInstagramFeed:
+  | {
+      expiresAt: number;
+      posts: InstagramFeedPost[];
+    }
+  | undefined;
 
 function decodeJsonString(value: string): string {
   let decoded = value;
@@ -185,6 +193,14 @@ export function extractInstagramFeed(html: string): InstagramFeedPost[] {
 }
 
 export async function fetchInstagramFeedPosts(): Promise<InstagramFeedPost[]> {
+  if (
+    cachedInstagramFeed &&
+    cachedInstagramFeed.expiresAt > Date.now() &&
+    cachedInstagramFeed.posts.length > 0
+  ) {
+    return cachedInstagramFeed.posts;
+  }
+
   const response = await fetch(
     SNS_INFO.instagram.embedUrl,
     INSTAGRAM_FETCH_OPTIONS
@@ -194,5 +210,30 @@ export async function fetchInstagramFeedPosts(): Promise<InstagramFeedPost[]> {
     throw new Error("Failed to load Instagram feed");
   }
 
-  return extractInstagramFeed(await response.text());
+  const posts = extractInstagramFeed(await response.text());
+
+  if (posts.length > 0) {
+    cachedInstagramFeed = {
+      expiresAt: Date.now() + INSTAGRAM_FEED_REVALIDATE_SECONDS * 1000,
+      posts,
+    };
+  }
+
+  return posts;
+}
+
+export async function findInstagramFeedPost(
+  shortcode: string
+): Promise<InstagramFeedPost | undefined> {
+  const cachedPost = cachedInstagramFeed?.posts.find(
+    (post) => post.shortcode === shortcode
+  );
+
+  if (cachedPost) {
+    return cachedPost;
+  }
+
+  const posts = await fetchInstagramFeedPosts();
+
+  return posts.find((post) => post.shortcode === shortcode);
 }
