@@ -89,7 +89,7 @@ export async function CrowdfundingSection() {
                     src="/images/crowd-fundings/funding.jpg"
                     alt="神戸音学祭2026 クラウドファンディングのお知らせ"
                     fill
-                    quality={100}
+                    quality={80}
                     sizes="(min-width: 1024px) 430px, (min-width: 640px) 360px, 320px"
                     className="object-cover"
                   />
