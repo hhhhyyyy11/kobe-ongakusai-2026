@@ -1,15 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import { SNS_INFO } from "@/constants/sns";
-
-type InstagramFeedPost = {
-  shortcode: string;
-  imageUrl: string;
-  permalink: string;
-  isVideo: boolean;
-};
+import type { InstagramFeedPost } from "@/lib/instagramFeed";
 
 type InstagramFeedResponse = {
   posts?: InstagramFeedPost[];
@@ -185,9 +180,11 @@ const InstagramFeedGrid: React.FC<InstagramFeedGridProps> = ({ posts }) => {
           className="group relative block aspect-square overflow-hidden rounded-md bg-gray-100"
           aria-label={`Instagram post ${index + 1}`}
         >
-          <img
+          <Image
             src={`/api/instagram-feed/image/${post.shortcode}`}
             alt=""
+            fill
+            sizes="(min-width: 768px) 208px, 30vw"
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
