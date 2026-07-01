@@ -73,6 +73,7 @@ export function HeroBackgroundSlideshow() {
         fill
         loading={currentSlide === 0 ? "eager" : "lazy"}
         fetchPriority={currentSlide === 0 ? "low" : "auto"}
+        quality={75}
         sizes="100vw"
         className={`hero-slide hero-slide-current ${
           isNextSlideVisible ? "hero-slide-exiting" : ""
@@ -86,6 +87,7 @@ export function HeroBackgroundSlideshow() {
           alt=""
           fill
           loading="lazy"
+          quality={75}
           sizes="100vw"
           className={`hero-slide hero-slide-incoming ${
             isNextSlideVisible ? "hero-slide-incoming-visible" : ""
