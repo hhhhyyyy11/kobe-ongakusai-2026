@@ -26,6 +26,7 @@ export function HeroSection() {
             alt="Kobe Ongakusai Main Logo"
             width={256}
             height={256}
+            sizes="(min-width: 768px) 192px, (min-width: 640px) 160px, 96px"
             className="mb-3 h-24 w-24 drop-shadow-2xl sm:mb-4 sm:h-40 sm:w-40 md:h-48 md:w-48"
           />
 
@@ -40,7 +41,7 @@ export function HeroSection() {
             height={572}
             priority
             fetchPriority="high"
-            sizes="(min-width: 1280px) 1024px, calc(100vw - 32px)"
+            sizes="(min-width: 1024px) 1024px, calc(100vw - 32px)"
             className="w-full max-w-5xl drop-shadow-[0_10px_26px_rgba(0,0,0,0.75)]"
           />
 
