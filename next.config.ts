@@ -54,6 +54,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["react", "react-dom"],
+    useTypeScriptCli: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
