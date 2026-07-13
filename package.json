@@ -27,7 +27,7 @@
     "postcss": "^8.5.10",
     "prettier": "^3.9.4",
     "tailwindcss": "^4.0.0",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "overrides": {
     "cross-spawn": "^7.0.6",
