@@ -75,7 +75,7 @@ export const artistGroups: ArtistGroup[] = [
     university: "神戸市外国語大学",
     artists: [
       {
-        name: "学部軽音",
+        name: "学部軽音楽部",
         socials: {
           instagram: "https://www.instagram.com/rock_the_k_on/",
           x: "https://x.com/rock_the_k_on",
