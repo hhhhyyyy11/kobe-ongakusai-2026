@@ -66,7 +66,7 @@ export const artistGroups: ArtistGroup[] = [
       {
         name: "軽音学部",
         socials: {
-          x: "https://x.com/Konan_keion2020",
+          x: "https://x.com/konan_keion",
         },
       },
     ],
