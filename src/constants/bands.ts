@@ -44,7 +44,7 @@ export const artistGroups: ArtistGroup[] = [
         },
       },
       {
-        name: "軽音II部",
+        name: "軽音楽部Ⅲ",
         socials: {
           instagram: "https://www.instagram.com/keion2bu/",
           x: "https://x.com/kobe_u_keion2",
