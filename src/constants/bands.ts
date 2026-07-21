@@ -1,81 +1,166 @@
-// 出演バンド情報
-export const bands: Array<{
-  name: string;
-  image: string | null;
-  youtube?: string;
+export type ArtistSocials = {
   instagram?: string;
-  xTwitter?: string;
-}> = [
+  x?: string;
+  youtube?: string;
+};
+
+export type Artist = {
+  name: string;
+  socials?: ArtistSocials;
+};
+
+export type ArtistGroup = {
+  university: string;
+  artists: Artist[];
+};
+
+// 出演団体情報（大学・団体・公式SNS）
+export const artistGroups: ArtistGroup[] = [
   {
-    name: "関西学院大学文化総部軽音楽部",
-    image: "/images/artists/kwansei-gakuin.jpg",
-    youtube: "https://www.youtube.com/@kglmc589",
-    instagram: "https://www.instagram.com/kglmc_official/",
-    xTwitter: "https://x.com/KGLMC",
+    university: "神戸大学",
+    artists: [
+      {
+        name: "SoundS",
+        socials: {
+          instagram: "https://www.instagram.com/sounds_kobe/",
+          x: "https://x.com/SoundS_kobe",
+          youtube: "https://www.youtube.com/user/kobesounds",
+        },
+      },
+      {
+        name: "MMC",
+        socials: {
+          instagram: "https://www.instagram.com/mmc.kobe/",
+          x: "https://x.com/Kobe_MMC",
+          youtube: "https://www.youtube.com/@mmc7639",
+        },
+      },
+      {
+        name: "軽音楽部ROCK",
+        socials: {
+          instagram: "https://www.instagram.com/kobe_u_rock/",
+          x: "https://x.com/kobe_u_rock",
+          youtube: "https://www.youtube.com/@ROCK-wh7ih",
+        },
+      },
+      {
+        name: "軽音II部",
+        socials: {
+          instagram: "https://www.instagram.com/keion2bu/",
+          x: "https://x.com/kobe_u_keion2",
+          youtube: "https://www.youtube.com/@kobe_keion3_nibu",
+        },
+      },
+    ],
   },
   {
-    name: "神戸市外国語大学学部軽音楽部",
-    image: "/images/artists/kobe-sgf.jpg",
-    youtube:
-      "https://www.youtube.com/@%E7%A5%9E%E6%88%B8%E5%B8%82%E5%A4%96%E5%A4%A7%E5%AD%A6%E9%83%A8%E8%BB%BD%E9%9F%B3%E6%A5%BD",
-    instagram: "https://www.instagram.com/rock_the_k_on/?hl=ja",
-    xTwitter: "https://x.com/rock_the_k_on",
+    university: "甲南大学",
+    artists: [
+      {
+        name: "フォークソング同好会",
+        socials: {
+          instagram: "https://www.instagram.com/konan_forson/",
+          x: "https://x.com/konanfolksong",
+        },
+      },
+      {
+        name: "軽音学部",
+        socials: {
+          x: "https://x.com/Konan_keion2020",
+        },
+      },
+    ],
   },
   {
-    name: "神戸親和大学軽音楽部",
-    image: "/images/artists/kobe-shinwa.jpg",
-    instagram: "https://www.instagram.com/keionshinwa_gram/?hl=ja",
-    xTwitter: "https://x.com/botshinwa",
+    university: "神戸市外国語大学",
+    artists: [
+      {
+        name: "学部軽音",
+        socials: {
+          instagram: "https://www.instagram.com/rock_the_k_on/",
+          x: "https://x.com/rock_the_k_on",
+          youtube:
+            "https://www.youtube.com/@%E7%A5%9E%E6%88%B8%E5%B8%82%E5%A4%96%E5%A4%A7%E5%AD%A6%E9%83%A8%E8%BB%BD%E9%9F%B3%E6%A5%BD",
+        },
+      },
+    ],
   },
   {
-    name: "神戸大学軽音楽部ROCK",
-    image: "/images/artists/kobe-univ-rock.jpg",
-    youtube: "https://www.youtube.com/@ROCK-wh7ih",
-    instagram: "https://www.instagram.com/kobe_u_rock/",
-    xTwitter: "https://x.com/kobe_u_rock",
+    university: "立命館大学",
+    artists: [
+      {
+        name: "Hansel&Gretel",
+        socials: {
+          instagram: "https://www.instagram.com/hansel_and_gretel.rits/",
+          x: "https://x.com/HG_Rits_OIC",
+          youtube: "https://www.youtube.com/channel/UCkyGtLjA60FNjuCbr0fRD6A",
+        },
+      },
+      {
+        name: "Jack&Beans",
+        socials: {
+          instagram: "https://www.instagram.com/jack_bkc.ins/",
+          x: "https://x.com/jack_bkc",
+          youtube: "https://www.youtube.com/@jackbeansbkc8419",
+        },
+      },
+    ],
   },
   {
-    name: "神戸大学軽音サークルFreeBeat",
-    image: "/images/artists/kobe-univ-free-beat.jpg",
-    youtube: "https://www.youtube.com/@freebeat1430",
-    instagram: "https://www.instagram.com/shindai_freebeat/",
-    xTwitter: "https://x.com/kobe_freebeat",
+    university: "関西学院大学",
+    artists: [
+      {
+        name: "文化総部軽音楽部",
+        socials: {
+          instagram: "https://www.instagram.com/kglmc_official/",
+          x: "https://x.com/KGLMC",
+          youtube: "https://www.youtube.com/@kglmc589",
+        },
+      },
+    ],
   },
   {
-    name: "神戸大学軽音サークルMMC",
-    image: "/images/artists/kobe-univ-mmc.jpg",
-    youtube: "https://www.youtube.com/@mmc7639",
-    instagram: "https://www.instagram.com/mmc.kobe/",
-    xTwitter: "https://x.com/kobe_mmc",
+    university: "関西大学",
+    artists: [
+      {
+        name: "軽音I部",
+        socials: {
+          instagram: "https://www.instagram.com/1bu.keion.1bu/",
+          x: "https://x.com/ku_keion01",
+        },
+      },
+    ],
   },
   {
-    name: "神戸大学軽音サークルSoundS",
-    image: "/images/artists/kobe-univ-sounds.png",
-    youtube: "https://www.youtube.com/user/kobesounds",
-    instagram: "https://www.instagram.com/sounds_kobe2025/",
-    xTwitter: "https://x.com/SoundS_kobe",
+    university: "同志社大学",
+    artists: [
+      {
+        name: "ひなたぼっこ",
+        socials: {
+          instagram: "https://www.instagram.com/hinatabokko._.doshisha/",
+        },
+      },
+    ],
   },
   {
-    name: "同志社大学Lilac Rainbows",
-    image: "/images/artists/doshisha-lilac-rainbows.jpg",
-    youtube: "https://www.youtube.com/@lilacrainbows",
-    instagram: "https://www.instagram.com/lilac_rainbows/",
-    xTwitter: "https://x.com/lilacrainbows",
+    university: "神戸市芸術工科大学",
+    artists: [{ name: "軽音楽部Oton" }],
   },
   {
-    name: "立命館大学Hansel&Gretel",
-    image: "/images/artists/ritsumeikan-hansel-gretel.jpg",
-    youtube: "https://www.youtube.com/channel/UCkyGtLjA60FNjuCbr0fRD6A",
-    instagram: "https://www.instagram.com/hansel_and_gretel.rits/",
-    xTwitter: "https://x.com/hg_rits_oic",
-  },
-  {
-    name: "立命館大学Jack&Beans",
-    image: "/images/artists/ritsumeikan-jack-beans.jpg",
-    youtube: "https://www.youtube.com/@jackbeansbkc8419",
-    instagram: "https://www.instagram.com/jack_bkc.ins/",
-    xTwitter: "https://x.com/jack_bkc",
+    university: "兵庫県立大学",
+    artists: [
+      {
+        name: "軽音楽部西支部ROCK",
+        socials: {
+          x: "https://x.com/kon_west_UofH",
+        },
+      },
+      {
+        name: "軽音楽部東支部",
+        socials: {
+          x: "https://x.com/kendai_keion_",
+        },
+      },
+    ],
   },
 ];
-
-export type Band = (typeof bands)[0];
