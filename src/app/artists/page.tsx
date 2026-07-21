@@ -42,6 +42,13 @@ const socialPlatforms = [
   className: string;
 }>;
 
+const artists = artistGroups.flatMap((group) =>
+  group.artists.map((artist) => ({
+    ...artist,
+    university: group.university,
+  }))
+);
+
 export default function ArtistsPage() {
   return (
     <div className="min-h-screen bg-kobe-light-blue font-sans">
@@ -72,62 +79,49 @@ export default function ArtistsPage() {
           <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
 
           <div className="mx-auto max-w-6xl px-4 pt-16">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {artistGroups.map((group) => (
-                <section
-                  key={group.university}
-                  className="overflow-hidden rounded-2xl border-4 border-kobe-dark-teal bg-white shadow-lg"
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {artists.map((artist) => (
+                <li
+                  key={`${artist.university}-${artist.name}`}
+                  className="flex min-h-44 flex-col justify-center rounded-2xl border-4 border-kobe-dark-teal bg-gray-50 p-6 text-center shadow-lg"
                 >
-                  <h2 className="bg-kobe-dark-teal px-5 py-4 text-center text-xl font-black text-white">
-                    {group.university}
+                  <h2 className="text-xl leading-tight font-black text-kobe-dark-teal">
+                    {artist.name}
                   </h2>
+                  <p className="mt-2 text-sm font-bold text-kobe-gray">
+                    {artist.university}
+                  </p>
 
-                  <ul className="space-y-4 p-5">
-                    {group.artists.map((artist) => (
-                      <li
-                        key={artist.name}
-                        className="rounded-xl border-2 border-kobe-light-blue bg-gray-50 p-4"
-                      >
-                        <h3 className="text-center text-lg leading-tight font-black text-kobe-dark-teal">
-                          {artist.name}
-                        </h3>
+                  {artist.socials && (
+                    <div className="mt-5 flex justify-center gap-3">
+                      {socialPlatforms.map((platform) => {
+                        const href = artist.socials?.[platform.key];
 
-                        {artist.socials && (
-                          <div className="mt-4 flex justify-center gap-3">
-                            {socialPlatforms.map((platform) => {
-                              const href = artist.socials?.[platform.key];
+                        if (!href) {
+                          return null;
+                        }
 
-                              if (!href) {
-                                return null;
-                              }
+                        const Icon = platform.icon;
 
-                              const Icon = platform.icon;
-
-                              return (
-                                <a
-                                  key={platform.key}
-                                  href={href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label={`${group.university}${artist.name}の${platform.label}を新しいタブで開く`}
-                                  title={platform.label}
-                                  className={`rounded-full p-3 text-white shadow-md transition-all duration-300 hover:scale-110 ${platform.className}`}
-                                >
-                                  <Icon
-                                    className="text-lg"
-                                    aria-hidden="true"
-                                  />
-                                </a>
-                              );
-                            })}
-                          </div>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </section>
+                        return (
+                          <a
+                            key={platform.key}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${artist.university} ${artist.name}の${platform.label}を新しいタブで開く`}
+                            title={platform.label}
+                            className={`rounded-full p-3 text-white shadow-md transition-all duration-300 hover:scale-110 ${platform.className}`}
+                          >
+                            <Icon className="text-lg" aria-hidden="true" />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       </main>
