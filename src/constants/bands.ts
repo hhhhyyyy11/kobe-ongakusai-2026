@@ -91,7 +91,6 @@ export const artistGroups: ArtistGroup[] = [
       {
         name: "Hansel&Gretel",
         socials: {
-          instagram: "https://www.instagram.com/hansel_and_gretel.rits/",
           x: "https://x.com/HG_Rits_OIC",
           youtube: "https://www.youtube.com/channel/UCkyGtLjA60FNjuCbr0fRD6A",
         },
