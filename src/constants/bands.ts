@@ -171,7 +171,7 @@ export const artistGroups: ArtistGroup[] = [
         },
       },
       {
-        name: "兵庫県立東支部軽音楽部",
+        name: "兵庫県立大学東支部軽音楽部",
         socials: {
           instagram: "https://www.instagram.com/kendai.keion/",
           x: "https://x.com/kendai_keion_",
