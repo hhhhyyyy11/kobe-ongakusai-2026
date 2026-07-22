@@ -158,9 +158,10 @@ export const artistGroups: ArtistGroup[] = [
     university: "兵庫県立大学",
     artists: [
       {
-        name: "軽音楽部西支部ROCK",
+        name: "兵庫県立大学西支部ロック部",
         socials: {
-          x: "https://x.com/kon_west_UofH",
+          instagram: "https://www.instagram.com/uh_rock/",
+          x: "https://x.com/UH_ROCK69",
         },
       },
       {
