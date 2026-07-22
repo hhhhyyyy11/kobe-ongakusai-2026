@@ -86,7 +86,7 @@ function SetListPage() {
                 タイムテーブルは近日公開
               </p>
               <p className="text-kobe-gray font-bold">
-                出演団体・演奏スケジュールは決定次第お知らせします
+                演奏スケジュールは決定次第お知らせします
               </p>
             </div>
           </div>
