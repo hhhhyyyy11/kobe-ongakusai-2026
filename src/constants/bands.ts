@@ -61,6 +61,8 @@ export const artistGroups: ArtistGroup[] = [
         socials: {
           instagram: "https://www.instagram.com/konan_forson/",
           x: "https://x.com/konanfolksong",
+          youtube:
+            "https://www.youtube.com/@%E7%94%B2%E5%8D%97%E5%A4%A7%E5%AD%A6%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF%E3%82%BD%E3%83%B3%E3%82%B0%E5%90%8C%E5%A5%BD/featured",
         },
       },
       {
@@ -68,6 +70,7 @@ export const artistGroups: ArtistGroup[] = [
         socials: {
           instagram: "https://www.instagram.com/konan_keion/",
           x: "https://x.com/konan_keion",
+          youtube: "https://www.youtube.com/channel/UCUq3pqPuC7YjfqXuDuTRtwg",
         },
       },
     ],
