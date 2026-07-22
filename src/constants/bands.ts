@@ -167,6 +167,7 @@ export const artistGroups: ArtistGroup[] = [
         socials: {
           instagram: "https://www.instagram.com/uh_rock/",
           x: "https://x.com/UH_ROCK69",
+          youtube: "https://www.youtube.com/channel/UCSmT7H3E-l8KzXtxBu1Cttg",
         },
       },
       {
