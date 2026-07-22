@@ -127,6 +127,7 @@ export const artistGroups: ArtistGroup[] = [
         socials: {
           instagram: "https://www.instagram.com/1bu.keion.1bu/",
           x: "https://x.com/ku_keion01",
+          youtube: "https://www.youtube.com/@KansaiUniv_LMC1",
         },
       },
     ],
