@@ -143,7 +143,16 @@ export const artistGroups: ArtistGroup[] = [
   },
   {
     university: "神戸市芸術工科大学",
-    artists: [{ name: "軽音楽部Oton" }],
+    artists: [
+      {
+        name: "軽音楽部Oton",
+        socials: {
+          instagram: "https://www.instagram.com/oton__official/",
+          x: "https://x.com/Oton_official",
+          youtube: "https://www.youtube.com/channel/UCvdmdbeDI0AAxVvORHFUG5w",
+        },
+      },
+    ],
   },
   {
     university: "兵庫県立大学",
