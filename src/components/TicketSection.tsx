@@ -6,6 +6,7 @@ import {
   FaTicketAlt,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import { eventInfo } from "@/constants/event";
 
 export function TicketSection() {
   return (
@@ -28,8 +29,12 @@ export function TicketSection() {
                 <div className="text-center flex-1">
                   <FaCalendarAlt className="text-4xl mb-4 mx-auto text-orange-500" />
                   <h3 className="text-xl font-black mb-4">日時</h3>
-                  <p className="text-lg font-bold mb-2">2026年8月21日（金）</p>
-                  <p className="text-base font-bold text-gray-500">時間未定</p>
+                  <p className="text-lg font-bold mb-2">
+                    {eventInfo.dateLabel}
+                  </p>
+                  <p className="text-base font-bold text-gray-500">
+                    {eventInfo.timeLabel}
+                  </p>
                 </div>
               </div>
 

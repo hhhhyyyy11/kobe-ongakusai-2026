@@ -15,6 +15,7 @@ import { Header } from "@/components/Header";
 import { WavePattern } from "@/components/WavePattern";
 import { createPageMetadata } from "@/lib/metadata";
 import { absoluteUrl } from "@/lib/site";
+import { eventInfo } from "@/constants/event";
 
 export const metadata: Metadata = createPageMetadata({
   title: "アクセス・FAQ｜神戸音学祭2026",
@@ -26,8 +27,8 @@ export const metadata: Metadata = createPageMetadata({
 const overviewItems = [
   {
     title: "開催日",
-    text: "2026年8月21日（金）",
-    detail: "開催時間は決定次第お知らせします。",
+    text: eventInfo.dateLabel,
+    detail: eventInfo.timeLabel,
     icon: FaCalendarAlt,
   },
   {
@@ -47,8 +48,7 @@ const overviewItems = [
 const faqItems = [
   {
     question: "神戸音学祭2026はいつ開催されますか？",
-    answer:
-      "2026年8月21日（金）に開催予定です。開催時間は決定次第お知らせします。",
+    answer: `${eventInfo.dateTimeLabel}に開催します。`,
   },
   {
     question: "会場はどこですか？",
@@ -190,7 +190,7 @@ export default function AccessPage() {
                     天候や会場状況により案内内容が変わる場合は、公式サイトと公式SNSでお知らせします。
                   </p>
                   <p className="font-bold leading-relaxed">
-                    出演団体は出演団体ページで公開中です。タイムテーブルとブース詳細は決定次第、各ページと公式SNSで順次公開します。
+                    出演団体とブース詳細は各ページで公開中です。タイムテーブルは決定次第、公式サイトと公式SNSでお知らせします。
                   </p>
                 </div>
               </section>

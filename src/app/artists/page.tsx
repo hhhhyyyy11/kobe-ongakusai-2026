@@ -11,7 +11,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "出演団体｜神戸音学祭2026",
   description:
-    "神戸音学祭2026に出演する関西圏9大学15団体と、各団体の公式SNSをご紹介します。",
+    "神戸音学祭2026に出演する関西圏10大学16団体・21バンドと、各団体の公式SNS、コピーするアーティストをご紹介します。",
   path: "/artists",
 });
 
@@ -69,7 +69,7 @@ export default function ArtistsPage() {
                 出演団体
               </h1>
               <p className="inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-2 text-xl font-bold text-white md:text-2xl">
-                9大学15団体が出演
+                10大学16団体・21バンドが出演
               </p>
             </div>
           </div>
@@ -79,11 +79,11 @@ export default function ArtistsPage() {
           <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
 
           <div className="mx-auto max-w-6xl px-4 pt-16">
-            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
               {artists.map((artist) => (
                 <li
                   key={`${artist.university}-${artist.name}`}
-                  className="flex min-h-44 flex-col justify-center rounded-2xl border-4 border-kobe-dark-teal bg-gray-50 p-6 text-center shadow-lg"
+                  className="flex flex-col rounded-2xl border-4 border-kobe-dark-teal bg-gray-50 p-6 text-center shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl focus-within:-translate-y-1 focus-within:shadow-2xl"
                 >
                   <h2 className="text-xl leading-tight font-black text-kobe-dark-teal">
                     {artist.name}
@@ -91,6 +91,22 @@ export default function ArtistsPage() {
                   <p className="mt-2 text-sm font-bold text-kobe-gray">
                     {artist.university}
                   </p>
+
+                  <div className="mt-5">
+                    <p className="text-xs font-black tracking-wide text-kobe-orange">
+                      コピーするアーティスト
+                    </p>
+                    <div className="mt-2 flex flex-wrap justify-center gap-2">
+                      {artist.copyArtists.map((copyArtist) => (
+                        <span
+                          key={copyArtist}
+                          className="rounded-full bg-gradient-to-r from-yellow-300 to-orange-400 px-3 py-1.5 text-sm font-black text-kobe-dark-teal shadow-sm"
+                        >
+                          {copyArtist}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
                   {artist.socials && (
                     <div className="mt-5 flex justify-center gap-3">
