@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/metadata";
 import { absoluteUrl, siteName, siteUrl } from "@/lib/site";
+import { eventInfo } from "@/constants/event";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -151,8 +152,8 @@ export default function RootLayout({
     description: "学生主催の野外音楽フェス",
     url: siteUrl,
     image: absoluteUrl("/images/logos/logo_main_2026.jpg"),
-    startDate: "2026-08-21T00:00:00+09:00",
-    endDate: "2026-08-21T23:59:59+09:00",
+    startDate: eventInfo.startDate,
+    endDate: eventInfo.endDate,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
