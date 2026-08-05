@@ -6,11 +6,11 @@ import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { WavePattern } from "@/components/WavePattern";
 import { createPageMetadata } from "@/lib/metadata";
+import { eventInfo } from "@/constants/event";
 
 export const metadata: Metadata = createPageMetadata({
   title: "タイムテーブル｜神戸音学祭2026",
-  description:
-    "神戸音学祭2026のタイムテーブル情報ページです。出演スケジュールや演奏時間は、決定次第お知らせします。",
+  description: `神戸音学祭2026は${eventInfo.dateTimeLabel}に開催します。出演スケジュールや演奏時間は、決定次第お知らせします。`,
   path: "/timetable",
 });
 
@@ -37,13 +37,13 @@ function SetListPage() {
             </h1>
             <div className="mb-4">
               <p className="inline-block px-6 py-2 rounded-full text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500">
-                2026年8月21日（金）開催予定
+                {eventInfo.dateLabel}開催
               </p>
             </div>
             <div className="flex items-center justify-center space-x-4 text-lg font-bold text-kobe-dark-teal">
               <div className="flex items-center space-x-2">
                 <FaClock className="text-orange-500" />
-                <span>時間未定</span>
+                <span>{eventInfo.timeLabel}</span>
               </div>
             </div>
           </div>

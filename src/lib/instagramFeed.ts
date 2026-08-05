@@ -45,42 +45,6 @@ function decodeJsonString(value: string): string {
   return decoded.replace(/\\\//g, "/").replace(/\\u0025/g, "%");
 }
 
-function readObjectAt(source: string, start: number): string | null {
-  let depth = 0;
-  let inString = false;
-  let escaped = false;
-
-  for (let index = start; index < source.length; index += 1) {
-    const char = source[index];
-
-    if (inString) {
-      if (escaped) {
-        escaped = false;
-      } else if (char === "\\") {
-        escaped = true;
-      } else if (char === '"') {
-        inString = false;
-      }
-
-      continue;
-    }
-
-    if (char === '"') {
-      inString = true;
-    } else if (char === "{") {
-      depth += 1;
-    } else if (char === "}") {
-      depth -= 1;
-
-      if (depth === 0) {
-        return source.slice(start, index + 1);
-      }
-    }
-  }
-
-  return null;
-}
-
 function extractMediaFields(value: string) {
   const shortcode = value.match(/"shortcode":"([^"]+)"/)?.[1];
   const isVideo = value.match(/"is_video":(true|false)/)?.[1];
@@ -97,19 +61,21 @@ function extractMediaFields(value: string) {
   };
 }
 
+function extractParentShortcode(value: string): string | undefined {
+  const parentHeader = value.match(/^"shortcode_media":\s*\{([^{}]*)/)?.[1];
+
+  return parentHeader?.match(/"shortcode":"([^"]+)"/)?.[1];
+}
+
 export function extractInstagramFeed(html: string): InstagramFeedPost[] {
   const normalizedHtml = html.replace(/\\"/g, '"');
   const mediaMarker = '"shortcode_media":';
-  const childMediaMarker = '"node":';
   const seenShortcodes = new Set<string>();
   const seenImageUrls = new Set<string>();
   const posts: InstagramFeedPost[] = [];
   let cursor = 0;
 
-  function addPost(
-    media: NonNullable<ReturnType<typeof extractMediaFields>>,
-    permalinkShortcode = media.shortcode
-  ) {
+  function addPost(media: NonNullable<ReturnType<typeof extractMediaFields>>) {
     if (
       seenShortcodes.has(media.shortcode) ||
       seenImageUrls.has(media.imageUrl) ||
@@ -123,7 +89,7 @@ export function extractInstagramFeed(html: string): InstagramFeedPost[] {
     posts.push({
       shortcode: media.shortcode,
       imageUrl: media.imageUrl,
-      permalink: `https://www.instagram.com/p/${permalinkShortcode}/`,
+      permalink: `https://www.instagram.com/p/${media.shortcode}/`,
       isVideo: media.isVideo,
     });
   }
@@ -135,58 +101,26 @@ export function extractInstagramFeed(html: string): InstagramFeedPost[] {
       break;
     }
 
-    const objectStart = normalizedHtml.indexOf("{", markerIndex);
+    const nextMarkerIndex = normalizedHtml.indexOf(
+      mediaMarker,
+      markerIndex + mediaMarker.length
+    );
+    const mediaSection = normalizedHtml.slice(
+      markerIndex,
+      nextMarkerIndex === -1 ? undefined : nextMarkerIndex
+    );
+    const parentMedia = extractMediaFields(mediaSection);
+    const parentShortcode = extractParentShortcode(mediaSection);
 
-    if (objectStart === -1) {
+    if (parentMedia && parentShortcode) {
+      addPost({ ...parentMedia, shortcode: parentShortcode });
+    }
+
+    if (nextMarkerIndex === -1) {
       break;
     }
 
-    const mediaObject = readObjectAt(normalizedHtml, objectStart);
-
-    if (!mediaObject) {
-      break;
-    }
-
-    const parentMedia = extractMediaFields(mediaObject);
-
-    if (parentMedia) {
-      addPost(parentMedia);
-
-      let childCursor = 0;
-
-      while (posts.length < INSTAGRAM_FEED_LIMIT) {
-        const childMarkerIndex = mediaObject.indexOf(
-          childMediaMarker,
-          childCursor
-        );
-
-        if (childMarkerIndex === -1) {
-          break;
-        }
-
-        const childObjectStart = mediaObject.indexOf("{", childMarkerIndex);
-
-        if (childObjectStart === -1) {
-          break;
-        }
-
-        const childObject = readObjectAt(mediaObject, childObjectStart);
-
-        if (!childObject) {
-          break;
-        }
-
-        const childMedia = extractMediaFields(childObject);
-
-        if (childMedia) {
-          addPost(childMedia, parentMedia.shortcode);
-        }
-
-        childCursor = childObjectStart + childObject.length;
-      }
-    }
-
-    cursor = objectStart + mediaObject.length;
+    cursor = nextMarkerIndex;
   }
 
   return posts;
