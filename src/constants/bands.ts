@@ -6,6 +6,7 @@ export type ArtistSocials = {
 
 export type Artist = {
   name: string;
+  copyArtists: string[];
   socials?: ArtistSocials;
 };
 
@@ -21,6 +22,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "SoundS",
+        copyArtists: ["The Birthday"],
         socials: {
           instagram: "https://www.instagram.com/sounds_kobe/",
           x: "https://x.com/SoundS_kobe",
@@ -29,6 +31,7 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "MMC",
+        copyArtists: ["フレデリック"],
         socials: {
           instagram: "https://www.instagram.com/mmc.kobe/",
           x: "https://x.com/Kobe_MMC",
@@ -37,6 +40,7 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "軽音楽部ROCK",
+        copyArtists: ["Saucy Dog", "ART-SCHOOL", "NEE"],
         socials: {
           instagram: "https://www.instagram.com/kobe_u_rock/",
           x: "https://x.com/kobe_u_rock",
@@ -45,6 +49,7 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "軽音楽部Ⅲ",
+        copyArtists: ["Larry Carlton"],
         socials: {
           instagram: "https://www.instagram.com/keion2bu/",
           x: "https://x.com/kobe_u_keion2",
@@ -58,6 +63,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "フォークソング同好会",
+        copyArtists: ["相対性理論"],
         socials: {
           instagram: "https://www.instagram.com/konan_forson/",
           x: "https://x.com/konanfolksong",
@@ -67,6 +73,7 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "軽音楽部",
+        copyArtists: ["赤い公園", "Age Factory"],
         socials: {
           instagram: "https://www.instagram.com/konan_keion/",
           x: "https://x.com/konan_keion",
@@ -80,6 +87,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "学部軽音楽部",
+        copyArtists: ["kurayamisaka"],
         socials: {
           instagram: "https://www.instagram.com/rock_the_k_on/",
           x: "https://x.com/rock_the_k_on",
@@ -94,6 +102,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "Hansel&Gretel",
+        copyArtists: ["King Gnu"],
         socials: {
           x: "https://x.com/HG_Rits_OIC",
           youtube: "https://www.youtube.com/channel/UCkyGtLjA60FNjuCbr0fRD6A",
@@ -101,6 +110,7 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "Jack&Beans",
+        copyArtists: ["ASIAN KUNG-FU GENERATION"],
         socials: {
           instagram: "https://www.instagram.com/jack_bkc.ins/",
           x: "https://x.com/jack_bkc",
@@ -114,6 +124,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "文化総部軽音楽部",
+        copyArtists: ["Oasis"],
         socials: {
           instagram: "https://www.instagram.com/kglmc_official/",
           x: "https://x.com/KGLMC",
@@ -127,6 +138,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "軽音I部",
+        copyArtists: ["スピッツ"],
         socials: {
           instagram: "https://www.instagram.com/1bu.keion.1bu/",
           x: "https://x.com/ku_keion01",
@@ -140,6 +152,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "ひなたぼっこ",
+        copyArtists: ["MOSHIMO", "Nagakumo", "レイラ"],
         socials: {
           instagram: "https://www.instagram.com/hinatabokko._.doshisha/",
         },
@@ -147,10 +160,11 @@ export const artistGroups: ArtistGroup[] = [
     ],
   },
   {
-    university: "神戸市芸術工科大学",
+    university: "神戸芸術工科大学",
     artists: [
       {
         name: "軽音楽部Oton",
+        copyArtists: ["きのこ帝国"],
         socials: {
           instagram: "https://www.instagram.com/oton__official/",
           x: "https://x.com/Oton_official",
@@ -164,6 +178,7 @@ export const artistGroups: ArtistGroup[] = [
     artists: [
       {
         name: "兵庫県立大学西支部ロック部",
+        copyArtists: ["ヨルシカ"],
         socials: {
           instagram: "https://www.instagram.com/uh_rock/",
           x: "https://x.com/UH_ROCK69",
@@ -172,9 +187,24 @@ export const artistGroups: ArtistGroup[] = [
       },
       {
         name: "兵庫県立大学東支部軽音楽部",
+        copyArtists: ["SUNNY CAR WASH"],
         socials: {
           instagram: "https://www.instagram.com/kendai.keion/",
           x: "https://x.com/kendai_keion_",
+        },
+      },
+    ],
+  },
+  {
+    university: "京都大学",
+    artists: [
+      {
+        name: "ZETS",
+        copyArtists: ["君島大空合奏形態"],
+        socials: {
+          instagram: "https://www.instagram.com/zets.official/",
+          x: "https://x.com/KyodaiZETS",
+          youtube: "https://www.youtube.com/@zets3990",
         },
       },
     ],

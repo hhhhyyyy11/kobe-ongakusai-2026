@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { HeroBackgroundSlideshow } from "./HeroBackgroundSlideshow";
 import { HeroComingSoonLinks } from "./HeroComingSoonLinks";
+import { eventInfo } from "@/constants/event";
 
 export function HeroSection() {
   return (
@@ -58,7 +59,12 @@ export function HeroSection() {
           <div className="mb-5 grid w-full max-w-3xl gap-2 text-base font-black sm:mb-8 sm:gap-3 md:grid-cols-2 md:text-xl">
             <div className="flex items-center justify-center gap-3 rounded-2xl border-2 border-white/50 bg-black/35 px-4 py-3 shadow-xl backdrop-blur-md sm:px-5 sm:py-4">
               <FaCalendarAlt className="text-2xl text-kobe-yellow md:text-3xl" />
-              <span>2026年8月21日（金）</span>
+              <span>
+                {eventInfo.dateLabel}
+                <span className="mt-1 block text-sm sm:text-base md:text-lg">
+                  {eventInfo.timeLabel}
+                </span>
+              </span>
             </div>
             <div className="flex items-center justify-center gap-3 rounded-2xl border-2 border-white/50 bg-black/35 px-4 py-3 shadow-xl backdrop-blur-md sm:px-5 sm:py-4">
               <FaMapMarkerAlt className="text-2xl text-kobe-yellow md:text-3xl" />
