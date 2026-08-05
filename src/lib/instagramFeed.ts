@@ -61,6 +61,12 @@ function extractMediaFields(value: string) {
   };
 }
 
+function extractParentShortcode(value: string): string | undefined {
+  const parentHeader = value.match(/^"shortcode_media":\s*\{([^{}]*)/)?.[1];
+
+  return parentHeader?.match(/"shortcode":"([^"]+)"/)?.[1];
+}
+
 export function extractInstagramFeed(html: string): InstagramFeedPost[] {
   const normalizedHtml = html.replace(/\\"/g, '"');
   const mediaMarker = '"shortcode_media":';
@@ -104,9 +110,10 @@ export function extractInstagramFeed(html: string): InstagramFeedPost[] {
       nextMarkerIndex === -1 ? undefined : nextMarkerIndex
     );
     const parentMedia = extractMediaFields(mediaSection);
+    const parentShortcode = extractParentShortcode(mediaSection);
 
-    if (parentMedia) {
-      addPost(parentMedia);
+    if (parentMedia && parentShortcode) {
+      addPost({ ...parentMedia, shortcode: parentShortcode });
     }
 
     if (nextMarkerIndex === -1) {
