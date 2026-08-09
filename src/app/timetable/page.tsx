@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { FaMusic, FaClock } from "react-icons/fa";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
+import { TimetablePoster } from "@/components/TimetablePoster";
+import { TimetableSchedule } from "@/components/TimetableSchedule";
 import { WavePattern } from "@/components/WavePattern";
 import { createPageMetadata } from "@/lib/metadata";
 import { eventInfo } from "@/constants/event";
 
 export const metadata: Metadata = createPageMetadata({
   title: "タイムテーブル｜神戸音学祭2026",
-  description: `神戸音学祭2026は${eventInfo.dateTimeLabel}に開催します。出演スケジュールや演奏時間は、決定次第お知らせします。`,
+  description: `神戸音学祭2026は${eventInfo.dateTimeLabel}に開催します。全21組の出演スケジュールと各団体の公式SNSをご案内します。`,
   path: "/timetable",
 });
 
@@ -76,20 +77,39 @@ function SetListPage() {
         </div>
       </section>
 
-      {/* Performance Schedule */}
-      <section className="py-16 bg-white relative">
-        <div className="max-w-4xl mx-auto px-4 pt-4">
-          <div className="text-center py-20">
-            <div className="border-2 border-dashed border-gray-300 rounded-2xl p-12 bg-gray-50">
-              <FaMusic className="text-6xl text-gray-300 mx-auto mb-6" />
-              <p className="text-2xl font-black text-kobe-dark-teal mb-2">
-                タイムテーブルは近日公開
-              </p>
-              <p className="text-kobe-gray font-bold">
-                演奏スケジュールは決定次第お知らせします
-              </p>
-            </div>
+      {/* 公式タイムテーブル画像 */}
+      <section className="relative bg-white py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-black text-kobe-dark-teal md:text-4xl">
+              公式タイムテーブル
+            </h2>
+            <p className="mt-3 font-bold text-gray-600">
+              画像をタップすると拡大できます。保存して当日もご活用ください。
+            </p>
           </div>
+
+          <TimetablePoster priority />
+        </div>
+      </section>
+
+      {/* Performance Schedule */}
+      <section className="relative bg-kobe-light-blue py-20">
+        <WavePattern fillColor="#94cef5" backgroundColor="bg-white" />
+
+        <div className="mx-auto max-w-6xl px-4 pt-12">
+          <div className="mb-10 text-center">
+            <div className="mb-5 inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-7 py-3 text-white">
+              <h2 className="text-3xl font-black md:text-4xl">
+                出演スケジュール
+              </h2>
+            </div>
+            <p className="font-bold leading-relaxed text-kobe-dark-teal md:text-lg">
+              気になる出演内容を選ぶと、出演団体の詳細と公式SNSを確認できます。
+            </p>
+          </div>
+
+          <TimetableSchedule />
         </div>
       </section>
 

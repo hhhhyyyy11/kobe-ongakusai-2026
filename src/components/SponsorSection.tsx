@@ -1,7 +1,9 @@
 import React from "react";
+import Image from "next/image";
 import { FaHandshake } from "react-icons/fa";
 import { SupporterCard } from "./SupporterCard";
 import { WavePattern } from "./WavePattern";
+import { featuredSponsors } from "@/constants/sponsors";
 
 export function SponsorSection() {
   return (
@@ -52,14 +54,49 @@ export function SponsorSection() {
               </p>
             </div>
 
-            {/* 協賛・協力 — Coming Soon */}
-            <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 bg-gray-50">
-              <div className="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-1 rounded-full mb-3">
-                <p className="text-xl font-black text-white">Coming Soon</p>
+            <div className="mt-10 border-t-2 border-gray-200 pt-10">
+              <div className="mb-8 inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-2">
+                <h3 className="text-2xl font-black text-white">特別協賛</h3>
               </div>
-              <p className="text-gray-500 font-bold text-sm">
-                協賛企業・団体は決定次第掲載いたします
-              </p>
+
+              <div className="grid gap-10">
+                {featuredSponsors.map((sponsor) => (
+                  <article
+                    key={sponsor.name}
+                    className="overflow-hidden rounded-3xl border-4 border-kobe-orange bg-gradient-to-br from-white via-white to-orange-50 p-4 shadow-xl sm:p-7"
+                  >
+                    <div className="mb-6 text-center">
+                      <p className="mb-2 text-xs font-black tracking-[0.28em] text-kobe-orange">
+                        SPECIAL SPONSOR
+                      </p>
+                      <h4 className="text-2xl leading-tight font-black text-kobe-dark-teal sm:text-3xl">
+                        {sponsor.name}
+                      </h4>
+                    </div>
+
+                    <div className="grid items-center gap-7 lg:grid-cols-2">
+                      <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-3 shadow-inner">
+                        <Image
+                          src={sponsor.image.src}
+                          alt={sponsor.image.alt}
+                          width={sponsor.image.width}
+                          height={sponsor.image.height}
+                          sizes="(min-width: 1024px) 480px, 90vw"
+                          className="h-auto max-h-[38rem] w-full object-contain"
+                        />
+                      </div>
+
+                      <div className="space-y-4 text-left text-base leading-relaxed font-bold text-gray-700 sm:text-lg">
+                        {sponsor.paragraphs.map((paragraph) => (
+                          <p key={paragraph} className="whitespace-pre-line">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>

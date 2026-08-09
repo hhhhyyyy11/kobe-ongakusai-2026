@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: siteName,
   description:
-    "2026年8月21日開催決定！学生主催の野外音楽フェス「神戸音学祭」が今年も神戸「TOTTEI PARK」にて開催。詳細は近日発表！",
+    "2026年8月21日開催！学生主催の野外音楽フェス「神戸音学祭」を神戸「TOTTEI PARK」にて開催。出演団体・タイムテーブル公開中！",
   applicationName: siteName,
   keywords: [
     siteName,
