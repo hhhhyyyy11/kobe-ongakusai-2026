@@ -1,7 +1,15 @@
 import { FaChevronDown, FaClock, FaMusic } from "react-icons/fa";
 import { ArtistSocialLinks } from "./ArtistSocialLinks";
 import { getArtistById } from "@/constants/bands";
+import { eventInfo } from "@/constants/event";
 import { timetableEntries } from "@/constants/timetable";
+
+const eventDate = eventInfo.startDate.slice(0, 10);
+const eventTimezone = eventInfo.startDate.slice(-6);
+
+function getEntryDateTime(startTime: string) {
+  return `${eventDate}T${startTime}:00${eventTimezone}`;
+}
 
 export function TimetableSchedule() {
   return (
@@ -14,7 +22,7 @@ export function TimetableSchedule() {
               className="flex items-center justify-center gap-3 rounded-2xl bg-sky-500 px-5 py-3 font-black text-white shadow-md"
             >
               <FaClock aria-hidden="true" />
-              <time dateTime={`2026-08-21T${entry.startTime}:00+09:00`}>
+              <time dateTime={getEntryDateTime(entry.startTime)}>
                 {entry.startTime}
               </time>
               <span>{entry.label}</span>
@@ -30,7 +38,7 @@ export function TimetableSchedule() {
             <details className="group overflow-hidden rounded-2xl border-2 border-kobe-dark-teal bg-white shadow-md transition-shadow open:shadow-xl">
               <summary className="flex cursor-pointer list-none items-center gap-4 p-4 text-left transition-colors hover:bg-kobe-yellow-light focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-orange-500 [&::-webkit-details-marker]:hidden sm:p-5">
                 <time
-                  dateTime={`2026-08-21T${entry.startTime}:00+09:00`}
+                  dateTime={getEntryDateTime(entry.startTime)}
                   className="shrink-0 rounded-xl bg-kobe-dark-teal px-3 py-2 text-lg font-black text-white sm:text-xl"
                 >
                   {entry.startTime}

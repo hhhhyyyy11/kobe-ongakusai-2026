@@ -87,8 +87,11 @@ export function SponsorSection() {
                       </div>
 
                       <div className="space-y-4 text-left text-base leading-relaxed font-bold text-gray-700 sm:text-lg">
-                        {sponsor.paragraphs.map((paragraph) => (
-                          <p key={paragraph} className="whitespace-pre-line">
+                        {sponsor.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p
+                            key={`${sponsor.name}-${paragraphIndex}`}
+                            className="whitespace-pre-line"
+                          >
                             {paragraph}
                           </p>
                         ))}
