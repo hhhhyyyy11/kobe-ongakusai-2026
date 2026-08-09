@@ -72,25 +72,27 @@ export function TimetableSchedule() {
                     {artist.university}
                   </p>
 
-                  <div className="mt-5">
-                    <p className="text-sm font-black tracking-wide text-kobe-orange">
-                      この団体の出演内容
-                    </p>
-                    <div className="mt-3 flex flex-wrap justify-center gap-2">
-                      {artist.copyArtists.map((copyArtist) => (
-                        <span
-                          key={copyArtist}
-                          className={`rounded-full px-3 py-1.5 text-sm font-black shadow-sm ${
-                            copyArtist === entry.copyArtist
-                              ? "bg-gradient-to-r from-yellow-300 to-orange-400 text-kobe-dark-teal"
-                              : "bg-white text-kobe-dark-teal ring-1 ring-gray-200"
-                          }`}
-                        >
-                          {copyArtist}
-                        </span>
-                      ))}
+                  {artist.copyArtists.length > 1 && (
+                    <div className="mt-5">
+                      <p className="text-sm font-black tracking-wide text-kobe-orange">
+                        この団体の出演内容
+                      </p>
+                      <div className="mt-3 flex flex-wrap justify-center gap-2">
+                        {artist.copyArtists.map((copyArtist) => (
+                          <span
+                            key={copyArtist}
+                            className={`rounded-full px-3 py-1.5 text-sm font-black shadow-sm ${
+                              copyArtist === entry.copyArtist
+                                ? "bg-gradient-to-r from-yellow-300 to-orange-400 text-kobe-dark-teal"
+                                : "bg-white text-kobe-dark-teal ring-1 ring-gray-200"
+                            }`}
+                          >
+                            {copyArtist}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   <div className="mt-6">
                     <p className="mb-3 text-sm font-black text-kobe-dark-teal">
