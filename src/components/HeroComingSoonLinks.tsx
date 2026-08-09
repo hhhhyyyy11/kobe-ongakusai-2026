@@ -11,11 +11,9 @@ export function HeroComingSoonLinks() {
       </Link>
       <Link
         href="/timetable"
-        aria-disabled="true"
-        tabIndex={-1}
-        className="pointer-events-none rounded-full border-2 border-orange-300 bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-3 text-base font-black text-white opacity-80 shadow-xl sm:px-8 sm:py-4 sm:text-lg md:text-xl"
+        className="rounded-full border-2 border-orange-300 bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-3 text-base font-black text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:from-yellow-300 hover:to-orange-400 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-8 sm:py-4 sm:text-lg md:text-xl"
       >
-        タイムテーブル（Coming Soon）
+        タイムテーブルを見る
       </Link>
     </div>
   );

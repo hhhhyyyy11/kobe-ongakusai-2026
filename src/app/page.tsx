@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { TicketSection } from "@/components/TicketSection";
 import { SponsorSection } from "@/components/SponsorSection";
 import { CrowdfundingSection } from "@/components/CrowdfundingSection";
+import { HomeTimetableSection } from "@/components/HomeTimetableSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { eventInfo } from "@/constants/event";
 
@@ -28,6 +29,9 @@ function MainComponent() {
 
       {/* Ticket Section */}
       <TicketSection />
+
+      {/* Timetable Section */}
+      <HomeTimetableSection />
 
       {/* SNS Section */}
       <SNSSection />
