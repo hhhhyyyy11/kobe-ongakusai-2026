@@ -159,8 +159,8 @@ export const FlyerSection: React.FC = () => {
         imageSrc="/images/timetable.jpg"
         imageAlt="神戸音学祭タイムテーブル"
         downloadFileName="神戸音学祭_タイムテーブル.jpg"
-        width={800}
-        height={1132}
+        width={1144}
+        height={1430}
       />
     </>
   );

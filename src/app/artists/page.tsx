@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { FaInstagram, FaUsers, FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaUsers } from "react-icons/fa";
+import { ArtistSocialLinks } from "@/components/ArtistSocialLinks";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
 import { WavePattern } from "@/components/WavePattern";
-import { artistGroups, type ArtistSocials } from "@/constants/bands";
+import { artists } from "@/constants/bands";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -14,40 +14,6 @@ export const metadata: Metadata = createPageMetadata({
     "神戸音学祭2026に出演する関西圏10大学16団体・21バンドと、各団体の公式SNS、コピーするアーティストをご紹介します。",
   path: "/artists",
 });
-
-const socialPlatforms = [
-  {
-    key: "instagram",
-    label: "Instagram",
-    icon: FaInstagram,
-    className:
-      "bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500",
-  },
-  {
-    key: "x",
-    label: "X",
-    icon: FaXTwitter,
-    className: "bg-black hover:bg-gray-800",
-  },
-  {
-    key: "youtube",
-    label: "YouTube",
-    icon: FaYoutube,
-    className: "bg-red-600 hover:bg-red-700",
-  },
-] as const satisfies ReadonlyArray<{
-  key: keyof ArtistSocials;
-  label: string;
-  icon: typeof FaInstagram;
-  className: string;
-}>;
-
-const artists = artistGroups.flatMap((group) =>
-  group.artists.map((artist) => ({
-    ...artist,
-    university: group.university,
-  }))
-);
 
 export default function ArtistsPage() {
   return (
@@ -109,30 +75,11 @@ export default function ArtistsPage() {
                   </div>
 
                   {artist.socials && (
-                    <div className="mt-5 flex justify-center gap-3">
-                      {socialPlatforms.map((platform) => {
-                        const href = artist.socials?.[platform.key];
-
-                        if (!href) {
-                          return null;
-                        }
-
-                        const Icon = platform.icon;
-
-                        return (
-                          <a
-                            key={platform.key}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${artist.university} ${artist.name}の${platform.label}を新しいタブで開く`}
-                            title={platform.label}
-                            className={`rounded-full p-3 text-white shadow-md transition-all duration-300 hover:scale-110 ${platform.className}`}
-                          >
-                            <Icon className="text-lg" aria-hidden="true" />
-                          </a>
-                        );
-                      })}
+                    <div className="mt-5">
+                      <ArtistSocialLinks
+                        socials={artist.socials}
+                        labelPrefix={`${artist.university} ${artist.name}`}
+                      />
                     </div>
                   )}
                 </li>

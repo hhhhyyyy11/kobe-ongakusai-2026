@@ -53,6 +53,9 @@ export const ImageModal: React.FC<ImageModalProps> = ({
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-2 md:p-4"
       onClick={handleModalClick}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${imageAlt}の拡大表示`}
     >
       <div className="relative w-full h-full max-w-6xl max-h-full flex flex-col">
         {/* 閉じるボタン */}
@@ -60,6 +63,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({
           onClick={onClose}
           className="absolute top-2 right-2 md:top-4 md:right-4 bg-white text-gray-800 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg z-10"
           title="閉じる"
+          aria-label="拡大画像を閉じる"
         >
           <FaTimes className="text-xl" />
         </button>
