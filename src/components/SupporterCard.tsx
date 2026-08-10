@@ -30,7 +30,6 @@ export function SupporterCard({ name, image }: SupporterCardProps) {
           alt={name}
           width={image.width}
           height={image.height}
-          loading="eager"
           className="h-40 w-auto object-contain md:h-52"
         />
       ) : (
