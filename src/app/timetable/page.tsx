@@ -63,34 +63,14 @@ function SetListPage() {
                 <FaMusic className="text-kobe-orange" />
               </div>
               <h2 className="mb-5 text-xl leading-snug font-black text-kobe-dark-teal sm:text-2xl">
-                <span className="block sm:inline">多彩なジャンルの</span>{" "}
-                <span className="block sm:inline">コピーバンドライブ</span>
+                多彩なジャンルのコピーバンドライブ
               </h2>
               <div className="mx-auto max-w-3xl space-y-3 text-left text-base leading-loose font-bold text-kobe-dark-teal sm:text-center sm:text-lg">
+                <p>各団体が、さまざまなアーティストのコピー曲を披露します。</p>
                 <p>
-                  <span className="block sm:inline">
-                    各団体が、さまざまなアーティストの
-                  </span>
-                  <span className="block sm:inline">
-                    コピー曲を披露します。
-                  </span>
+                  誰もが知る有名アーティストから、知る人ぞ知るニッチな音楽まで。
                 </p>
-                <p>
-                  <span className="block sm:inline">
-                    誰もが知る有名アーティストから、
-                  </span>
-                  <span className="block sm:inline">
-                    知る人ぞ知るニッチな音楽まで。
-                  </span>
-                </p>
-                <p>
-                  <span className="block sm:inline">
-                    ジャンルを問わず、多彩な演奏を
-                  </span>
-                  <span className="block sm:inline">
-                    お楽しみいただけます。
-                  </span>
-                </p>
+                <p>ジャンルを問わず、多彩な演奏をお楽しみいただけます。</p>
               </div>
             </div>
           </div>
