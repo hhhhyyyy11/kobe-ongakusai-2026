@@ -42,18 +42,18 @@ export function Header() {
               alt="Kobe Ongakusai Logo"
               width={144}
               height={144}
-              className="lg:w-18 lg:h-18 w-14 h-14 rounded-full"
+              className="h-14 w-14 rounded-full 2xl:h-18 2xl:w-18"
             />
             <Image
               src="/images/title_dark_teal.png"
               alt="神戸音学祭"
               width={384}
               height={128}
-              className="object-contain object-center lg:w-48 lg:h-16 w-36 h-12"
+              className="h-12 w-36 object-contain object-center 2xl:h-16 2xl:w-48"
             />
           </Link>
 
-          <div className="ml-4 hidden flex-nowrap justify-end gap-2 xl:flex 2xl:gap-3">
+          <div className="ml-2 hidden flex-nowrap justify-end gap-1 lg:flex xl:ml-3 xl:gap-2 2xl:ml-4 2xl:gap-3">
             {navigationItems.map((item) => {
               const active = isActive(item.href);
 
@@ -62,9 +62,9 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full border-2 px-3 py-3 text-sm font-black transition-all duration-300 2xl:px-4 2xl:text-base ${
+                  className={`rounded-full border-2 px-2 py-2.5 text-xs font-black transition-all duration-300 xl:px-3 xl:py-3 xl:text-sm 2xl:px-4 2xl:text-base ${
                     active
-                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
+                      ? "transform border-orange-400 bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg 2xl:scale-105"
                       : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
                   }`}
                 >
@@ -77,7 +77,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`transform rounded-lg p-2 transition-all duration-300 xl:hidden ${
+            className={`transform rounded-lg p-2 transition-all duration-300 lg:hidden ${
               isMobileMenuOpen
                 ? "bg-gray-800 scale-105 border-2 border-orange-400"
                 : "bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-110 border-2 border-orange-400"
@@ -93,7 +93,7 @@ export function Header() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`transition-all duration-500 ease-in-out xl:hidden ${
+          className={`transition-all duration-500 ease-in-out lg:hidden ${
             isMobileMenuOpen
               ? "max-h-[calc(100vh-5rem)] overflow-y-auto opacity-100"
               : "max-h-0 overflow-hidden opacity-0"
