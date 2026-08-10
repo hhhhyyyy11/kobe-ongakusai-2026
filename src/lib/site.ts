@@ -33,6 +33,10 @@ export const siteRoutes = [
     priority: 0.7,
   },
   {
+    path: "/sponsors",
+    priority: 0.7,
+  },
+  {
     path: "/access",
     priority: 0.8,
   },
