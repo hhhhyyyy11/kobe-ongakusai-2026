@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaArrowRight, FaHandshake } from "react-icons/fa";
+import { SupporterCard } from "./SupporterCard";
 import { WavePattern } from "./WavePattern";
 import { featuredSponsors, supporters } from "@/constants/sponsors";
 
@@ -23,28 +24,36 @@ export function SponsorSection() {
               <FaHandshake className="text-kobe-dark-teal" />
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-kobe-light-blue/20 p-5 sm:p-6">
-                <div className="mb-4 inline-block rounded-full bg-kobe-dark-teal px-6 py-2">
-                  <h3 className="text-xl font-black text-white">後援</h3>
-                </div>
-                <ul className="space-y-3 text-lg font-black text-kobe-dark-teal sm:text-xl">
-                  {supporters.map((supporter) => (
-                    <li key={supporter.name}>{supporter.name}</li>
-                  ))}
-                </ul>
+            <div className="mb-8">
+              <div className="mb-5 inline-block rounded-full bg-kobe-dark-teal px-6 py-2">
+                <h3 className="text-2xl font-black text-white">後援</h3>
               </div>
 
-              <div className="rounded-2xl bg-orange-50 p-5 sm:p-6">
-                <div className="mb-4 inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-2">
-                  <h3 className="text-xl font-black text-white">特別協賛</h3>
-                </div>
-                <ul className="space-y-3 text-lg font-black leading-snug text-kobe-dark-teal sm:text-xl">
-                  {featuredSponsors.map((sponsor) => (
-                    <li key={sponsor.name}>{sponsor.name}</li>
-                  ))}
-                </ul>
+              <div className="grid gap-6 md:grid-cols-3">
+                {supporters.map((supporter) => (
+                  <SupporterCard
+                    key={supporter.name}
+                    name={supporter.name}
+                    image={supporter.image}
+                  />
+                ))}
               </div>
+
+              <p className="mt-5 rounded-2xl border border-kobe-dark-teal bg-kobe-light-blue/20 px-4 py-3 text-sm leading-relaxed font-bold text-kobe-dark-teal">
+                この事業は、令和 8 年度
+                神戸市地域貢献活動補助金を受けて実施しています。
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-orange-50 p-5 sm:p-6">
+              <div className="mb-4 inline-block rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-6 py-2">
+                <h3 className="text-xl font-black text-white">特別協賛</h3>
+              </div>
+              <ul className="space-y-3 text-lg font-black leading-snug text-kobe-dark-teal sm:text-xl">
+                {featuredSponsors.map((sponsor) => (
+                  <li key={sponsor.name}>{sponsor.name}</li>
+                ))}
+              </ul>
             </div>
 
             <div className="mt-8">
