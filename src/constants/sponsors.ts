@@ -1,12 +1,16 @@
 export interface FeaturedSponsor {
   name: string;
-  image: {
+  image?: {
     src: string;
     width: number;
     height: number;
     alt: string;
   };
-  paragraphs: string[];
+  paragraphs?: string[];
+}
+
+export interface GoodsSponsor {
+  name: string;
 }
 
 export interface Supporter {
@@ -39,7 +43,7 @@ export const sponsorContactEmail = "ongakusai.kobe@gmail.com";
 
 /**
  * 公式サイトで特別枠として紹介する協賛企業・団体。
- * 素材がそろった企業のみを追加し、配列順で掲載する。
+ * 紹介素材がない場合は名称のみを設定し、配列順で掲載する。
  */
 export const featuredSponsors: FeaturedSponsor[] = [
   {
@@ -72,5 +76,18 @@ export const featuredSponsors: FeaturedSponsor[] = [
       "神戸の海辺で、美味しい料理と心地よい音楽に包まれる時間を。",
       "「TOOTH MART」で、神戸音学祭の余韻まで楽しむ特別なひとときをお過ごしください。",
     ],
+  },
+  {
+    name: "Studio246",
+  },
+];
+
+/** 物品提供で神戸音学祭をご支援いただいている企業。 */
+export const goodsSponsors: GoodsSponsor[] = [
+  {
+    name: "富永貿易",
+  },
+  {
+    name: "株式会社トーラク",
   },
 ];

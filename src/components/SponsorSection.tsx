@@ -3,7 +3,11 @@ import Link from "next/link";
 import { FaArrowRight, FaHandshake } from "react-icons/fa";
 import { SupporterCard } from "./SupporterCard";
 import { WavePattern } from "./WavePattern";
-import { featuredSponsors, supporters } from "@/constants/sponsors";
+import {
+  featuredSponsors,
+  goodsSponsors,
+  supporters,
+} from "@/constants/sponsors";
 
 export function SponsorSection() {
   return (
@@ -52,6 +56,22 @@ export function SponsorSection() {
               <ul className="space-y-3 text-lg font-black leading-snug text-kobe-dark-teal sm:text-xl">
                 {featuredSponsors.map((sponsor) => (
                   <li key={sponsor.name}>{sponsor.name}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-kobe-light-blue/20 p-5 sm:p-6">
+              <div className="mb-4 inline-block rounded-full bg-kobe-dark-teal px-6 py-2">
+                <h3 className="text-xl font-black text-white">物品協賛</h3>
+              </div>
+              <ul className="grid gap-3 text-lg font-black leading-snug text-kobe-dark-teal sm:grid-cols-2 sm:text-xl">
+                {goodsSponsors.map((sponsor) => (
+                  <li
+                    key={sponsor.name}
+                    className="rounded-xl border-2 border-kobe-dark-teal/20 bg-white px-4 py-3"
+                  >
+                    {sponsor.name}
+                  </li>
                 ))}
               </ul>
             </div>

@@ -8,6 +8,7 @@ import { SupporterCard } from "@/components/SupporterCard";
 import { WavePattern } from "@/components/WavePattern";
 import {
   featuredSponsors,
+  goodsSponsors,
   sponsorContactEmail,
   supporters,
 } from "@/constants/sponsors";
@@ -16,7 +17,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "スポンサー｜神戸音学祭2026",
   description:
-    "神戸音学祭2026をご支援いただいている後援団体・特別協賛企業と、協賛に関するお問い合わせ先をご紹介します。",
+    "神戸音学祭2026をご支援いただいている後援団体・特別協賛企業・物品協賛企業と、協賛に関するお問い合わせ先をご紹介します。",
   path: "/sponsors",
 });
 
@@ -80,43 +81,80 @@ function SponsorsPage() {
             </div>
 
             <div className="grid gap-10">
-              {featuredSponsors.map((sponsor) => (
+              {featuredSponsors.map((sponsor) => {
+                const { image, paragraphs } = sponsor;
+                const hasDetails = image && paragraphs;
+
+                return (
+                  <article
+                    key={sponsor.name}
+                    className="overflow-hidden rounded-3xl border-4 border-kobe-orange bg-gradient-to-br from-white via-white to-orange-50 p-4 shadow-xl sm:p-7"
+                  >
+                    <div
+                      className={
+                        hasDetails ? "mb-6 text-center" : "text-center"
+                      }
+                    >
+                      <p className="mb-2 text-xs font-black tracking-[0.28em] text-kobe-orange">
+                        SPECIAL SPONSOR
+                      </p>
+                      <h3 className="text-2xl leading-tight font-black text-kobe-dark-teal sm:text-3xl">
+                        {sponsor.name}
+                      </h3>
+                    </div>
+
+                    {image && paragraphs && (
+                      <div className="grid items-center gap-7 lg:grid-cols-2">
+                        <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-3 shadow-inner">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            sizes="(min-width: 1024px) 480px, 90vw"
+                            className="h-auto max-h-[38rem] w-full object-contain"
+                          />
+                        </div>
+
+                        <div className="space-y-4 text-left text-base leading-relaxed font-bold text-gray-700 sm:text-lg">
+                          {paragraphs.map((paragraph, paragraphIndex) => (
+                            <p
+                              key={`${sponsor.name}-${paragraphIndex}`}
+                              className="whitespace-pre-line"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-8 text-center">
+              <div className="inline-block rounded-full bg-kobe-dark-teal px-7 py-3">
+                <h2 className="text-3xl font-black text-white md:text-4xl">
+                  物品協賛
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              {goodsSponsors.map((sponsor) => (
                 <article
                   key={sponsor.name}
-                  className="overflow-hidden rounded-3xl border-4 border-kobe-orange bg-gradient-to-br from-white via-white to-orange-50 p-4 shadow-xl sm:p-7"
+                  className="rounded-3xl border-4 border-kobe-dark-teal bg-kobe-light-blue/20 p-7 text-center shadow-xl sm:p-9"
                 >
-                  <div className="mb-6 text-center">
-                    <p className="mb-2 text-xs font-black tracking-[0.28em] text-kobe-orange">
-                      SPECIAL SPONSOR
-                    </p>
-                    <h3 className="text-2xl leading-tight font-black text-kobe-dark-teal sm:text-3xl">
-                      {sponsor.name}
-                    </h3>
-                  </div>
-
-                  <div className="grid items-center gap-7 lg:grid-cols-2">
-                    <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-gray-200 bg-white p-3 shadow-inner">
-                      <Image
-                        src={sponsor.image.src}
-                        alt={sponsor.image.alt}
-                        width={sponsor.image.width}
-                        height={sponsor.image.height}
-                        sizes="(min-width: 1024px) 480px, 90vw"
-                        className="h-auto max-h-[38rem] w-full object-contain"
-                      />
-                    </div>
-
-                    <div className="space-y-4 text-left text-base leading-relaxed font-bold text-gray-700 sm:text-lg">
-                      {sponsor.paragraphs.map((paragraph, paragraphIndex) => (
-                        <p
-                          key={`${sponsor.name}-${paragraphIndex}`}
-                          className="whitespace-pre-line"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="mb-2 text-xs font-black tracking-[0.28em] text-kobe-dark-teal">
+                    GOODS SPONSOR
+                  </p>
+                  <h3 className="text-2xl leading-tight font-black text-kobe-dark-teal sm:text-3xl">
+                    {sponsor.name}
+                  </h3>
                 </article>
               ))}
             </div>
