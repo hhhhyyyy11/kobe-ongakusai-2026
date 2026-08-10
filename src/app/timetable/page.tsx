@@ -57,21 +57,21 @@ function SetListPage() {
         <WavePattern fillColor="white" backgroundColor="bg-kobe-light-blue" />
 
         <div className="max-w-4xl mx-auto px-4 pt-16">
-          <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8">
+          <div className="rounded-3xl border-4 border-kobe-dark-teal bg-white p-5 shadow-xl sm:p-8">
             <div className="text-center">
-              <div className="text-6xl mb-4 flex justify-center">
+              <div className="mb-4 flex justify-center text-5xl sm:text-6xl">
                 <FaMusic className="text-kobe-orange" />
               </div>
-              <h2 className="text-2xl font-black text-kobe-dark-teal mb-4">
+              <h2 className="mb-5 text-xl leading-snug font-black text-kobe-dark-teal sm:text-2xl">
                 多彩なジャンルのコピーバンドライブ
               </h2>
-              <p className="text-lg font-bold text-kobe-dark-teal leading-relaxed mb-6">
-                各団体によるアーティストのコピー曲披露
-                <br />
-                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
-                <br />
-                ジャンルを問わず多様な演奏をお楽しみいただけます
-              </p>
+              <div className="mx-auto max-w-3xl space-y-3 text-left text-base leading-loose font-bold text-kobe-dark-teal sm:text-center sm:text-lg">
+                <p>各団体が、さまざまなアーティストのコピー曲を披露します。</p>
+                <p>
+                  誰もが知る有名アーティストから、知る人ぞ知るニッチな音楽まで。
+                </p>
+                <p>ジャンルを問わず、多彩な演奏をお楽しみいただけます。</p>
+              </div>
             </div>
           </div>
         </div>

@@ -33,12 +33,12 @@ export const siteRoutes = [
     priority: 0.7,
   },
   {
-    path: "/access",
-    priority: 0.8,
+    path: "/sponsors",
+    priority: 0.7,
   },
   {
-    path: "/archive",
-    priority: 0.5,
+    path: "/access",
+    priority: 0.8,
   },
 ] as const;
 
