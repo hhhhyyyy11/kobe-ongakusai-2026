@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaCalendarAlt,
+  FaExternalLinkAlt,
+  FaHandshake,
+  FaImages,
+  FaMicrophone,
+  FaMusic,
+  FaStar,
+} from "react-icons/fa";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { DecorativeNotes } from "@/components/DecorativeNotes";
@@ -10,9 +19,37 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "神戸音学祭とは｜神戸音学祭2026",
   description:
-    "神戸音学祭は、学生音楽から神戸市を盛り上げることを目指す学生主催の野外音楽フェスです。企画の背景、コンセプト、学生主体の運営体制を紹介します。",
+    "神戸音学祭は、学生音楽から神戸市を盛り上げることを目指す学生主催の野外音楽フェスです。企画の背景、コンセプト、過去の開催や写真をご紹介します。",
   path: "/about",
 });
+
+const pastEvents = [
+  {
+    year: "2025",
+    title: "神戸音学祭 2025",
+    url: "https://kobe-ongakusai-2025.vercel.app/",
+    description:
+      "神戸音学祭の初開催ページです。学生がつくる野外音楽フェスの雰囲気や、当日の開催情報を振り返れます。",
+  },
+];
+
+const archiveImages = [
+  "/images/archive/S__21094535_0.jpg",
+  "/images/archive/S__21094536_0.jpg",
+  "/images/archive/S__21094538_0.jpg",
+  "/images/archive/S__21094539_0.jpg",
+  "/images/archive/S__21094540_0.jpg",
+  "/images/archive/S__21094541_0.jpg",
+  "/images/archive/S__21094542_0.jpg",
+  "/images/archive/S__21094543_0.jpg",
+  "/images/archive/S__21094544_0.jpg",
+  "/images/archive/S__21094546_0.jpg",
+  "/images/archive/S__21094547_0.jpg",
+  "/images/archive/S__21094548_0.jpg",
+  "/images/archive/S__21094549_0.jpg",
+  "/images/archive/S__21094550_0.jpg",
+  "/images/archive/S__21094551_0.jpg",
+];
 
 function AboutPage() {
   return (
@@ -175,6 +212,94 @@ function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Archive Section */}
+      <section
+        id="archive"
+        className="relative scroll-mt-24 bg-kobe-light-blue py-20"
+      >
+        <WavePattern fillColor="#94cef5" backgroundColor="bg-white" />
+
+        <div className="mx-auto max-w-7xl px-4 pt-16">
+          <div className="mb-16 text-center">
+            <div className="mb-6 flex justify-center">
+              <div className="rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 p-4">
+                <FaImages className="text-5xl text-white md:text-6xl" />
+              </div>
+            </div>
+            <h2 className="mb-4 text-3xl font-black text-kobe-dark-teal md:text-5xl">
+              過去の開催・アーカイブ
+            </h2>
+            <p className="mx-auto max-w-3xl text-base leading-relaxed font-bold text-kobe-dark-teal md:text-lg">
+              これまでに開催された神戸音学祭の記録と、会場の様子をご紹介します。
+            </p>
+          </div>
+
+          <div className="mb-16 grid gap-6 md:grid-cols-2">
+            {pastEvents.map((event) => (
+              <a
+                key={event.year}
+                href={event.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-3xl border-4 border-kobe-dark-teal bg-kobe-yellow-light p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              >
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-kobe-dark-teal px-4 py-2 text-sm font-black text-white">
+                      <FaCalendarAlt aria-hidden="true" />
+                      {event.year}年開催
+                    </div>
+                    <h3 className="mb-3 text-2xl font-black text-kobe-dark-teal md:text-3xl">
+                      {event.title}
+                    </h3>
+                    <p className="text-base leading-relaxed font-bold text-kobe-dark-teal">
+                      {event.description}
+                    </p>
+                  </div>
+
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white transition-transform duration-300 group-hover:translate-x-1">
+                    <FaExternalLinkAlt className="text-xl" aria-hidden="true" />
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center gap-2 text-sm font-black text-kobe-orange">
+                  2025年ページを見る
+                  <FaArrowRight aria-hidden="true" />
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="mb-10 text-center">
+            <h2 className="mb-4 text-3xl font-black text-kobe-dark-teal md:text-5xl">
+              フォトアーカイブ
+            </h2>
+            <p className="mx-auto max-w-3xl text-base leading-relaxed font-bold text-kobe-dark-teal md:text-lg">
+              会場の熱気や演奏の様子を写真で振り返ります。
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {archiveImages.map((src, index) => (
+              <div
+                key={src}
+                className="group overflow-hidden rounded-3xl border-4 border-kobe-dark-teal bg-gray-100 shadow-xl"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={src}
+                    alt={`神戸音学祭アーカイブ写真 ${index + 1}`}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -5,6 +5,5 @@ export const navigationItems = [
   { href: "/booths", label: "ブース" },
   { href: "/sponsors", label: "スポンサー" },
   { href: "/access", label: "アクセス・FAQ" },
-  { href: "/archive", label: "アーカイブ" },
   { href: "/about", label: "神戸音学祭とは" },
 ];

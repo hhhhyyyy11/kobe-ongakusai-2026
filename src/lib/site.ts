@@ -40,10 +40,6 @@ export const siteRoutes = [
     path: "/access",
     priority: 0.8,
   },
-  {
-    path: "/archive",
-    priority: 0.5,
-  },
 ] as const;
 
 export function absoluteUrl(path = "") {
