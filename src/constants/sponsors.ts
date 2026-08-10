@@ -9,6 +9,34 @@ export interface FeaturedSponsor {
   paragraphs: string[];
 }
 
+export interface Supporter {
+  name: string;
+  image?: {
+    src: string;
+    width: number;
+    height: number;
+  };
+}
+
+export const supporters: Supporter[] = [
+  {
+    name: "神戸市中央区役所",
+  },
+  {
+    name: "神戸新聞社",
+  },
+  {
+    name: "サンテレビ",
+    image: {
+      src: "/images/sponsors/suntv.png",
+      width: 859,
+      height: 612,
+    },
+  },
+];
+
+export const sponsorContactEmail = "ongakusai.kobe@gmail.com";
+
 /**
  * 公式サイトで特別枠として紹介する協賛企業・団体。
  * 素材がそろった企業のみを追加し、配列順で掲載する。
