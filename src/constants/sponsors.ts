@@ -78,16 +78,16 @@ export const featuredSponsors: FeaturedSponsor[] = [
     ],
   },
   {
-    name: "Studio246",
+    name: "株式会社ワイドウィンドウズ",
   },
 ];
 
 /** 物品提供で神戸音学祭をご支援いただいている企業。 */
 export const goodsSponsors: GoodsSponsor[] = [
   {
-    name: "富永貿易",
+    name: "富永貿易株式会社",
   },
   {
-    name: "株式会社トーラク",
+    name: "トーハク株式会社",
   },
 ];
