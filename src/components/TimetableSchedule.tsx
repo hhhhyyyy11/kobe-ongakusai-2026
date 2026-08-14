@@ -1,4 +1,4 @@
-import { FaChevronDown, FaClock, FaMusic } from "react-icons/fa";
+import { FaChevronDown, FaClock, FaInstagram, FaMusic } from "react-icons/fa";
 import { ArtistSocialLinks } from "./ArtistSocialLinks";
 import { getArtistById } from "@/constants/bands";
 import { eventInfo } from "@/constants/event";
@@ -91,6 +91,24 @@ export function TimetableSchedule() {
                           </span>
                         ))}
                       </div>
+                    </div>
+                  )}
+
+                  {entry.introVideoUrl && (
+                    <div className="mt-6">
+                      <p className="mb-3 text-sm font-black text-kobe-dark-teal">
+                        出演バンド紹介
+                      </p>
+                      <a
+                        href={entry.introVideoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${entry.copyArtist}（${labelPrefix}）の紹介動画をInstagramで新しいタブで開く`}
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-5 py-3 font-black text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-kobe-orange"
+                      >
+                        <FaInstagram className="text-xl" aria-hidden="true" />
+                        <span>Instagramで紹介動画を見る</span>
+                      </a>
                     </div>
                   )}
 

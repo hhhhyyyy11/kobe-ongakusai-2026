@@ -105,7 +105,7 @@ function SetListPage() {
               </h2>
             </div>
             <p className="font-bold leading-relaxed text-kobe-dark-teal md:text-lg">
-              気になる出演内容を選ぶと、出演団体の詳細と公式SNSを確認できます。
+              気になる出演内容を選ぶと、公開中の紹介動画や出演団体の詳細、公式SNSを確認できます。
             </p>
           </div>
 
