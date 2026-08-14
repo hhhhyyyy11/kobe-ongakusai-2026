@@ -5,6 +5,7 @@ export type TimetablePerformance = {
   startTime: string;
   copyArtist: string;
   artistId: ArtistId;
+  introVideoUrl?: string;
 };
 
 export type TimetableBreak = {
@@ -22,6 +23,7 @@ export const timetableEntries = [
     startTime: "10:00",
     copyArtist: "赤い公園",
     artistId: "konan-keion",
+    introVideoUrl: "https://www.instagram.com/reel/Db8ONPYSGnh/",
   },
   {
     kind: "performance",
@@ -34,6 +36,7 @@ export const timetableEntries = [
     startTime: "10:50",
     copyArtist: "SUNNY CAR WASH",
     artistId: "hyogo-east-keion",
+    introVideoUrl: "https://www.instagram.com/reel/Db8AVlUzMw-/",
   },
   {
     kind: "performance",
@@ -58,6 +61,7 @@ export const timetableEntries = [
     startTime: "12:30",
     copyArtist: "スピッツ",
     artistId: "kansai-keion-1",
+    introVideoUrl: "https://www.instagram.com/reel/Db-lPVlytDd/",
   },
   { kind: "break", startTime: "12:55", label: "休憩" },
   {
@@ -71,18 +75,21 @@ export const timetableEntries = [
     startTime: "13:35",
     copyArtist: "相対性理論",
     artistId: "konan-folk",
+    introVideoUrl: "https://www.instagram.com/reel/DcA8P-MSfpL/",
   },
   {
     kind: "performance",
     startTime: "14:00",
     copyArtist: "Age Factory",
     artistId: "konan-keion",
+    introVideoUrl: "https://www.instagram.com/reel/Db5N24yyd8v/",
   },
   {
     kind: "performance",
     startTime: "14:25",
     copyArtist: "NEE",
     artistId: "kobe-rock",
+    introVideoUrl: "https://www.instagram.com/reel/Db8HQiISRTS/",
   },
   {
     kind: "performance",
@@ -95,6 +102,7 @@ export const timetableEntries = [
     startTime: "15:15",
     copyArtist: "Nagakumo",
     artistId: "doshisha-hinatabokko",
+    introVideoUrl: "https://www.instagram.com/reel/Db5bmasyUcx/",
   },
   {
     kind: "performance",
@@ -108,6 +116,7 @@ export const timetableEntries = [
     startTime: "16:20",
     copyArtist: "君島大空合奏形態",
     artistId: "kyoto-zets",
+    introVideoUrl: "https://www.instagram.com/reel/Db-Xch_ylwS/",
   },
   {
     kind: "performance",
@@ -132,12 +141,14 @@ export const timetableEntries = [
     startTime: "18:00",
     copyArtist: "Larry Carlton",
     artistId: "kobe-keion-iii",
+    introVideoUrl: "https://www.instagram.com/reel/Db5pUoySNVB/",
   },
   {
     kind: "performance",
     startTime: "18:25",
     copyArtist: "きのこ帝国",
     artistId: "kobe-design-oton",
+    introVideoUrl: "https://www.instagram.com/reel/Db-y9GOS6rU/",
   },
   {
     kind: "performance",
