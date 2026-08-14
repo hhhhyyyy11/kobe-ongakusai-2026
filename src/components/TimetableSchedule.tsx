@@ -104,7 +104,7 @@ export function TimetableSchedule() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${entry.copyArtist}（${labelPrefix}）の紹介動画をInstagramで新しいタブで開く`}
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-5 py-3 font-black text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-kobe-orange"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-5 py-3 font-black text-white shadow-md transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-[color:var(--kobe-orange)]"
                       >
                         <FaInstagram className="text-xl" aria-hidden="true" />
                         <span>Instagramで紹介動画を見る</span>
