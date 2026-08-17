@@ -80,9 +80,9 @@ export const featuredSponsors: FeaturedSponsor[] = [
   {
     name: "株式会社ワイドウィンドウズ",
     image: {
-      src: "/images/sponsors/wide-windows.png",
+      src: "/images/sponsors/wide-windows.jpg",
       width: 1024,
-      height: 609,
+      height: 582,
       alt: "株式会社ワイドウィンドウズ",
     },
     paragraphs: [
