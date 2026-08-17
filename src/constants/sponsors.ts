@@ -11,6 +11,13 @@ export interface FeaturedSponsor {
 
 export interface GoodsSponsor {
   name: string;
+  image?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
+  paragraphs?: string[];
 }
 
 export interface Supporter {
@@ -100,6 +107,16 @@ export const goodsSponsors: GoodsSponsor[] = [
     name: "富永貿易株式会社",
   },
   {
-    name: "トーハク株式会社",
+    name: "トーラク株式会社",
+    image: {
+      src: "/images/sponsors/toraku.jpg",
+      width: 884,
+      height: 1024,
+      alt: "トーラク株式会社 神戸プリン",
+    },
+    paragraphs: [
+      "神戸土産の定番「神戸プリン」をはじめ、おうちで手軽にスイーツ作りを楽しんでいただける「らくらくホイップ」や、スーパーやコンビニなどで手軽にお買い求めいただける「チルドカップデザート」などを製造・販売しています。\nスイーツの可能性の探求に取り組み、新しい美味しさをお届けしています。",
+      "お見かけの際はぜひお買い求めください！",
+    ],
   },
 ];
