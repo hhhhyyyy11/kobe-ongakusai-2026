@@ -30,6 +30,7 @@ export const timetableEntries = [
     startTime: "10:25",
     copyArtist: "ASIAN KUNG-FU GENERATION",
     artistId: "rits-jack-beans",
+    introVideoUrl: "https://www.instagram.com/reel/DcDuxeRSOq4/",
   },
   {
     kind: "performance",
@@ -69,6 +70,7 @@ export const timetableEntries = [
     startTime: "13:10",
     copyArtist: "MOSHIMO",
     artistId: "doshisha-hinatabokko",
+    introVideoUrl: "https://www.instagram.com/reel/DcBKC1EyYRJ/",
   },
   {
     kind: "performance",
@@ -96,6 +98,7 @@ export const timetableEntries = [
     startTime: "14:50",
     copyArtist: "King Gnu",
     artistId: "rits-hansel-gretel",
+    introVideoUrl: "https://www.instagram.com/reel/DcGF5mZxsID/",
   },
   {
     kind: "performance",
@@ -109,6 +112,7 @@ export const timetableEntries = [
     startTime: "15:40",
     copyArtist: "Saucy Dog",
     artistId: "kobe-rock",
+    introVideoUrl: "https://www.instagram.com/reel/DcDhD3Lyg5t/",
   },
   { kind: "break", startTime: "16:05", label: "休憩" },
   {
@@ -123,18 +127,21 @@ export const timetableEntries = [
     startTime: "16:45",
     copyArtist: "ヨルシカ",
     artistId: "hyogo-west-rock",
+    introVideoUrl: "https://www.instagram.com/reel/DcD8gkWyP86/",
   },
   {
     kind: "performance",
     startTime: "17:10",
     copyArtist: "ART-SCHOOL",
     artistId: "kobe-rock",
+    introVideoUrl: "https://www.instagram.com/reel/DcGTkg2yDUu/",
   },
   {
     kind: "performance",
     startTime: "17:35",
     copyArtist: "フレデリック",
     artistId: "kobe-mmc",
+    introVideoUrl: "https://www.instagram.com/reel/DcBXyhWyHoq/",
   },
   {
     kind: "performance",
@@ -155,5 +162,6 @@ export const timetableEntries = [
     startTime: "18:50",
     copyArtist: "Oasis",
     artistId: "kwansei-keion",
+    introVideoUrl: "https://www.instagram.com/reel/DcGhYszSqMx/",
   },
 ] satisfies TimetableEntry[];
