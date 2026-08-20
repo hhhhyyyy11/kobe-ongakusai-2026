@@ -53,7 +53,7 @@ export function Header() {
             />
           </Link>
 
-          <div className="ml-3 hidden flex-nowrap items-center justify-end gap-1.5 xl:flex 2xl:gap-2">
+          <div className="hidden lg:flex flex-wrap justify-end gap-2 xl:gap-3 ml-4">
             {navigationItems.map((item) => {
               const active = isActive(item.href);
 
@@ -62,7 +62,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full border-2 px-3 py-2.5 text-xs font-black whitespace-nowrap transition-all duration-300 2xl:px-4 2xl:py-3 2xl:text-sm ${
+                  className={`px-4 py-3 rounded-full font-black text-sm xl:text-base border-2 transition-all duration-300 ${
                     active
                       ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-orange-400 shadow-lg transform scale-105"
                       : "text-gray-800 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-white border-gray-300 hover:border-orange-400 hover:shadow-lg"
@@ -77,7 +77,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`rounded-lg p-2 transition-all duration-300 transform xl:hidden ${
+            className={`lg:hidden p-2 rounded-lg transition-all duration-300 transform ${
               isMobileMenuOpen
                 ? "bg-gray-800 scale-105 border-2 border-orange-400"
                 : "bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-110 border-2 border-orange-400"
@@ -93,7 +93,7 @@ export function Header() {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`transition-all duration-500 ease-in-out xl:hidden ${
+          className={`lg:hidden transition-all duration-500 ease-in-out ${
             isMobileMenuOpen
               ? "max-h-[calc(100vh-5rem)] overflow-y-auto opacity-100"
               : "max-h-0 overflow-hidden opacity-0"
