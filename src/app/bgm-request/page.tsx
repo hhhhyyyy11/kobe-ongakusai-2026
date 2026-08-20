@@ -96,6 +96,7 @@ export default function BgmRequestPage() {
               <iframe
                 src={embeddedFormUrl}
                 title="神戸音学祭2026 BGMリクエストフォーム"
+                loading="lazy"
                 className="h-[1100px] w-full border-0 sm:h-[1000px]"
                 referrerPolicy="strict-origin-when-cross-origin"
               >
