@@ -44,18 +44,21 @@ export const timetableEntries = [
     startTime: "11:15",
     copyArtist: "レイラ",
     artistId: "doshisha-hinatabokko",
+    introVideoUrl: "https://www.instagram.com/reel/DcI4W5JyxzZ/",
   },
   {
     kind: "performance",
     startTime: "11:40",
     copyArtist: "kurayamisaka",
     artistId: "kobe-city-foreign-keion",
+    introVideoUrl: "https://www.instagram.com/reel/DcIqoHjyxaX/",
   },
   {
     kind: "performance",
     startTime: "12:05",
     copyArtist: "The Birthday",
     artistId: "kobe-sounds",
+    introVideoUrl: "https://www.instagram.com/reel/DcJGFKgS5a0/",
   },
   {
     kind: "performance",
