@@ -17,6 +17,10 @@ export const siteRoutes = [
     priority: 1,
   },
   {
+    path: "/bgm-request",
+    priority: 0.9,
+  },
+  {
     path: "/about",
     priority: 0.8,
   },

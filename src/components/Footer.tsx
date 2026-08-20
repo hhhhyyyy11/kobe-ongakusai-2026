@@ -46,6 +46,12 @@ export function Footer() {
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href="/bgm-request"
+                className="block text-gray-300 hover:text-white font-bold transition-colors"
+              >
+                BGMリクエスト
+              </Link>
             </div>
           </div>
           <div>
