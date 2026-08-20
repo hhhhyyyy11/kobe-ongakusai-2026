@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { TicketSection } from "@/components/TicketSection";
 import { SponsorSection } from "@/components/SponsorSection";
-import { CrowdfundingSection } from "@/components/CrowdfundingSection";
+import { BgmRequestSection } from "@/components/BgmRequestSection";
 import { HomeTimetableSection } from "@/components/HomeTimetableSection";
 import { createPageMetadata } from "@/lib/metadata";
 import { eventInfo } from "@/constants/event";
@@ -24,8 +24,8 @@ function MainComponent() {
       {/* Main Visual Section */}
       <HeroSection />
 
-      {/* Crowdfunding Section */}
-      <CrowdfundingSection />
+      {/* BGM Request Section */}
+      <BgmRequestSection />
 
       {/* Ticket Section */}
       <TicketSection />
