@@ -1,5 +1,6 @@
 export const navigationItems = [
   { href: "/", label: "TOP" },
+  { href: "/bgm-request", label: "BGMリクエスト" },
   { href: "/artists", label: "出演団体" },
   { href: "/timetable", label: "タイムテーブル" },
   { href: "/booths", label: "ブース" },

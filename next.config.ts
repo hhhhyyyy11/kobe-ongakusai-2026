@@ -5,7 +5,7 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'self'",
-  "frame-src 'none'",
+  "frame-src https://docs.google.com",
   "form-action 'self'",
   "manifest-src 'self'",
   "font-src 'self'",
